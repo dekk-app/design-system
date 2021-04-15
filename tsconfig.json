@@ -1,0 +1,55 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "alwaysStrict": true,
+        "declaration": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "isolatedModules": true,
+        "lib": [
+            "dom",
+            "esnext"
+        ],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "jsx": "preserve",
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "strict": false,
+        "target": "es6",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./types"
+        ],
+        "baseUrl": "./",
+        "paths": {
+            "@dekk-ui/create-token": [
+                "./atomic-design/ions/create-token/src"
+            ],
+            "@dekk-ui/design-tokens": [
+                "./atomic-design/ions/design-tokens/src"
+            ],
+            "@dekk-ui/theme": [
+                "./atomic-design/ions/theme/src"
+            ],
+            "@dekk-ui/utils": [
+                "./atomic-design/ions/utils/src"
+            ],
+            "@dekk-ui/input-field": [
+                "./atomic-design/atoms/input-field/src"
+            ]
+        }
+    },
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

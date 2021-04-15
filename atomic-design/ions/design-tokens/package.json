@@ -1,0 +1,43 @@
+{
+  "name": "@dekk-ui/design-tokens",
+  "version": "0.1.0",
+  "keywords": [
+    "component library",
+    "design system",
+    "design-tokens"
+  ],
+  "homepage": "https://dekk-app.github.io/design-system",
+  "bugs": {
+    "url": "https://github.com/dekk-app/design-system/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dekk-app/design-system.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Gregor Adams",
+    "email": "greg@pixelass.com"
+  },
+  "main": "index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "index.js",
+    "colors.js",
+    "spaces.js",
+    "radiuses.js"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf dist",
+    "watch": "rollup -cw"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@dekk-ui/create-token": "0.1.0"
+  }
+}
