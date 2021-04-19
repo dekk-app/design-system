@@ -1,10 +1,18 @@
 import { css } from "@emotion/react";
 
 export const fontFaces = css`
-	* {
+	html {
 		font-family: poppins, sans-serif;
 	}
+
+	input,
+	select,
+	button {
+		font-family: inherit;
+		font-size: 1em;
+	}
 `;
+
 export const poppins = css`
 	/* devanagari */
 	@font-face {
@@ -156,6 +164,7 @@ export const globalStyles = css`
 	*::before,
 	*::after {
 		box-sizing: border-box;
+		user-select: none;
 	}
 
 	html {
@@ -171,7 +180,7 @@ export const globalStyles = css`
 
 		&.dark-mode {
 			/* dark mode */
-			background: black;
+			background: #232324;
 			color: white;
 			-webkit-font-smoothing: antialiased;
 		}

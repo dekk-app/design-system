@@ -41,6 +41,15 @@
             ],
             "@dekk-ui/input-field": [
                 "./atomic-design/atoms/input-field/src"
+            ],
+            "@dekk-ui/input-label": [
+                "./atomic-design/atoms/input-label/src"
+            ],
+            "@dekk-ui/range-knob": [
+                "./atomic-design/atoms/range-knob/src"
+            ],
+            "@dekk-ui/color-input-field": [
+                "./atomic-design/molecules/color-input-field/src"
             ]
         }
     },

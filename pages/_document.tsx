@@ -1,4 +1,3 @@
-import { cache } from "../emotion";
 import createEmotionServer from "@emotion/server/create-instance";
 import NextDocument, {
 	DocumentContext,
@@ -9,6 +8,7 @@ import NextDocument, {
 	NextScript,
 } from "next/document";
 import React from "react";
+import { cache } from "../emotion";
 
 const { extractCritical } = createEmotionServer(cache);
 

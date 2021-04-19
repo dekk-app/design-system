@@ -1,33 +1,28 @@
-import React, { forwardRef, useCallback, useState } from "react";
-import { StyledInput } from "./styled";
+import React, { forwardRef, useCallback } from "react";
+import { StyledNumberInput } from "./styled";
 import { NumberInputProps } from "./types";
 
 export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
-	({ value, width, fullWidth }, ref) => {
-		const [step, setStep] = useState(1);
-
-		const handleKeyDown: React.KeyboardEventHandler = useCallback(({ shiftKey }) => {
-			if (shiftKey) {
-				setStep(10);
-			}
-		}, []);
-
-		const handleKeyUp: React.KeyboardEventHandler = useCallback(({ shiftKey }) => {
-			if (!shiftKey) {
-				setStep(1);
-			}
-		}, []);
+	({ value, width, fullWidth, onChange, min, max }, ref) => {
+		const handleChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(
+			event_ => {
+				if (onChange) {
+					onChange(Math.round(Number.parseFloat(event_.target.value)));
+				}
+			},
+			[onChange]
+		);
 
 		return (
-			<StyledInput
+			<StyledNumberInput
 				ref={ref}
 				value={value}
 				type="number"
 				fullWidth={fullWidth}
 				width={width}
-				step={step}
-				onKeyDown={handleKeyDown}
-				onKeyUp={handleKeyUp}
+				min={min}
+				max={max}
+				onChange={handleChange}
 			/>
 		);
 	}

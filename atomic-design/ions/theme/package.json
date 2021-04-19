@@ -37,6 +37,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@dekk-ui/create-token": "0.1.0",
     "@dekk-ui/design-tokens": "0.1.0"
   }
 }

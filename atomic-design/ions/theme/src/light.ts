@@ -1,4 +1,6 @@
 import {
+	darkest,
+	lightest,
 	lightFill1,
 	lightFill2,
 	lightFill3,
@@ -6,8 +8,6 @@ import {
 	lightOutline1,
 	lightText1,
 	primary,
-	lightest,
-	darkest,
 } from "@dekk-ui/design-tokens/colors";
 import { base } from "./base";
 import { Theme } from "./types";

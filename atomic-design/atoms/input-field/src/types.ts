@@ -1,24 +1,21 @@
 import React from "react";
-
-type CSSize =
-	| `${number}%`
-	| `${number}px`
-	| `${number}em`
-	| `${number}ex`
-	| `${number}lh`
-	| `${number}rem`
-	| `${number}vh`
-	| `${number}vw`
-	| `${number}vmin`
-	| `${number}vmax`;
+import { Except } from "type-fest";
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
 	fullWidth?: boolean;
-	width?: CSSize;
+	width?: string;
 }
 
-export interface ColorInputProps extends InputProps {}
+export interface CombinedInputProps extends React.HTMLProps<HTMLSpanElement> {
+	invalid?: boolean;
+	fullWidth?: boolean;
+	width?: string;
+}
 
 export interface TextInputProps extends InputProps {}
 
-export interface NumberInputProps extends InputProps {}
+export interface NumberInputProps extends Except<InputProps, "onChange" | "min" | "max"> {
+	min?: number;
+	max?: number;
+	onChange?(value: number): void;
+}

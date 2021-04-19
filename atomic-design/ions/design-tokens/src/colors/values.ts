@@ -65,13 +65,13 @@ export const darkFill2 = createToken<RGBColor>(
 
 export const lightFill3 = createToken<RGBColor>(
 	"Light Fill 3",
-	"rgb(201, 201, 201)",
+	"rgb(153, 153, 153)",
 	"Light Mode Fill Color 3"
 );
 
 export const darkFill3 = createToken<RGBColor>(
 	"Dark Fill 3",
-	"rgb(74, 74, 74)",
+	"rgb(90, 90, 90)",
 	"Dark Mode Fill Color 3"
 );
 

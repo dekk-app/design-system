@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { StyledInput } from "./styled";
 import { TextInputProps } from "./types";
 
-export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
+export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 	({ value, width, fullWidth }, ref) => {
 		return (
 			<StyledInput

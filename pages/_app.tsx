@@ -1,7 +1,7 @@
 import { dark, light } from "@dekk-ui/theme";
 import { CacheProvider, Global, ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useDarkMode from "use-dark-mode";
 
 import pkg from "../../package.json";
@@ -10,9 +10,9 @@ import { cache } from "../emotion";
 
 const App = ({ Component, pageProps }) => {
 	const { value: darkMode } = useDarkMode();
-	const [theme, setTheme] = React.useState(light);
+	const [theme, setTheme] = useState(light);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		setTheme(darkMode ? dark : light);
 	}, [darkMode]);
 

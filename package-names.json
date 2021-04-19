@@ -1,6 +1,8 @@
 {
     "atoms": [
-        "input-field"
+        "input-field",
+        "input-label",
+        "range-knob"
     ],
     "ions": [
         "create-token",
@@ -8,6 +10,8 @@
         "theme",
         "utils"
     ],
-    "molecules": [],
+    "molecules": [
+        "color-input-field"
+    ],
     "organisms": []
 }
