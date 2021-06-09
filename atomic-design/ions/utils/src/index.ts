@@ -9,3 +9,5 @@ export const getDeg = (pointer: { x: number; y: number }, center: number) => {
 	deg += (x < 0 && y >= 0) || (x < 0 && y < 0) ? 270 : 90;
 	return deg;
 };
+
+export const clamp = (value: number, max: number, min = 0) => Math.min(max, Math.max(min, value));

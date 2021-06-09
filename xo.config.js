@@ -14,6 +14,8 @@ module.exports = {
 		"**/*.d.ts",
 		"**/types.ts",
 		"**/enums.ts",
+		"pages",
+		"docs",
 	],
 	plugins: ["prettier"],
 	env: ["browser", "node"],

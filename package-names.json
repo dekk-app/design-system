@@ -1,17 +1,23 @@
 {
     "atoms": [
+        "avatar",
+        "icon-button",
+        "icon",
         "input-field",
         "input-label",
-        "range-knob"
+        "range-knob",
+        "range"
     ],
     "ions": [
         "create-token",
         "design-tokens",
+        "icons",
         "theme",
         "utils"
     ],
     "molecules": [
-        "color-input-field"
+        "color-input-field",
+        "select"
     ],
     "organisms": []
 }

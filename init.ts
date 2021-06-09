@@ -8,7 +8,7 @@ const { flags } = meow();
 const writeFile = pify(fs.writeFile);
 
 function sort(array: string[]): string[] {
-	return array.sort((a, b) => {
+	array.sort((a, b) => {
 		if (a > b) {
 			return 1;
 		}
@@ -19,6 +19,7 @@ function sort(array: string[]): string[] {
 
 		return 0;
 	});
+	return array;
 }
 
 function makeAlias(dir: string, names: string[], atomic?: boolean): Record<string, string> {

@@ -4,6 +4,11 @@ import { Except } from "type-fest";
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
 	fullWidth?: boolean;
 	width?: string;
+	textAlign?: "left" | "right" | "center";
+}
+
+export interface PrefixProps extends React.HTMLProps<HTMLDivElement> {
+	width?: string;
 }
 
 export interface CombinedInputProps extends React.HTMLProps<HTMLSpanElement> {

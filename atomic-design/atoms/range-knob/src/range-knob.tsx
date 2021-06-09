@@ -1,40 +1,61 @@
-import { getDeg } from "@dekk-ui/utils";
+import { clamp, getDeg } from "@dekk-ui/utils";
 import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { StyledBubble, StyledInputWrapper, StyledRing } from "./styled";
 import { RangeKnobProps } from "./types";
 
 export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
-	({ id, onChange, value, min, max, tabIndex }, inputRef) => {
+	(
+		{
+			id,
+			onChange,
+			defaultValue = 0,
+			value: controlledValue,
+			min = 0,
+			max = 100,
+			step = 1,
+			tabIndex,
+		},
+		inputRef
+	) => {
 		const ref = useRef<HTMLDivElement>(null);
+		const [value, setValue] = useState(defaultValue);
 		const [down, setDown] = useState(false);
 		const [rect, setRect] = useState({ left: 0, top: 0, width: 0 });
+		const range = max - min;
 
 		const handleStart = useCallback(
 			({ pageX, pageY }) => {
 				if (ref.current) {
 					const { left, top, width } = ref.current.getBoundingClientRect();
-					const x = pageX - left;
-					const y = pageY - top;
-					const deg_ = Math.round(getDeg({ x, y }, width / 2));
+					const x = pageX - window.scrollX - left;
+					const y = pageY - window.scrollY - top;
+					const newValue =
+						Math.round(((getDeg({ x, y }, width / 2) / 360) * range + min) / step) *
+						step;
 					setRect({ top, left, width });
 					setDown(true);
+					setValue(newValue);
 					if (onChange) {
-						onChange(deg_);
+						onChange(newValue);
 					}
 				}
 			},
-			[onChange, ref]
+			[onChange, ref, range, min, step]
 		);
 
 		useEffect(() => {
 			const subscribe = () => {
 				const handleMove = ({ pageX, pageY }) => {
 					if (down) {
-						const x = pageX - rect.left;
-						const y = pageY - rect.top;
-						const deg_ = Math.round(getDeg({ x, y }, rect.width / 2));
+						const x = pageX - window.scrollX - rect.left;
+						const y = pageY - window.scrollY - rect.top;
+						const newValue =
+							Math.round(
+								((getDeg({ x, y }, rect.width / 2) / 360) * range + min) / step
+							) * step;
+						setValue(newValue);
 						if (onChange) {
-							onChange(deg_);
+							onChange(newValue);
 						}
 					}
 				};
@@ -52,31 +73,40 @@ export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
 			};
 
 			return subscribe();
-		}, [onChange, rect, down]);
+		}, [onChange, rect, down, range, min, step]);
 
 		const handleChange = useCallback(
 			(event_: React.ChangeEvent<HTMLInputElement>) => {
+				const newValue = Number.parseFloat(event_.target.value);
+				const moduloValue =
+					newValue <= min
+						? ((newValue + range) % range) + min
+						: clamp((newValue % range) + min, max, min);
+				setValue(moduloValue);
 				if (onChange) {
-					onChange(Math.round(Number.parseFloat(event_.target.value)));
+					onChange(moduloValue);
 				}
 			},
-			[onChange]
+			[onChange, min, max, step]
 		);
 
 		return (
 			<StyledInputWrapper ref={ref} onMouseDown={handleStart}>
 				<StyledRing
 					style={{
-						transform: `rotate3d(0,0,1,${value}deg)`,
+						transform: `rotate3d(0,0,1,${Math.round(
+							(controlledValue ?? value) * (360 / range)
+						)}deg)`,
 					}}
 				>
 					<StyledBubble
 						ref={inputRef}
 						id={id}
 						type="range"
-						value={value}
-						min={min}
+						value={controlledValue ?? value}
 						max={max}
+						min={min - step}
+						step={step}
 						tabIndex={tabIndex}
 						onChange={handleChange}
 					/>

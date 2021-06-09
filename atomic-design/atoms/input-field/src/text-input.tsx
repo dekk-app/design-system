@@ -3,12 +3,14 @@ import { StyledInput } from "./styled";
 import { TextInputProps } from "./types";
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-	({ value, width, fullWidth }, ref) => {
+	({ value, textAlign, width, fullWidth, id }, ref) => {
 		return (
 			<StyledInput
 				ref={ref}
 				value={value}
+				id={id}
 				type="text"
+				textAlign={textAlign}
 				fullWidth={fullWidth}
 				width={width}
 				autoComplete="off"

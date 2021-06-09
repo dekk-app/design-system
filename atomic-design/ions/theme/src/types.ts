@@ -22,6 +22,11 @@ export interface Theme {
 		};
 		text: {
 			"1": Token<RGBColor>;
+			"2": Token<RGBColor>;
+		};
+		background: {
+			"1": Token<RGBColor>;
+			"2": Token<RGBColor>;
 		};
 		outline: {
 			"1": Token<RGBColor>;
