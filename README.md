@@ -3,8 +3,9 @@
 The design system for Dekk
 
 [![MIT license][license-badge]][license]
+[![Atomic Design][atomic-design-badge]][atomic-design]  
 [![Storybook][storybook-badge]][storybook]
-[![Atomic Design][atomic-design-badge]][atomic-design]
+[![Percy][percy-badge]][percy]
 
 This is the contributor documentation for the `@everdevs` mono-repository.
 For user docs see the [Documentation][docs].
@@ -21,6 +22,8 @@ git commit -m "feat(fancy-thing): add fancy-thing component"
 Copyright © 2021 Dekk. All rights reserved.
 
 [docs]: https://design-system-dekk.vercel.app/
+[percy-badge]: https://img.shields.io/badge/Visual_Regression-Percy-9e66bf?style=for-the-badge
+[percy]: https://percy.io/70750019/Dekk-UI
 [storybook-badge]: https://img.shields.io/badge/Documentation-Storybook-ff4685?style=for-the-badge
 [storybook]: https://design-system-dekk.vercel.app/
 [atomic-design-badge]: https://img.shields.io/badge/System-Atomic_Design-be6700?style=for-the-badge
