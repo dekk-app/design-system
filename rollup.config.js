@@ -21,12 +21,11 @@ const tsconfigOverride = { compilerOptions: { declaration: false } };
 module.exports = () => {
 	const cwd = process.cwd();
 	const pkg = require(path.resolve(cwd, "package.json"));
-	const inputs = pkg.files.filter(name => name.endsWith(".js"));
-	const bins = pkg.bin ? Object.values(pkg.bin).map(bin => bin.replace(/^\.\/dist\//, "")) : [];
+	const packageExports = ["index", ...(pkg.exports ? Object.keys(pkg.exports) : [])];
 	const tsconfig = path.resolve(cwd, "tsconfig.json");
 	return [
-		...inputs.map(input => ({
-			input: `src/${input}`.replace(".js", ".ts"),
+		...packageExports.map(packageExport => ({
+			input: `src/${packageExport}.ts`,
 			external: [
 				...Object.keys(pkg.dependencies || {}),
 				...Object.keys(pkg.peerDependencies || {}),
@@ -36,7 +35,7 @@ module.exports = () => {
 			output: [
 				{
 					banner: createBanner(pkg),
-					file: `dist/${input}`,
+					file: `dist/${packageExport}.js`,
 					format: "cjs",
 				},
 			],
@@ -47,8 +46,8 @@ module.exports = () => {
 				typescript({ tsconfig }),
 			],
 		})),
-		...inputs.map(input => ({
-			input: `src/${input}`.replace(".js", ".ts"),
+		...packageExports.map(packageExport => ({
+			input: `src/${packageExport}.ts`,
 			external: [
 				...Object.keys(pkg.dependencies || {}),
 				...Object.keys(pkg.peerDependencies || {}),
@@ -58,7 +57,7 @@ module.exports = () => {
 			output: [
 				{
 					banner: createBanner(pkg),
-					file: `dist/esm/${input}`,
+					file: `dist/esm/${packageExport}.js`,
 					format: "esm",
 				},
 			],
@@ -69,31 +68,5 @@ module.exports = () => {
 				typescript({ tsconfig, tsconfigOverride }),
 			],
 		})),
-		...bins.map(bin => {
-			return {
-				input: `src/${bin}`.replace(".js", ".ts"),
-				external: [
-					...Object.keys(pkg.dependencies || {}),
-					...Object.keys(pkg.peerDependencies || {}),
-					"path",
-					"fs",
-				],
-				output: [
-					{
-						banner: `#!/usr/bin/env node\n${createBanner(pkg)}`,
-						file: `dist/${bin}`,
-						format: "cjs",
-					},
-				],
-				plugins: [
-					commonjs(),
-					babel({ babelHelpers: "bundled" }),
-					typescript({
-						tsconfig,
-						tsconfigOverride,
-					}),
-				],
-			};
-		}),
 	];
 };

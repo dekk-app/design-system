@@ -1,36 +1,47 @@
-import { Token } from "@dekk-ui/create-token";
 import { Radius, RGBColor, Space } from "@dekk-ui/design-tokens";
 
 export interface Theme {
 	space: {
-		xxs: Token<Space>;
-		xs: Token<Space>;
-		s: Token<Space>;
-		m: Token<Space>;
-		l: Token<Space>;
-		xl: Token<Space>;
-		xxl: Token<Space>;
+		xxs: Space;
+		xs: Space;
+		s: Space;
+		m: Space;
+		l: Space;
+		xl: Space;
+		xxl: Space;
 	};
 	radius: {
-		s: Token<Radius>;
+		s: Radius;
+	};
+	ci: {
+		colors: {
+			primary: RGBColor;
+			lightest: RGBColor;
+			darkest: RGBColor;
+		};
 	};
 	ui: {
 		colors: {
-			primary: Token<RGBColor>;
-			lightest: Token<RGBColor>;
-			darkest: Token<RGBColor>;
+			primary: RGBColor;
+			lightest: RGBColor;
+			darkest: RGBColor;
 		};
 		text: {
-			"1": Token<RGBColor>;
+			"1": RGBColor;
+			"2": RGBColor;
+		};
+		background: {
+			"1": RGBColor;
+			"2": RGBColor;
 		};
 		outline: {
-			"1": Token<RGBColor>;
+			"1": RGBColor;
 		};
 		fill: {
-			"1": Token<RGBColor>;
-			"2": Token<RGBColor>;
-			"3": Token<RGBColor>;
-			"4": Token<RGBColor>;
+			"1": RGBColor;
+			"2": RGBColor;
+			"3": RGBColor;
+			"4": RGBColor;
 		};
 	};
 }

@@ -1,0 +1,32 @@
+{
+  "name": "@dekk-ui/icons",
+  "version": "0.1.0",
+  "keywords": [
+    "component library",
+    "design system",
+    "icons"
+  ],
+  "homepage": "https://dekk-app.github.io/design-system",
+  "bugs": {
+    "url": "https://github.com/dekk-app/design-system/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dekk-app/design-system.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Gregor Adams",
+    "email": "greg@pixelass.com"
+  },
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "icons.json",
+    "index.d.ts",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

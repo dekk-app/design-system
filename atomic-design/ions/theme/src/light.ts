@@ -1,5 +1,6 @@
 import {
 	darkest,
+	darkText1,
 	lightest,
 	lightFill1,
 	lightFill2,
@@ -16,21 +17,26 @@ export const light: Theme = {
 	...base,
 	ui: {
 		colors: {
-			primary,
-			lightest,
-			darkest,
+			primary: primary.value,
+			lightest: lightest.value,
+			darkest: darkest.value,
+		},
+		background: {
+			"1": lightest.value,
+			"2": darkest.value,
 		},
 		text: {
-			"1": lightText1,
+			"1": lightText1.value,
+			"2": darkText1.value,
 		},
 		outline: {
-			"1": lightOutline1,
+			"1": lightOutline1.value,
 		},
 		fill: {
-			"1": lightFill1,
-			"2": lightFill2,
-			"3": lightFill3,
-			"4": lightFill4,
+			"1": lightFill1.value,
+			"2": lightFill2.value,
+			"3": lightFill3.value,
+			"4": lightFill4.value,
 		},
 	},
 };

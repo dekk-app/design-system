@@ -1,12 +1,20 @@
-import { pxToRem } from "@dekk-ui/utils";
+import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const StyledInputWrapper = styled.span`
-	display: block;
+	display: inline-flex;
 	position: relative;
-	width: ${pxToRem(52)};
-	height: ${pxToRem(52)};
+	width: ${pxToRem(48)};
+	height: ${pxToRem(48)};
+	margin: ${pxToRem(-8)} ${pxToRem(-6)};
+	${({ theme }) => css`
+		&:focus-within {
+			background: ${theme.ui.fill["1"]};
+			box-shadow: 0 0 0 1px ${theme.ui.colors.primary};
+			border-radius: ${pxToRem(theme.radius.s)};
+		}
+	`};
 `;
 
 export const StyledRing = styled.div`
@@ -14,12 +22,21 @@ export const StyledRing = styled.div`
 	border-radius: 50%;
 	pointer-events: none;
 	${({ theme }) => css`
-		top: ${pxToRem(theme.space.xs.value)};
-		right: ${pxToRem(theme.space.xs.value)};
-		bottom: ${pxToRem(theme.space.xs.value)};
-		left: ${pxToRem(theme.space.xs.value)};
-		box-shadow: inset 0 0 0 2px ${theme.ui.fill[3].value};
+		top: 50%;
+		left: 50%;
+		width: ${pxToRem(32)};
+		height: ${pxToRem(32)};
+		margin: ${pxToRem(-16)};
+		box-shadow: 0 0 0 2px ${theme.ui.fill[3]};
 	`};
+`;
+
+const thumb = css`
+	width: 0;
+	height: 0;
+	border: 0;
+	appearance: none;
+	pointer-events: none;
 `;
 
 export const StyledBubble = styled.input`
@@ -34,20 +51,17 @@ export const StyledBubble = styled.input`
 	}
 
 	&::-webkit-slider-thumb {
-		width: 0;
-		height: 0;
-		appearance: none;
-		pointer-events: none;
+		${thumb};
+	}
+
+	&::-moz-range-thumb {
+		${thumb};
 	}
 
 	${({ theme }) => css`
-		width: ${pxToRem(theme.space.xs.value)};
-		height: ${pxToRem(theme.space.xs.value)};
-		margin: ${pxToRem(-theme.space.xxs.value)};
-		background: ${theme.ui.colors.primary.value};
-
-		&:focus-visible {
-			box-shadow: 0 0 0 1px ${theme.ui.colors.primary.value};
-		}
+		width: ${pxToRem(12)};
+		height: ${pxToRem(12)};
+		margin: ${pxToRem(-6)};
+		background: ${theme.ui.colors.primary};
 	`};
 `;

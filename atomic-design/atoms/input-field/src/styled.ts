@@ -1,43 +1,71 @@
-import { pxToRem } from "@dekk-ui/utils";
+import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { CombinedInputProps, InputProps } from "./types";
+import { CombinedInputProps, InputProps, PrefixProps } from "./types";
+
+export const StyledPrefix = styled.div<PrefixProps>`
+	overflow: hidden;
+	font-size: ${pxToRem(12)};
+	${({ theme, width }) => css`
+		width: ${width || "auto"};
+		height: ${pxToRem(theme.space.l)};
+		padding: ${pxToRem(theme.space.xs)} 0 ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)};
+		line-height: ${pxToRem(theme.space.s)};
+		border-radius: ${pxToRem(theme.radius.s)} 0 0 ${pxToRem(theme.radius.s)};
+		background: inherit;
+		color: inherit;
+	`};
+`;
+
+export const StyledSuffix = styled.div<PrefixProps>`
+	overflow: hidden;
+	font-size: ${pxToRem(12)};
+	${({ theme, width }) => css`
+		width: ${width || "auto"};
+		height: ${pxToRem(theme.space.l)};
+		margin: 0 0 0 ${pxToRem(-theme.space.xs + 2)};
+		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)} 0;
+		line-height: ${pxToRem(theme.space.s)};
+		border-radius: 0 ${pxToRem(theme.radius.s)} ${pxToRem(theme.radius.s)} 0;
+		background: inherit;
+		color: inherit;
+	`};
+`;
 
 export const StyledInput = styled.input<InputProps>`
 	overflow: hidden;
 	border: 0;
 	appearance: none;
-	font-size: 12px;
+	font-size: ${pxToRem(12)};
 
 	&:focus {
 		outline: 0;
 	}
 
-	&[type="number"]::-webkit-inner-spin-button,
-	&[type="number"]::-webkit-outer-spin-button {
-		margin: 0;
-		appearance: none;
-	}
-
-	${({ theme, fullWidth, width }) => css`
+	${({ theme, fullWidth, width, textAlign }) => css`
 		width: ${fullWidth ? "100%" : width || "auto"};
-		min-width: ${pxToRem(theme.space.l.value)};
-		height: ${pxToRem(theme.space.l.value)};
-		padding: ${pxToRem(theme.space.xs.value)};
-		line-height: ${pxToRem(theme.space.s.value)};
-		border-radius: ${pxToRem(theme.radius.s.value)};
-		background: ${theme.ui.fill["2"].value};
-		color: ${theme.ui.text["1"].value};
-		box-shadow: inset 0 0 0 1px ${theme.ui.outline["1"].value};
-		caret-color: ${theme.ui.colors.primary.value};
+		min-width: ${pxToRem(theme.space.l)};
+		height: ${pxToRem(theme.space.l)};
+		padding: ${pxToRem(theme.space.xs)};
+		line-height: ${pxToRem(theme.space.s)};
+		border-radius: ${pxToRem(theme.radius.s)};
+		background: ${theme.ui.fill["2"]};
+		color: ${theme.ui.text["1"]};
+		box-shadow: inset 0 0 0 1px ${theme.ui.outline["1"]};
+		caret-color: ${theme.ui.colors.primary};
+		text-align: ${textAlign};
 
 		&:hover {
-			background: ${theme.ui.fill["1"].value};
+			background: ${theme.ui.fill["1"]};
+
+			+ ${StyledSuffix} {
+				background: ${theme.ui.fill["1"]};
+			}
 		}
 
 		&:focus {
-			background: ${theme.ui.fill["1"].value};
-			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary.value};
+			background: ${theme.ui.fill["1"]};
+			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary};
 		}
 
 		&:invalid {
@@ -48,6 +76,8 @@ export const StyledInput = styled.input<InputProps>`
 
 export const StyledNumberInput = styled(StyledInput)`
 	&[type="number"] {
+		-moz-appearance: textfield;
+
 		&::-webkit-inner-spin-button,
 		&::-webkit-outer-spin-button {
 			margin: 0;
@@ -56,7 +86,7 @@ export const StyledNumberInput = styled(StyledInput)`
 	}
 `;
 
-export const StyledCombinedInput = styled.span<CombinedInputProps>`
+export const StyledCombinedInput = styled.label<CombinedInputProps>`
 	display: inline-flex;
 	position: relative;
 	overflow: hidden;
@@ -64,7 +94,7 @@ export const StyledCombinedInput = styled.span<CombinedInputProps>`
 	&::before {
 		content: "";
 		position: absolute;
-		z-index: 1;
+		z-index: 0;
 		top: 0;
 		right: 0;
 		bottom: 0;
@@ -79,27 +109,37 @@ export const StyledCombinedInput = styled.span<CombinedInputProps>`
 
 	${({ theme, invalid, fullWidth, width }) => css`
 		width: ${fullWidth ? "100%" : width || "auto"};
-		min-width: ${pxToRem(theme.space.l.value)};
-		height: ${pxToRem(theme.space.l.value)};
-		border-radius: ${pxToRem(theme.radius.s.value)};
+		min-width: ${pxToRem(theme.space.l)};
+		height: ${pxToRem(theme.space.l)};
+		border-radius: ${pxToRem(theme.radius.s)};
+		background: ${theme.ui.fill["2"]};
+		color: ${theme.ui.text["1"]};
+
+		&:hover {
+			background: ${theme.ui.fill["1"]};
+			${StyledInput}, ${StyledNumberInput} {
+				background: inherit;
+			}
+		}
 		&::before {
-			box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.outline["1"].value}; // @todo add brand color
+			box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.outline["1"]}; // @todo add brand color
 		}
 
 		&:focus-within {
+			background: ${theme.ui.fill["1"]};
 			&::before {
-				box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.colors.primary.value}; // @todo add brand color
+				box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.colors.primary}; // @todo add brand color
 			}
 		}
+		${StyledInput}, ${StyledNumberInput} {
+			border-radius: 0;
+			box-shadow: none;
 
-		${StyledInput} {
+			&:focus-visible {
+				box-shadow: none;
+			}
 			&:first-of-type {
 				flex: 1;
-				border-radius: ${pxToRem(theme.radius.s.value)} 0 0 ${pxToRem(theme.radius.s.value)};
-			}
-
-			&:last-of-type {
-				border-radius: 0 ${pxToRem(theme.radius.s.value)} ${pxToRem(theme.radius.s.value)} 0;
 			}
 		}
 	`};

@@ -7,6 +7,7 @@ import {
 	darkOutline1,
 	darkText1,
 	lightest,
+	lightText1,
 	primary,
 } from "@dekk-ui/design-tokens/colors";
 import { base } from "./base";
@@ -16,21 +17,26 @@ export const dark: Theme = {
 	...base,
 	ui: {
 		colors: {
-			primary,
-			lightest,
-			darkest,
+			primary: primary.value,
+			lightest: lightest.value,
+			darkest: darkest.value,
+		},
+		background: {
+			"1": darkest.value,
+			"2": lightest.value,
 		},
 		text: {
-			"1": darkText1,
+			"1": darkText1.value,
+			"2": lightText1.value,
 		},
 		outline: {
-			"1": darkOutline1,
+			"1": darkOutline1.value,
 		},
 		fill: {
-			"1": darkFill1,
-			"2": darkFill2,
-			"3": darkFill3,
-			"4": darkFill4,
+			"1": darkFill1.value,
+			"2": darkFill2.value,
+			"3": darkFill3.value,
+			"4": darkFill4.value,
 		},
 	},
 };
