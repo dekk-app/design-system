@@ -63,6 +63,12 @@
             "@dekk-ui/avatar/*": [
                 "./atomic-design/atoms/avatar/src/*"
             ],
+            "@dekk-ui/fieldset-row": [
+                "./atomic-design/atoms/fieldset-row/src"
+            ],
+            "@dekk-ui/fieldset-row/*": [
+                "./atomic-design/atoms/fieldset-row/src/*"
+            ],
             "@dekk-ui/icon-button": [
                 "./atomic-design/atoms/icon-button/src"
             ],
@@ -99,11 +105,29 @@
             "@dekk-ui/range/*": [
                 "./atomic-design/atoms/range/src/*"
             ],
+            "@dekk-ui/avatars": [
+                "./atomic-design/molecules/avatars/src"
+            ],
+            "@dekk-ui/avatars/*": [
+                "./atomic-design/molecules/avatars/src/*"
+            ],
             "@dekk-ui/color-input-field": [
                 "./atomic-design/molecules/color-input-field/src"
             ],
             "@dekk-ui/color-input-field/*": [
                 "./atomic-design/molecules/color-input-field/src/*"
+            ],
+            "@dekk-ui/range-field": [
+                "./atomic-design/molecules/range-field/src"
+            ],
+            "@dekk-ui/range-field/*": [
+                "./atomic-design/molecules/range-field/src/*"
+            ],
+            "@dekk-ui/range-knob-field": [
+                "./atomic-design/molecules/range-knob-field/src"
+            ],
+            "@dekk-ui/range-knob-field/*": [
+                "./atomic-design/molecules/range-knob-field/src/*"
             ],
             "@dekk-ui/select": [
                 "./atomic-design/molecules/select/src"

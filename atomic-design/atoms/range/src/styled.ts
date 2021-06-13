@@ -1,4 +1,4 @@
-import { pxToRem } from "@dekk-ui/utils";
+import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { RangeProps } from "./types";

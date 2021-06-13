@@ -1,7 +1,5 @@
 import { Avatar, AvatarProps } from "@dekk-ui/avatar";
-import { light } from "@dekk-ui/theme";
 import { Story } from "@storybook/react";
-import { ThemeProvider } from "@storybook/theming";
 import faker from "faker";
 import React from "react";
 
@@ -14,10 +12,10 @@ const user = {
 
 const Template: Story<AvatarProps> = args => {
 	return (
-		<ThemeProvider theme={light}>
+		<>
 			<Avatar {...args} />
 			<Avatar>Foo</Avatar>
-		</ThemeProvider>
+		</>
 	);
 };
 

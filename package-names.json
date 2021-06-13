@@ -1,6 +1,7 @@
 {
     "atoms": [
         "avatar",
+        "fieldset-row",
         "icon-button",
         "icon",
         "input-field",
@@ -16,7 +17,10 @@
         "utils"
     ],
     "molecules": [
+        "avatars",
         "color-input-field",
+        "range-field",
+        "range-knob-field",
         "select"
     ],
     "organisms": []

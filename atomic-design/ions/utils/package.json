@@ -22,6 +22,32 @@
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/index.d.ts",
+  "exports": {
+    "./clamp": "./dist/clamp.js",
+    "./get-deg": "./dist/get-deg.js",
+    "./px-to-rem": "./dist/px-to-rem.js",
+    "./rem": "./dist/rem.js",
+    "./take": "./dist/take.js"
+  },
+  "typesVersions": {
+    "*": {
+      "clamp": [
+        "dist/clamp.d.ts"
+      ],
+      "get-deg": [
+        "dist/get-deg.d.ts"
+      ],
+      "px-to-rem": [
+        "dist/px-to-rem.d.ts"
+      ],
+      "rem": [
+        "dist/rem.d.ts"
+      ],
+      "take": [
+        "dist/take.d.ts"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],

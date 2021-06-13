@@ -5,7 +5,6 @@ import { RangeProps } from "./types";
 export const Range = forwardRef<HTMLInputElement, RangeProps>(
 	(
 		{
-			id,
 			fullWidth,
 			width,
 			onChange,
@@ -14,7 +13,7 @@ export const Range = forwardRef<HTMLInputElement, RangeProps>(
 			step = 1,
 			min = 0,
 			max = 100,
-			tabIndex,
+			...props
 		},
 		ref
 	) => {
@@ -39,14 +38,13 @@ export const Range = forwardRef<HTMLInputElement, RangeProps>(
 			<StyledInputWrapper fullWidth={fullWidth} width={width}>
 				<StyledProgress style={style} />
 				<StyledRange
+					{...props}
 					ref={ref}
-					id={id}
 					type="range"
 					value={controlledValue ?? value}
 					step={step}
 					min={min}
 					max={max}
-					tabIndex={tabIndex}
 					onChange={handleChange}
 				/>
 			</StyledInputWrapper>

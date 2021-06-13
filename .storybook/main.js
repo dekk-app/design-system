@@ -19,7 +19,12 @@ module.exports = {
 		strictMode: true,
 	},
 	stories: ["../atomic-design/**/*.stories.@(ts|tsx|mdx)"],
-	addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+	addons: [
+		"@storybook/addon-essentials",
+		"@storybook/addon-links",
+		"@storybook/addon-a11y",
+		"storybook-dark-mode",
+	],
 	webpackFinal: async config => {
 		return {
 			...config,

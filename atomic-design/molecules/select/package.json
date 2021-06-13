@@ -24,7 +24,8 @@
   "typings": "dist/index.d.ts",
   "exports": {
     "./select": "./dist/select.js",
-    "./popout-select": "./dist/popout-select.js"
+    "./popout-select": "./dist/popout-select.js",
+    "./styled": "./dist/styled.js"
   },
   "typesVersions": {
     "*": {
@@ -33,6 +34,9 @@
       ],
       "popout-select": [
         "dist/popout-select.d.ts"
+      ],
+      "styled": [
+        "dist/styled.d.ts"
       ]
     }
   },

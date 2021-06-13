@@ -5,7 +5,7 @@ import { IconButtonProps } from "./types";
 
 export const IconButton: React.FC<IconButtonProps> = ({ icon, size, ...props }) => {
 	return (
-		<StyledButton {...props}>
+		<StyledButton {...props} aria-label={icon}>
 			<StyledSvg height={size} width={size} viewBox={`0 0 ${size} ${size}`}>
 				<StyledPath d={icons[size][icon]} />
 			</StyledSvg>

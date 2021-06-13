@@ -1,7 +1,7 @@
 import React from "react";
 import { Except } from "type-fest";
 
-export interface InputProps extends React.HTMLProps<HTMLInputElement> {
+export interface InputProps extends Except<React.HTMLProps<HTMLInputElement>, "ref" | "as"> {
 	fullWidth?: boolean;
 	width?: string;
 	textAlign?: "left" | "right" | "center";

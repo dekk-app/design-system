@@ -1,4 +1,5 @@
-import { clamp, getDeg } from "@dekk-ui/utils";
+import { clamp } from "@dekk-ui/utils/clamp";
+import { getDeg } from "@dekk-ui/utils/get-deg";
 import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { StyledBubble, StyledInputWrapper, StyledRing } from "./styled";
 import { RangeKnobProps } from "./types";
@@ -6,14 +7,13 @@ import { RangeKnobProps } from "./types";
 export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
 	(
 		{
-			id,
 			onChange,
 			defaultValue = 0,
 			value: controlledValue,
 			min = 0,
 			max = 100,
 			step = 1,
-			tabIndex,
+			...props
 		},
 		inputRef
 	) => {
@@ -100,14 +100,13 @@ export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
 					}}
 				>
 					<StyledBubble
+						{...props}
 						ref={inputRef}
-						id={id}
 						type="range"
 						value={controlledValue ?? value}
 						max={max}
 						min={min - step}
 						step={step}
-						tabIndex={tabIndex}
 						onChange={handleChange}
 					/>
 				</StyledRing>
