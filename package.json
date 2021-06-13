@@ -17,6 +17,7 @@
     "spj": "npx sort-package-json package.json",
     "setup": "babel-node prepare/init.ts --extensions='.ts'",
     "storybook": "start-storybook",
+    "build-storybook": "build-storybook -c .storybook -o public",
     "prepare": "yarn setup",
     "watch": "lerna run watch"
   },
