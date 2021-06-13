@@ -26,21 +26,51 @@ module.exports = {
 		"storybook-dark-mode",
 	],
 	webpackFinal: async config => {
-		return {
-			...config,
-			resolve: {
-				...config.resolve,
-				alias: {
-					...config.resolve.alias,
-					"@emotion/core": toPath("node_modules/@emotion/react"),
-					"@emotion/styled": toPath("node_modules/@emotion/styled"),
-					"emotion-theming": toPath("node_modules/@emotion/react"),
-					...makeAlias("ions", packages.ions),
-					...makeAlias("atoms", packages.atoms),
-					...makeAlias("molecules", packages.molecules),
-					...makeAlias("organisms", packages.organisms),
+		config.module.rules.push({
+			test: /\.(ts|tsx)$/,
+			use: [
+				{
+					loader: require.resolve("babel-loader"),
+					options: {
+						presets: [
+							"@babel/preset-env",
+							"@babel/preset-typescript",
+							"@babel/preset-react",
+						],
+						plugins: [
+							"@babel/plugin-transform-runtime",
+							[
+								"@emotion/babel-plugin",
+								{
+									sourceMap: true,
+									autoLabel: "dev-only",
+									labelFormat: "[local]",
+									cssPropOptimization: true,
+								},
+							],
+						],
+					},
 				},
-			},
+				{
+					loader: require.resolve("react-docgen-typescript-loader"),
+					options: {
+						// Provide the path to your tsconfig.json so that your stories can
+						// display types from outside each individual story.
+						tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
+					},
+				},
+			],
+		});
+		config.resolve.alias = {
+			...config.resolve.alias,
+			"@emotion/core": toPath("node_modules/@emotion/react"),
+			"@emotion/styled": toPath("node_modules/@emotion/styled"),
+			"emotion-theming": toPath("node_modules/@emotion/react"),
+			...makeAlias("ions", packages.ions),
+			...makeAlias("atoms", packages.atoms),
+			...makeAlias("molecules", packages.molecules),
+			...makeAlias("organisms", packages.organisms),
 		};
+		return config;
 	},
 };
