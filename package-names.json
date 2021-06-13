@@ -7,7 +7,8 @@
         "input-field",
         "input-label",
         "range-knob",
-        "range"
+        "range",
+        "toggle-button"
     ],
     "ions": [
         "create-token",
@@ -19,6 +20,7 @@
     "molecules": [
         "avatars",
         "color-input-field",
+        "multi-button",
         "range-field",
         "range-knob-field",
         "select"

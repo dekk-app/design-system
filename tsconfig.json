@@ -105,6 +105,12 @@
             "@dekk-ui/range/*": [
                 "./atomic-design/atoms/range/src/*"
             ],
+            "@dekk-ui/toggle-button": [
+                "./atomic-design/atoms/toggle-button/src"
+            ],
+            "@dekk-ui/toggle-button/*": [
+                "./atomic-design/atoms/toggle-button/src/*"
+            ],
             "@dekk-ui/avatars": [
                 "./atomic-design/molecules/avatars/src"
             ],
@@ -116,6 +122,12 @@
             ],
             "@dekk-ui/color-input-field/*": [
                 "./atomic-design/molecules/color-input-field/src/*"
+            ],
+            "@dekk-ui/multi-button": [
+                "./atomic-design/molecules/multi-button/src"
+            ],
+            "@dekk-ui/multi-button/*": [
+                "./atomic-design/molecules/multi-button/src/*"
             ],
             "@dekk-ui/range-field": [
                 "./atomic-design/molecules/range-field/src"

@@ -1,3 +1,4 @@
+import { FieldsetRow } from "@dekk-ui/fieldset-row";
 import { NumberInput } from "@dekk-ui/input-field/number-input";
 import { StyledCombinedInput, StyledPrefix, StyledSuffix } from "@dekk-ui/input-field/styled";
 import { InputLabel } from "@dekk-ui/input-label";
@@ -6,7 +7,6 @@ import { clamp } from "@dekk-ui/utils/clamp";
 import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { useTheme } from "@emotion/react";
 import React, { forwardRef, useCallback, useState } from "react";
-import { GridRow } from "../../../../__pages";
 import { StyledRangeKnobLabel } from "./styled";
 import { RangeKnobFieldProps } from "./types";
 
@@ -16,15 +16,18 @@ export const RangeKnobField = forwardRef<
 >(({ id, label, name, max = 100, min = 0, step = 1, prefix, suffix }, ref) => {
 	const [value, setValue] = useState(min);
 	const theme = useTheme();
-	const handleChange = useCallback(newValue => {
-		setValue(
-			newValue <= min
-				? clamp((newValue + max) % max, max, min)
-				: clamp(newValue % max, max, min)
-		);
-	}, []);
+	const handleChange = useCallback(
+		(newValue: number) => {
+			setValue(
+				newValue <= min
+					? clamp((newValue + max) % max, max, min)
+					: clamp(newValue % max, max, min)
+			);
+		},
+		[max, min]
+	);
 	return (
-		<GridRow fullWidth columns={`1fr ${pxToRem(36)} 1fr`} gap={pxToRem(theme.space.xs)}>
+		<FieldsetRow fullWidth columns={`1fr ${pxToRem(36)} 1fr`} gap={pxToRem(theme.space.xs)}>
 			<InputLabel htmlFor={id}>{label}</InputLabel>
 			<StyledRangeKnobLabel>
 				<RangeKnob
@@ -52,6 +55,6 @@ export const RangeKnobField = forwardRef<
 				/>
 				{suffix && <StyledSuffix>{suffix}</StyledSuffix>}
 			</StyledCombinedInput>
-		</GridRow>
+		</FieldsetRow>
 	);
 });

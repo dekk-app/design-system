@@ -16,9 +16,12 @@ export const RangeField = forwardRef<
 >(({ id, label, name, max = 100, min = 0, step = 1, prefix, suffix }, ref) => {
 	const [value, setValue] = useState(min);
 	const theme = useTheme();
-	const handleChange = useCallback(newValue => {
-		setValue(clamp(newValue, max, min));
-	}, []);
+	const handleChange = useCallback(
+		(newValue: number) => {
+			setValue(clamp(newValue, max, min));
+		},
+		[max, min]
+	);
 	return (
 		<StyledInputWrapper>
 			<InputLabel fullWidth htmlFor={id}>
