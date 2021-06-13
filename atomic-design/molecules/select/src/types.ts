@@ -11,3 +11,11 @@ export interface SelectProps<T extends SelectOption = SelectOption> {
 	width?: string;
 	defaultValue?: T;
 }
+
+export interface ReactSelectProps {
+	isSelected?: boolean;
+	isFocused?: boolean;
+	isDisabled?: boolean;
+	menuIsOpen?: boolean;
+	hasValue?: boolean;
+}

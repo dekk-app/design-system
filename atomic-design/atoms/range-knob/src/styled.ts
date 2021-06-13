@@ -10,9 +10,9 @@ export const StyledInputWrapper = styled.span`
 	margin: ${pxToRem(-8)} ${pxToRem(-6)};
 	${({ theme }) => css`
 		&:focus-within {
-			background: ${theme.ui.fill["1"].value};
-			box-shadow: 0 0 0 1px ${theme.ui.colors.primary.value};
-			border-radius: ${pxToRem(theme.radius.s.value)};
+			background: ${theme.ui.fill["1"]};
+			box-shadow: 0 0 0 1px ${theme.ui.colors.primary};
+			border-radius: ${pxToRem(theme.radius.s)};
 		}
 	`};
 `;
@@ -27,7 +27,7 @@ export const StyledRing = styled.div`
 		width: ${pxToRem(32)};
 		height: ${pxToRem(32)};
 		margin: ${pxToRem(-16)};
-		box-shadow: 0 0 0 2px ${theme.ui.fill[3].value};
+		box-shadow: 0 0 0 2px ${theme.ui.fill[3]};
 	`};
 `;
 
@@ -62,6 +62,6 @@ export const StyledBubble = styled.input`
 		width: ${pxToRem(12)};
 		height: ${pxToRem(12)};
 		margin: ${pxToRem(-6)};
-		background: ${theme.ui.colors.primary.value};
+		background: ${theme.ui.colors.primary};
 	`};
 `;

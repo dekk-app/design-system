@@ -19,15 +19,29 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/index.d.ts",
+  "exports": {
+    "./colors": "./dist/colors.js",
+    "./spaces": "./dist/spaces.js",
+    "./radiuses": "./dist/radiuses.js"
+  },
+  "typesVersions": {
+    "*": {
+      "colors": [
+        "dist/colors.d.ts"
+      ],
+      "spaces": [
+        "dist/spaces.d.ts"
+      ],
+      "radiuses": [
+        "dist/radiuses.d.ts"
+      ]
+    }
+  },
   "files": [
-    "dist",
-    "index.js",
-    "colors.js",
-    "spaces.js",
-    "radiuses.js"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c",

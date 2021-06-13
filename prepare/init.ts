@@ -1,11 +1,12 @@
+import path from "path";
 import fs from "fs";
 import globby from "globby";
 import meow from "meow";
-import path from "path";
 import pify from "pify";
 
 const { flags } = meow();
 const writeFile = pify(fs.writeFile);
+const cwd = process.cwd();
 
 function sort(array: string[]): string[] {
 	array.sort((a, b) => {
@@ -27,6 +28,7 @@ function makeAlias(dir: string, names: string[], atomic?: boolean): Record<strin
 		(previousValue, name) => ({
 			...previousValue,
 			[`@dekk-ui/${name}`]: [`./${atomic ? "atomic-design/" : ""}${dir}/${name}/src`],
+			[`@dekk-ui/${name}/*`]: [`./${atomic ? "atomic-design/" : ""}${dir}/${name}/src/*`],
 		}),
 		{}
 	);
@@ -59,14 +61,11 @@ async function getNames() {
 
 (async () => {
 	const names = await getNames();
-	await writeFile(path.resolve(__dirname, "package-names.json"), JSON.stringify(names, null, 4));
+	await writeFile(path.resolve(cwd, "package-names.json"), JSON.stringify(names, null, 4));
 	console.log("Generated package names as JSON");
 	const { default: tsconfig } = await import("./tsconfig.tpl.json");
 	if (flags.build) {
-		await writeFile(
-			path.resolve(__dirname, "tsconfig.json"),
-			JSON.stringify(tsconfig, null, 4)
-		);
+		await writeFile(path.resolve(cwd, "tsconfig.json"), JSON.stringify(tsconfig, null, 4));
 	} else {
 		const paths = {
 			...makeAlias("ions", names.ions, true),
@@ -75,7 +74,7 @@ async function getNames() {
 			...makeAlias("organisms", names.organisms, true),
 		};
 		await writeFile(
-			path.resolve(__dirname, "tsconfig.json"),
+			path.resolve(cwd, "tsconfig.json"),
 			JSON.stringify(
 				{
 					...tsconfig,

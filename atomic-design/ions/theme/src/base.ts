@@ -1,18 +1,27 @@
-import { radiuses, spaces } from "@dekk-ui/design-tokens";
+import { darkest, lightest, primary } from "@dekk-ui/design-tokens/colors";
+import * as radius from "@dekk-ui/design-tokens/radiuses";
+import * as space from "@dekk-ui/design-tokens/spaces";
 import { Except } from "type-fest";
 import { Theme } from "./types";
 
 export const base: Except<Theme, "ui"> = {
 	space: {
-		xxs: spaces.xxs,
-		xs: spaces.xs,
-		s: spaces.s,
-		m: spaces.m,
-		l: spaces.l,
-		xl: spaces.xl,
-		xxl: spaces.xxl,
+		xxs: space.xxs.value,
+		xs: space.xs.value,
+		s: space.s.value,
+		m: space.m.value,
+		l: space.l.value,
+		xl: space.xl.value,
+		xxl: space.xxl.value,
 	},
 	radius: {
-		s: radiuses.s,
+		s: radius.s.value,
+	},
+	ci: {
+		colors: {
+			primary: primary.value,
+			lightest: lightest.value,
+			darkest: darkest.value,
+		},
 	},
 };

@@ -22,7 +22,7 @@
         "strict": false,
         "target": "es6",
         "typeRoots": [
-            "./node_modules/@types",
+            "../node_modules/@types",
             "./types"
         ],
         "baseUrl": "./",
@@ -30,54 +30,95 @@
             "@dekk-ui/create-token": [
                 "./atomic-design/ions/create-token/src"
             ],
+            "@dekk-ui/create-token/*": [
+                "./atomic-design/ions/create-token/src/*"
+            ],
             "@dekk-ui/design-tokens": [
                 "./atomic-design/ions/design-tokens/src"
+            ],
+            "@dekk-ui/design-tokens/*": [
+                "./atomic-design/ions/design-tokens/src/*"
             ],
             "@dekk-ui/icons": [
                 "./atomic-design/ions/icons/src"
             ],
+            "@dekk-ui/icons/*": [
+                "./atomic-design/ions/icons/src/*"
+            ],
             "@dekk-ui/theme": [
                 "./atomic-design/ions/theme/src"
+            ],
+            "@dekk-ui/theme/*": [
+                "./atomic-design/ions/theme/src/*"
             ],
             "@dekk-ui/utils": [
                 "./atomic-design/ions/utils/src"
             ],
+            "@dekk-ui/utils/*": [
+                "./atomic-design/ions/utils/src/*"
+            ],
             "@dekk-ui/avatar": [
                 "./atomic-design/atoms/avatar/src"
+            ],
+            "@dekk-ui/avatar/*": [
+                "./atomic-design/atoms/avatar/src/*"
             ],
             "@dekk-ui/icon-button": [
                 "./atomic-design/atoms/icon-button/src"
             ],
+            "@dekk-ui/icon-button/*": [
+                "./atomic-design/atoms/icon-button/src/*"
+            ],
             "@dekk-ui/icon": [
                 "./atomic-design/atoms/icon/src"
+            ],
+            "@dekk-ui/icon/*": [
+                "./atomic-design/atoms/icon/src/*"
             ],
             "@dekk-ui/input-field": [
                 "./atomic-design/atoms/input-field/src"
             ],
+            "@dekk-ui/input-field/*": [
+                "./atomic-design/atoms/input-field/src/*"
+            ],
             "@dekk-ui/input-label": [
                 "./atomic-design/atoms/input-label/src"
+            ],
+            "@dekk-ui/input-label/*": [
+                "./atomic-design/atoms/input-label/src/*"
             ],
             "@dekk-ui/range-knob": [
                 "./atomic-design/atoms/range-knob/src"
             ],
+            "@dekk-ui/range-knob/*": [
+                "./atomic-design/atoms/range-knob/src/*"
+            ],
             "@dekk-ui/range": [
                 "./atomic-design/atoms/range/src"
+            ],
+            "@dekk-ui/range/*": [
+                "./atomic-design/atoms/range/src/*"
             ],
             "@dekk-ui/color-input-field": [
                 "./atomic-design/molecules/color-input-field/src"
             ],
+            "@dekk-ui/color-input-field/*": [
+                "./atomic-design/molecules/color-input-field/src/*"
+            ],
             "@dekk-ui/select": [
                 "./atomic-design/molecules/select/src"
+            ],
+            "@dekk-ui/select/*": [
+                "./atomic-design/molecules/select/src/*"
             ]
         }
     },
     "include": [
-        "next-env.d.ts",
-        "emotion.d.ts",
+        "./types/*.d.ts",
         "**/*.ts",
         "**/*.tsx"
     ],
     "exclude": [
-        "node_modules"
+        "../node_modules"
     ]
 }

@@ -15,7 +15,7 @@
     "ncu:minor": "ncu -t minor -u; yarn lerna exec 'ncu -t minor -u -x \"/^@dekk-ui/.*$/\"'",
     "ncu:patch": "ncu -t patch -u; yarn lerna exec 'ncu -t patch -u -x \"/^@dekk-ui/.*$/\"'",
     "spj": "npx sort-package-json package.json",
-    "setup": "babel-node init.ts --extensions='.ts'",
+    "setup": "babel-node prepare/init.ts --extensions='.ts'",
     "storybook": "start-storybook",
     "prepare": "yarn setup",
     "watch": "lerna run watch"
@@ -50,6 +50,7 @@
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.2.9",
+    "@types/pify": "^5.0.0",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "^4.24.0",

@@ -3,3 +3,9 @@ export interface Token<T = unknown> {
 	value: T;
 	description?: string;
 }
+
+export interface CSSToken<T = unknown> {
+	token: string;
+	propertyName: string;
+	value: T;
+}

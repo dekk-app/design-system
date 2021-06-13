@@ -1,9 +1,9 @@
-import { StyledCombinedInput, StyledInput } from "@dekk-ui/input-field";
+import { StyledCombinedInput, StyledInput } from "@dekk-ui/input-field/styled";
 import React, { forwardRef, useCallback, useState } from "react";
 import { StyledColorInput } from "./styled";
 import { ColorInputProps } from "./types";
 
-const hexKeys = [
+const hexKeys = new Set([
 	"Digit1",
 	"Digit2",
 	"Digit3",
@@ -20,13 +20,13 @@ const hexKeys = [
 	"KeyD",
 	"KeyE",
 	"KeyF",
-];
+]);
 
-const modKeys = ["Backspace", "Tab", "ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
+const modKeys = new Set(["Backspace", "Tab", "ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"]);
 function getSelectionText() {
-	let activeEl: HTMLInputElement | Element | null = document.activeElement;
-	if (activeEl.tagName === "INPUT") {
-		const { type, value, selectionStart, selectionEnd } = activeEl as HTMLInputElement;
+	const activeElement: HTMLInputElement | Element | null = document.activeElement;
+	if (activeElement.tagName === "INPUT") {
+		const { type, value, selectionStart, selectionEnd } = activeElement as HTMLInputElement;
 		const match = /^(?:text|search|password|tel|url)$/i.exec(type);
 		const hasStart = typeof selectionStart === "number";
 		if (match && hasStart) {
@@ -35,8 +35,10 @@ function getSelectionText() {
 	} else if (window.getSelection) {
 		return window.getSelection().toString();
 	}
+
 	return "";
 }
+
 export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 	({ defaultValue, width, fullWidth }, ref) => {
 		const [value, setValue] = useState(defaultValue);
@@ -61,10 +63,10 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 
 		const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = useCallback(event_ => {
 			const selectionText = getSelectionText();
-			if (!hexKeys.includes(event_.code) && !modKeys.includes(event_.code)) {
+			if (!hexKeys.has(event_.code) && !modKeys.has(event_.code)) {
 				event_.preventDefault();
 			} else if (
-				!modKeys.includes(event_.code) &&
+				!modKeys.has(event_.code) &&
 				((event_.currentTarget.value.length > 6 && selectionText.length === 0) ||
 					selectionText.includes("#"))
 			) {

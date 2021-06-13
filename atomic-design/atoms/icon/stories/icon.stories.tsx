@@ -1,7 +1,7 @@
+import { Icon, IconProps } from "@dekk-ui/icon";
 import { IconName } from "@dekk-ui/icons";
-import React from "react";
 import { Story } from "@storybook/react";
-import { Icon, IconProps } from "./";
+import React from "react";
 
 const Template: Story<IconProps> = args => {
 	return <Icon {...args} />;

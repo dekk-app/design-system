@@ -1,9 +1,9 @@
+import { Avatar, AvatarProps } from "@dekk-ui/avatar";
 import { light } from "@dekk-ui/theme";
-import { ThemeProvider } from "@storybook/theming";
-import React from "react";
 import { Story } from "@storybook/react";
+import { ThemeProvider } from "@storybook/theming";
 import faker from "faker";
-import { Avatar, AvatarProps } from "./";
+import React from "react";
 
 const firstName = faker.name.firstName();
 const lastName = faker.name.lastName();

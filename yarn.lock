@@ -3634,6 +3634,11 @@
   resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-5.0.3.tgz#e7b5aebbac150f8b5fdd4a46e7f0bd8e65e19109"
   integrity sha512-kUNnecmtkunAoQ3CnjmMkzNU/gtxG8guhi+Fk2U/kOpIKjIMKnXGp4IJCgQJrXSgMsWYimYG4TGjz/UzbGEBTw==
 
+"@types/pify@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/pify/-/pify-5.0.0.tgz#50eac92722df9ae02caa9f514609cb8d18f9acd7"
+  integrity sha512-Y7rZv5LH4WqWXiCBDp+OqMG43XekhABHsUoWnfWcpy2TE4YxekicDMxt95aQsRgGYWAZ21ab7IxOQj0pHhVKsQ==
+
 "@types/pretty-hrtime@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/pretty-hrtime/-/pretty-hrtime-1.0.0.tgz#c5a2d644a135e988b2932f99737e67b3c62528d0"

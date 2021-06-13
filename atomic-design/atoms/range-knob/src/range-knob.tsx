@@ -87,7 +87,7 @@ export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
 					onChange(moduloValue);
 				}
 			},
-			[onChange, min, max, step]
+			[onChange, min, max, range]
 		);
 
 		return (

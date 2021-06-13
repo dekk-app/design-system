@@ -4,7 +4,7 @@
   "keywords": [
     "component library",
     "design system",
-    "design-tokens"
+    "theme"
   ],
   "homepage": "https://dekk-app.github.io/design-system",
   "bugs": {
@@ -19,14 +19,25 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/index.d.ts",
+  "exports": {
+    "./dark": "./dist/dark.js",
+    "./light": "./dist/light.js"
+  },
+  "typesVersions": {
+    "*": {
+      "dark": [
+        "dist/dark.d.ts"
+      ],
+      "light": [
+        "dist/light.d.ts"
+      ]
+    }
+  },
   "files": [
-    "dist",
-    "index.js",
-    "dark.js",
-    "light.js"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c",

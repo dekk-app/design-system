@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback } from "react";
-import { StyledNumberInput } from "./styled";
-import { NumberInputProps } from "./types";
+import { StyledNumberInput } from "../styled";
+import { NumberInputProps } from "../types";
 
 export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
 	({ value, id, name, textAlign, width, fullWidth, onChange, min, max, step }, ref) => {

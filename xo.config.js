@@ -16,6 +16,9 @@ module.exports = {
 		"**/enums.ts",
 		"pages",
 		"docs",
+		"atomic-design/ions/icons",
+		"stories",
+		"__pages",
 	],
 	plugins: ["prettier"],
 	env: ["browser", "node"],
@@ -55,5 +58,6 @@ module.exports = {
 		"react/jsx-uses-react": 1,
 		"react/jsx-uses-vars": 1,
 		"no-unused-vars": 2,
+		"unicorn/prefer-node-protocol": 0,
 	},
 };

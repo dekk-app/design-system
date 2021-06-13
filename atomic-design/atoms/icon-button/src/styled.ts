@@ -30,22 +30,22 @@ export const StyledButton = styled.button<Except<IconButtonProps, "icon" | "size
 	}
 
 	${({ theme, isSelected }) => css`
-		width: ${pxToRem(theme.space.l.value)};
-		min-width: ${pxToRem(theme.space.l.value)};
-		height: ${pxToRem(theme.space.l.value)};
-		background: ${isSelected ? theme.ui.colors.primary.value : "none"};
-		color: ${isSelected ? theme.ui.colors.lightest.value : "currentColor"};
-		border-radius: ${pxToRem(theme.radius.s.value)};
+		width: ${pxToRem(theme.space.l)};
+		min-width: ${pxToRem(theme.space.l)};
+		height: ${pxToRem(theme.space.l)};
+		background: ${isSelected ? theme.ui.colors.primary : "none"};
+		color: ${isSelected ? theme.ui.colors.lightest : "currentColor"};
+		border-radius: ${pxToRem(theme.radius.s)};
 
 		&:focus-visible {
-			background: ${isSelected ? theme.ui.colors.primary.value : theme.ui.fill["1"].value};
+			background: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["1"]};
 			box-shadow: ${isSelected
-				? `inset 0 0 0 1px ${theme.ui.colors.primary.value}, inset  0 0 0 2px ${theme.ui.fill["2"].value}`
-				: `inset 0 0 0 1px ${theme.ui.colors.primary.value}`};
+				? `inset 0 0 0 1px ${theme.ui.colors.primary}, inset  0 0 0 2px ${theme.ui.fill["2"]}`
+				: `inset 0 0 0 1px ${theme.ui.colors.primary}`};
 		}
 
 		&:hover {
-			background: ${isSelected ? theme.ui.colors.primary.value : theme.ui.fill["1"].value};
+			background: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["1"]};
 		}
 	`};
 `;

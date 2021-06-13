@@ -25,7 +25,7 @@ export const StyledProgress = styled.div`
 	transform-origin: 0 50%;
 	pointer-events: none;
 	${({ theme }) => css`
-		background: ${theme.ui.colors.primary.value};
+		background: ${theme.ui.colors.primary};
 	`};
 `;
 
@@ -71,28 +71,28 @@ export const StyledRange = styled.input`
 	}
 
 	${({ theme }) => css`
-		height: ${pxToRem(theme.space.l.value)};
-		border-radius: ${pxToRem(theme.radius.s.value)};
+		height: ${pxToRem(theme.space.l)};
+		border-radius: ${pxToRem(theme.radius.s)};
 
 		&::-webkit-slider-thumb {
-			background: ${theme.ui.colors.primary.value};
+			background: ${theme.ui.colors.primary};
 		}
 
 		&::-webkit-slider-runnable-track {
-			background: ${theme.ui.fill["3"].value};
+			background: ${theme.ui.fill["3"]};
 		}
 
 		&::-moz-range-thumb {
-			background: ${theme.ui.colors.primary.value};
+			background: ${theme.ui.colors.primary};
 		}
 
 		&::-moz-range-track {
-			background: ${theme.ui.fill["3"].value};
+			background: ${theme.ui.fill["3"]};
 		}
 
 		&:focus-visible {
-			background: ${theme.ui.fill["1"].value};
-			box-shadow: 0 0 0 1px ${theme.ui.colors.primary.value};
+			background: ${theme.ui.fill["1"]};
+			box-shadow: 0 0 0 1px ${theme.ui.colors.primary};
 		}
 	`};
 `;

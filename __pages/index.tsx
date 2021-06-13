@@ -30,7 +30,7 @@ interface User {
 	avatar: string;
 }
 
-const users: User[] = Array(10)
+const users: User[] = new Array(10)
 	.fill(Boolean)
 	.map(() => {
 		const firstName = faker.name.firstName();
@@ -60,7 +60,7 @@ const makeNumbers = (to, from = 0) =>
 const numbers = makeNumbers(20, 10);
 const letterSpacing = makeNumbers(12);
 
-const pick = <T extends unknown = unknown>(array: T[], n: number) => {
+const pick = <T, = unknown>(array: T[], n: number) => {
 	const a = [...array];
 	return a.splice(0, n);
 };
@@ -241,9 +241,10 @@ const StyledAvatars = styled.div`
 
 export const Avatars: React.FC<{ people: User[] }> = ({ people, ...props }) => {
 	const more = people.length > 4;
-	const maxPeople = React.useMemo(() => pick(people, people.length < 5 ? people.length : 3), [
-		people,
-	]);
+	const maxPeople = React.useMemo(
+		() => pick(people, people.length < 5 ? people.length : 3),
+		[people]
+	);
 	return (
 		<StyledAvatars {...props}>
 			{maxPeople.map(user => {
@@ -364,8 +365,7 @@ const users5 = pick<User>(users, 5);
 
 const Home = () => {
 	return (
-		<>
-			<div style={{ padding: 32, width: 300 }}>
+		<div style={{ padding: 32, width: 300 }}>
 				<TextInput fullWidth />
 				<br />
 				<ColorInput fullWidth defaultValue="#000000" />
@@ -528,7 +528,6 @@ const Home = () => {
 				<br />
 				<br />
 			</div>
-		</>
 	);
 };
 

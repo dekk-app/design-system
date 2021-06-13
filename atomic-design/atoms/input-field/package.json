@@ -4,7 +4,9 @@
   "keywords": [
     "component library",
     "design system",
-    "design-tokens"
+    "input-field",
+    "text-field",
+    "number-field"
   ],
   "homepage": "https://dekk-app.github.io/design-system",
   "bugs": {
@@ -19,12 +21,29 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/index.d.ts",
+  "exports": {
+    "./number-input": "./dist/number-input.js",
+    "./text-input": "./dist/text-input.js",
+    "./styled": "./dist/styled.js"
+  },
+  "typesVersions": {
+    "*": {
+      "number-input": [
+        "dist/number-input.d.ts"
+      ],
+      "text-input": [
+        "dist/text-input.d.ts"
+      ],
+      "styled": [
+        "dist/styled.d.ts"
+      ]
+    }
+  },
   "files": [
-    "dist",
-    "index.js"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c",

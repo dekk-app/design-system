@@ -14,7 +14,7 @@ export const StyledAvatarWrapper = styled.div`
 	border-radius: 50%;
 	vertical-align: bottom;
 	${({ theme }) => css`
-		background: ${theme.ui.background["1"].value};
+		background: ${theme.ui.background["1"]};
 	`};
 `;
 
@@ -24,7 +24,7 @@ export const StyledAvatar = styled.img`
 	overflow: hidden;
 	border-radius: inherit;
 	${({ theme }) => css`
-		box-shadow: 0 0 0 2px ${theme.ui.background["1"].value};
+		box-shadow: 0 0 0 2px ${theme.ui.background["1"]};
 	`};
 `;
 
@@ -41,8 +41,8 @@ export const StyledAvatarText = styled.div`
 	font-size: ${pxToRem(12)};
 	direction: ltr;
 	${({ theme }) => css`
-		background: ${theme.ui.background["2"].value};
-		box-shadow: 0 0 0 2px ${theme.ui.background["2"].value};
-		color: ${theme.ui.text["2"].value};
+		background: ${theme.ui.background["2"]};
+		box-shadow: 0 0 0 2px ${theme.ui.background["2"]};
+		color: ${theme.ui.text["2"]};
 	`};
 `;

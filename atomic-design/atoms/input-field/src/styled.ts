@@ -7,7 +7,7 @@ export const StyledInput = styled.input<InputProps>`
 	overflow: hidden;
 	border: 0;
 	appearance: none;
-	font-size: 12px;
+	font-size: ${pxToRem(12)};
 
 	&:focus {
 		outline: 0;
@@ -15,24 +15,24 @@ export const StyledInput = styled.input<InputProps>`
 
 	${({ theme, fullWidth, width, textAlign }) => css`
 		width: ${fullWidth ? "100%" : width || "auto"};
-		min-width: ${pxToRem(theme.space.l.value)};
-		height: ${pxToRem(theme.space.l.value)};
-		padding: ${pxToRem(theme.space.xs.value)};
-		line-height: ${pxToRem(theme.space.s.value)};
-		border-radius: ${pxToRem(theme.radius.s.value)};
-		background: ${theme.ui.fill["2"].value};
-		color: ${theme.ui.text["1"].value};
-		box-shadow: inset 0 0 0 1px ${theme.ui.outline["1"].value};
-		caret-color: ${theme.ui.colors.primary.value};
+		min-width: ${pxToRem(theme.space.l)};
+		height: ${pxToRem(theme.space.l)};
+		padding: ${pxToRem(theme.space.xs)};
+		line-height: ${pxToRem(theme.space.s)};
+		border-radius: ${pxToRem(theme.radius.s)};
+		background: ${theme.ui.fill["2"]};
+		color: ${theme.ui.text["1"]};
+		box-shadow: inset 0 0 0 1px ${theme.ui.outline["1"]};
+		caret-color: ${theme.ui.colors.primary};
 		text-align: ${textAlign};
 
 		&:hover {
-			background: ${theme.ui.fill["1"].value};
+			background: ${theme.ui.fill["1"]};
 		}
 
 		&:focus {
-			background: ${theme.ui.fill["1"].value};
-			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary.value};
+			background: ${theme.ui.fill["1"]};
+			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary};
 		}
 
 		&:invalid {
@@ -55,14 +55,13 @@ export const StyledNumberInput = styled(StyledInput)`
 
 export const StyledPrefix = styled.div<PrefixProps>`
 	overflow: hidden;
-	font-size: 12px;
+	font-size: ${pxToRem(12)};
 	${({ theme, width }) => css`
 		width: ${width || "auto"};
-		height: ${pxToRem(theme.space.l.value)};
-		padding: ${pxToRem(theme.space.xs.value)} 0 ${pxToRem(theme.space.xs.value)}
-			${pxToRem(theme.space.xs.value)};
-		line-height: ${pxToRem(theme.space.s.value)};
-		border-radius: ${pxToRem(theme.radius.s.value)} 0 0 ${pxToRem(theme.radius.s.value)};
+		height: ${pxToRem(theme.space.l)};
+		padding: ${pxToRem(theme.space.xs)} 0 ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)};
+		line-height: ${pxToRem(theme.space.s)};
+		border-radius: ${pxToRem(theme.radius.s)} 0 0 ${pxToRem(theme.radius.s)};
 		background: inherit;
 		color: inherit;
 	`};
@@ -70,15 +69,14 @@ export const StyledPrefix = styled.div<PrefixProps>`
 
 export const StyledSuffix = styled.div<PrefixProps>`
 	overflow: hidden;
-	font-size: 12px;
+	font-size: ${pxToRem(12)};
 	${({ theme, width }) => css`
 		width: ${width || "auto"};
-		height: ${pxToRem(theme.space.l.value)};
-		margin: 0 0 0 ${pxToRem(-theme.space.xs.value + 2)};
-		padding: ${pxToRem(theme.space.xs.value)} ${pxToRem(theme.space.xs.value)}
-			${pxToRem(theme.space.xs.value)} 0;
-		line-height: ${pxToRem(theme.space.s.value)};
-		border-radius: 0 ${pxToRem(theme.radius.s.value)} ${pxToRem(theme.radius.s.value)} 0;
+		height: ${pxToRem(theme.space.l)};
+		margin: 0 0 0 ${pxToRem(-theme.space.xs + 2)};
+		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)} 0;
+		line-height: ${pxToRem(theme.space.s)};
+		border-radius: 0 ${pxToRem(theme.radius.s)} ${pxToRem(theme.radius.s)} 0;
 		background: inherit;
 		color: inherit;
 	`};
@@ -107,23 +105,23 @@ export const StyledCombinedInput = styled.label<CombinedInputProps>`
 
 	${({ theme, invalid, fullWidth, width }) => css`
 		width: ${fullWidth ? "100%" : width || "auto"};
-		min-width: ${pxToRem(theme.space.l.value)};
-		height: ${pxToRem(theme.space.l.value)};
-		border-radius: ${pxToRem(theme.radius.s.value)};
-		background: ${theme.ui.fill["2"].value};
-		color: ${theme.ui.text["1"].value};
+		min-width: ${pxToRem(theme.space.l)};
+		height: ${pxToRem(theme.space.l)};
+		border-radius: ${pxToRem(theme.radius.s)};
+		background: ${theme.ui.fill["2"]};
+		color: ${theme.ui.text["1"]};
 
 		&:hover {
-			background: ${theme.ui.fill["1"].value};
+			background: ${theme.ui.fill["1"]};
 		}
 		&::before {
-			box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.outline["1"].value}; // @todo add brand color
+			box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.outline["1"]}; // @todo add brand color
 		}
 
 		&:focus-within {
-			background: ${theme.ui.fill["1"].value};
+			background: ${theme.ui.fill["1"]};
 			&::before {
-				box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.colors.primary.value}; // @todo add brand color
+				box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.colors.primary}; // @todo add brand color
 			}
 		}
 		${StyledInput}, ${StyledNumberInput} {
