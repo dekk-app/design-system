@@ -1,14 +1,9 @@
 import { Avatar, AvatarProps } from "@dekk-ui/avatar";
 import { Story } from "@storybook/react";
-import faker from "faker";
 import React from "react";
+import { people } from "../../../../resources/data/people";
 
-const firstName = faker.name.firstName();
-const lastName = faker.name.lastName();
-const user = {
-	name: faker.name.findName(firstName, lastName),
-	avatar: faker.image.avatar(),
-};
+const [user] = people;
 
 const Template: Story<AvatarProps> = args => {
 	return (

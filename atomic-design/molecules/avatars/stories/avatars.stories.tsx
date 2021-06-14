@@ -1,19 +1,8 @@
-import { Avatars, AvatarsProps, Person } from "@dekk-ui/avatars";
-import { range } from "@dekk-ui/utils/range";
+import { Avatars, AvatarsProps } from "@dekk-ui/avatars";
 import { take } from "@dekk-ui/utils/take";
 import { Story } from "@storybook/react";
-import faker from "faker";
 import React from "react";
-
-const people: Person[] = range(10).map(() => {
-	const firstName = faker.name.firstName();
-	const lastName = faker.name.lastName();
-	return {
-		id: `${firstName}_${lastName}`,
-		name: faker.name.findName(firstName, lastName),
-		avatar: faker.image.avatar(),
-	};
-});
+import { people } from "../../../../resources/data/people";
 
 const Template: Story<AvatarsProps> = args => {
 	return <Avatars {...args} />;

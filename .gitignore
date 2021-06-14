@@ -80,6 +80,10 @@ out
 # Storybook
 public
 
+# Generated
+package-names.json
+tsconfig.json
+
 # Unignore
 !atomic-design/atoms/icon
 

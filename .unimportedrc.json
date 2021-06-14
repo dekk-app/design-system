@@ -1,8 +1,15 @@
 {
-  "entry": ["src/pages/**"],
+  "entry": ["atomic-design/**/*/src/**"],
   "extensions": [".ts", ".tsx"],
-  "ignorePatterns": ["**/node_modules/**"],
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/stories/**",
+    "prepare/**",
+    "types/**",
+    "resources/**",
+    "**/*.d.ts"
+  ],
   "ignoreUnresolved": ["type-fest"],
   "ignoreUnimported": [],
-  "ignoreUnused": ["tslib", "@emotion/core", "@apollo/react-hooks"]
+  "ignoreUnused": ["tslib", "@emotion/core"]
 }

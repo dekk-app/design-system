@@ -19,6 +19,7 @@
     "storybook": "start-storybook",
     "build-storybook": "build-storybook -c .storybook -o public && percy-storybook --widths=320,1280 --build_dir=public",
     "prepare": "yarn setup",
+    "unimported": "npx unimported",
     "watch": "lerna run watch"
   },
   "workspaces": [
