@@ -2,38 +2,66 @@ import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
-export const StyledCheckbox = styled.input`
+export const StyledCheckboxWrapper = styled.div`
+	display: inline-block;
 	position: relative;
-	margin: 0;
-	padding: 0;
-	border: 0;
+	${({ theme }) => css`
+		min-width: ${pxToRem(theme.space.s)};
+		min-height: ${pxToRem(theme.space.s)};
+		border-radius: ${pxToRem(theme.radius.s)};
+	`}
+`;
+
+export const StyledCheckbox = styled.input`
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	appearance: none;
-	background: none;
+	width: 100%; /* chromium */
+	height: 100%; /* chromium */
+	margin: 0;
 
 	&:focus {
 		outline: 0;
 	}
 
 	${({ theme }) => css`
-		width: ${pxToRem(theme.space.s)};
-		max-width: ${pxToRem(theme.space.s)};
-		height: ${pxToRem(theme.space.s)};
-		max-height: ${pxToRem(theme.space.s)};
 		box-shadow: inset 0 0 0 1px ${theme.ui.text["1"]};
 		border-radius: ${pxToRem(theme.radius.s)};
 
-		&:checked {
-			background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="${theme
-						.ui.text[
-						"2"
-					]}"><path d="M12.256 4.25a.75.75 0 00-.537.219L6.25 9.937 4.281 7.97a.75.75 0 00-1.062 0 .75.75 0 000 1.062l2.5 2.5a.75.75 0 001.062 0l6-6a.75.75 0 000-1.062.75.75 0 00-.525-.219z"/></svg>')
-					no-repeat center/100%,
-				${theme.ui.text["1"]};
-		}
-
 		&:focus-visible {
-			background-color: ${theme.ui.colors.primary};
 			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary};
+
+			& + * {
+				--background-color: ${theme.ui.colors.primary};
+			}
 		}
 	`};
+`;
+
+export const StyledSvg = styled.svg<{ hasBackground?: boolean }>`
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	${({ theme, hasBackground }) => css`
+		--background-color: ${theme.ui.text["1"]};
+
+		border-radius: ${pxToRem(theme.radius.s)};
+		background: ${(hasBackground && "var(--background-color)") || "none"};
+		color: ${theme.ui.text["2"]};
+	`}
+`;
+
+export const StyledPath = styled.path`
+	stroke-width: 1.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: currentColor;
+	fill: none;
 `;
