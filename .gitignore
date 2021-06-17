@@ -70,9 +70,6 @@ out
 # IntelliJ
 .idea
 
-# Git hooks
-.husky
-
 # Cypress
 /cypress/videos
 /cypress/screenshots
