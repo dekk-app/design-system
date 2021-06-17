@@ -12,6 +12,22 @@ export const StyledCheckboxWrapper = styled.div`
 	`}
 `;
 
+export const StyledSvg = styled.svg<{ hasBackground?: boolean }>`
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	${({ theme, hasBackground }) => css`
+		--background-color: ${theme.ui.text["1"]};
+
+		border-radius: ${pxToRem(theme.radius.s)};
+		background: ${(hasBackground && "var(--background-color)") || "none"};
+		color: ${theme.ui.text["2"]};
+	`}
+`;
+
 export const StyledCheckbox = styled.input`
 	position: absolute;
 	z-index: 1;
@@ -35,27 +51,11 @@ export const StyledCheckbox = styled.input`
 		&:focus-visible {
 			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary};
 
-			& + * {
+			+ ${StyledSvg} {
 				--background-color: ${theme.ui.colors.primary};
 			}
 		}
 	`};
-`;
-
-export const StyledSvg = styled.svg<{ hasBackground?: boolean }>`
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	pointer-events: none;
-	${({ theme, hasBackground }) => css`
-		--background-color: ${theme.ui.text["1"]};
-
-		border-radius: ${pxToRem(theme.radius.s)};
-		background: ${(hasBackground && "var(--background-color)") || "none"};
-		color: ${theme.ui.text["2"]};
-	`}
 `;
 
 export const StyledPath = styled.path`

@@ -1,40 +1,40 @@
-import React, { forwardRef, useCallback, useState } from "react";
+import React, { ChangeEventHandler, forwardRef, useCallback, useState } from "react";
 import { StyledCheckbox, StyledCheckboxWrapper, StyledPath, StyledSvg } from "./styled";
 import { CheckboxProps } from "./types";
+import { display } from "./utils";
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 	({ className, checked: controlledChecked, indeterminate, onChange, style, ...props }, ref) => {
-		const [checked, setChecked] = useState(!!controlledChecked);
-		const handleChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(
+		const [isChecked, setIsChecked] = useState(!!controlledChecked);
+		const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback(
 			event_ => {
-				const checked = event_.target.checked;
-				setChecked(checked);
+				const { checked } = event_.target;
+				setIsChecked(checked);
 				onChange?.(checked);
 			},
 			[onChange]
 		);
-		const display = flag => (flag ? "block" : "none");
 
 		// TODO: Set `indeterminate` property on Input-DOM-Element
 
 		return (
-			<StyledCheckboxWrapper style={style}>
+			<StyledCheckboxWrapper className={className} style={style}>
 				<StyledCheckbox
 					{...props}
 					ref={ref}
 					type="checkbox"
-					checked={checked}
+					checked={isChecked}
 					onChange={handleChange}
 				/>
 				<StyledSvg
-					hasBackground={checked || indeterminate}
+					hasBackground={isChecked || indeterminate}
 					width="100%"
 					height="100%"
 					viewBox="0 0 16 16"
 				>
 					<StyledPath
 						d="m3.75 8.5 2.5 2.5 6-6"
-						display={display(checked && !indeterminate)}
+						display={display(isChecked && !indeterminate)}
 					/>
 					<StyledPath d="M4 8h8" display={display(indeterminate)} />
 				</StyledSvg>
