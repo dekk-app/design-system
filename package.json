@@ -17,7 +17,7 @@
     "spj": "npx sort-package-json package.json",
     "setup": "babel-node prepare/init.ts -x '.ts'",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook -c .storybook -o public --quiet && percy-storybook --widths=320,1280 --build_dir=public",
+    "build-storybook": "build-storybook -c .storybook -o public --quiet && percy-storybook --widths=320 --build_dir=public",
     "prepare": "yarn setup",
     "unimported": "npx unimported",
     "watch": "lerna run watch"
