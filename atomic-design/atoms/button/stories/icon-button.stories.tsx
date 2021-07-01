@@ -1,6 +1,6 @@
-import { IconButton, IconButtonProps } from "@dekk-ui/icon-button";
-import { IconSize } from "@dekk-ui/icons";
 import { Story } from "@storybook/react";
+import { IconButton, IconButtonProps } from "@dekk-ui/button";
+import { IconSize } from "@dekk-ui/icons";
 import React from "react";
 
 const Template: Story<IconButtonProps> = args => {

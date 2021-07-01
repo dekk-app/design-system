@@ -1,9 +1,9 @@
-import { Icon } from "@dekk-ui/icon";
-import { ToggleButton, ToggleButtonProps } from "@dekk-ui/toggle-button";
 import { Story } from "@storybook/react";
+import { ButtonProps, ToggleButton } from "@dekk-ui/button";
+import { Icon } from "@dekk-ui/icon";
 import React from "react";
 
-const Template: Story<ToggleButtonProps> = args => {
+const Template: Story<ButtonProps> = args => {
 	return (
 		<ToggleButton {...args}>
 			<Icon icon="editorImage" />
