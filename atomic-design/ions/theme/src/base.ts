@@ -25,4 +25,14 @@ export const base: Except<Theme, "ui"> = {
 			darkest: darkest.value,
 		},
 	},
+	palette: {
+		red: "#D90303",
+		green: "#2EFFB0",
+		blue: "#2E93FF",
+		yellow: "#FFD22E",
+		dark: "#232424",
+		light: "#F8F9FD",
+		purple: "#6A28EA",
+		darkPurple: "#4F13C2",
+	},
 };

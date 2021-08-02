@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { ButtonProps } from "./types";
 
-export const StyledButton = styled.button<ButtonProps>`
+const StyledButtonBase = styled.button<ButtonProps>`
 	display: inline-flex;
 	align-content: center;
 	align-items: center;
@@ -34,6 +34,24 @@ export const StyledButton = styled.button<ButtonProps>`
 	`};
 `;
 
+export const StyledButton = styled(StyledButtonBase)`
+	${({ theme, isSelected }) => css`
+		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.s)};
+		background: ${isSelected ? theme.palette.darkPurple : theme.ui.colors.primary};
+
+		&:hover {
+			background: ${isSelected ? theme.ui.colors.primary : theme.palette.darkPurple};
+		}
+
+		&:focus-visible {
+			background: ${isSelected ? theme.palette.darkPurple : theme.ui.colors.primary};
+			box-shadow: ${isSelected
+				? `inset 0 0 0 1px ${theme.palette.darkPurple}, inset  0 0 0 2px ${theme.ui.fill["2"]}`
+				: `inset 0 0 0 1px ${theme.ui.colors.primary}, inset  0 0 0 2px ${theme.ui.fill["2"]}`};
+		}
+	`};
+`;
+
 export const StyledSvg = styled.svg`
 	fill: currentColor;
 `;
@@ -42,7 +60,7 @@ export const StyledPath = styled.path`
 	fill: currentColor;
 `;
 
-export const StyledIconButton = styled(StyledButton)`
+export const StyledIconButton = styled(StyledButtonBase)`
 	${StyledSvg} {
 		pointer-events: none;
 	}
@@ -54,7 +72,7 @@ export const StyledIconButton = styled(StyledButton)`
 	`}
 `;
 
-export const StyledToggleButton = styled(StyledButton)`
+export const StyledToggleButton = styled(StyledButtonBase)`
 	position: relative;
 	flex: 1;
 	width: 100%;
@@ -77,6 +95,7 @@ export const StyledToggleButton = styled(StyledButton)`
 			background: ${isSelected ? theme.ui.colors.primary : theme.ui.outline["1"]};
 		}
 	`}
+
 	&:hover,
   &:focus-visible,
   &:last-of-type {
