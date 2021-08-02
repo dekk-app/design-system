@@ -7,7 +7,7 @@ The design system for Dekk
 [![Storybook][storybook-badge]][storybook]
 [![Percy][percy-badge]][percy]
 
-This is the contributor documentation for the `@everdevs` mono-repository.
+This is the contributor documentation for the `@dekk-ui` mono-repository.
 For user docs see the [Documentation][docs].
 
 ## Commits
