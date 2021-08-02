@@ -1,7 +1,7 @@
 import { Icon } from "@dekk-ui/icon";
 import { IconSize } from "@dekk-ui/icons";
 import { MultiButton, MultiButtonProps } from "@dekk-ui/multi-button";
-import { ToggleButton } from "@dekk-ui/button";
+import { ToggleButton } from "@dekk-ui/toggle-button";
 import { Story } from "@storybook/react";
 import React from "react";
 
