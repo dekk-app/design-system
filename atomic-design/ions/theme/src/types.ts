@@ -16,6 +16,7 @@ export interface Theme {
 	ci: {
 		colors: {
 			primary: RGBColor;
+			primaryDark: RGBColor;
 			lightest: RGBColor;
 			darkest: RGBColor;
 		};

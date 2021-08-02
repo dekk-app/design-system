@@ -1,4 +1,4 @@
-import { darkest, lightest, primary } from "@dekk-ui/design-tokens/colors";
+import { darkest, lightest, primary, primaryDark } from "@dekk-ui/design-tokens/colors";
 import * as radius from "@dekk-ui/design-tokens/radiuses";
 import * as space from "@dekk-ui/design-tokens/spaces";
 import { Except } from "type-fest";
@@ -20,6 +20,7 @@ export const base: Except<Theme, "ui"> = {
 	ci: {
 		colors: {
 			primary: primary.value,
+			primaryDark: primaryDark.value,
 			lightest: lightest.value,
 			darkest: darkest.value,
 		},

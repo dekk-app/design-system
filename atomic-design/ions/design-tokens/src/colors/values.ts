@@ -8,6 +8,12 @@ export const black = createToken<RGBColor>("Black", "rgb(0, 0, 0)", "Black");
 
 export const primary = createToken<RGBColor>("Primary", "rgb(106, 40, 234)", "Primary Brand Color");
 
+export const primaryDark = createToken<RGBColor>(
+	"Primary Dark",
+	"rgb(79, 19, 194)",
+	"Primary Dark Brand Color"
+);
+
 export const lightest = createToken<RGBColor>("Lightest", white.value, "Lightest Brand Color");
 
 export const darkest = createToken<RGBColor>("Darkest", "rgb(35, 36, 36)", "Darkest Brand Color");
