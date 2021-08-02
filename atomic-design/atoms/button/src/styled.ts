@@ -38,6 +38,7 @@ export const StyledButton = styled(StyledButtonBase)`
 	${({ theme, isSelected }) => css`
 		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.s)};
 		background: ${isSelected ? theme.palette.darkPurple : theme.ui.colors.primary};
+		color: ${theme.ui.colors.lightest};
 
 		&:hover {
 			background: ${isSelected ? theme.ui.colors.primary : theme.palette.darkPurple};
