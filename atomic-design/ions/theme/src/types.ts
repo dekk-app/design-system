@@ -45,15 +45,4 @@ export interface Theme {
 			"4": RGBColor;
 		};
 	};
-	/* eslint-disable no-unused-vars */
-	palette: {
-		red: string;
-		green: string;
-		blue: string;
-		yellow: string;
-		dark: string;
-		light: string;
-		purple: string;
-		darkPurple: string;
-	};
 }
