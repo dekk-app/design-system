@@ -1,5 +1,5 @@
-import React from "react";
+import { HTMLAttributes } from "react";
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 	isSelected?: boolean;
 }

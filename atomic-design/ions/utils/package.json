@@ -19,9 +19,6 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
-  "typings": "dist/index.d.ts",
   "exports": {
     "./clamp": "./dist/clamp.js",
     "./get-deg": "./dist/get-deg.js",
@@ -29,6 +26,8 @@
     "./rem": "./dist/rem.js",
     "./take": "./dist/take.js"
   },
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "typesVersions": {
     "*": {
       "clamp": [
@@ -48,6 +47,7 @@
       ]
     }
   },
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],

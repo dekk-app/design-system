@@ -19,12 +19,11 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
-  "typings": "dist/index.d.ts",
   "exports": {
     "./styled": "./dist/styled.js"
   },
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "typesVersions": {
     "*": {
       "styled": [
@@ -32,6 +31,7 @@
       ]
     }
   },
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -39,9 +39,6 @@
     "build": "rollup -c",
     "clean": "rimraf dist",
     "watch": "rollup -cw"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "dependencies": {
     "@dekk-ui/icons": "0.1.0",
@@ -61,5 +58,8 @@
     "@emotion/styled": "^11.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

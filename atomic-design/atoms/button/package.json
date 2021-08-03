@@ -27,13 +27,11 @@
       "email": "ok@0x04.de"
     }
   ],
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
-  "typings": "dist/index.d.ts",
   "exports": {
-    "./button": "./dist/button.js",
     "./styled": "./dist/styled.js"
   },
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "typesVersions": {
     "*": {
       "button": [
@@ -44,6 +42,7 @@
       ]
     }
   },
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -51,9 +50,6 @@
     "build": "rollup -c",
     "clean": "rimraf dist",
     "watch": "rollup -cw"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "dependencies": {
     "@dekk-ui/theme": "0.1.0",
@@ -72,5 +68,8 @@
     "@emotion/styled": "^11.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,7 +1,7 @@
-import React from "react";
+import { HTMLProps } from "react";
 import { Except } from "type-fest";
 
-export interface LabelProps extends Except<React.HTMLProps<HTMLLabelElement>, "ref"> {
+export interface LabelProps extends Except<HTMLProps<HTMLLabelElement>, "ref"> {
 	fullWidth?: boolean;
 }
 

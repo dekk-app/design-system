@@ -91,7 +91,7 @@ export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<Se
 		const [value, setValue] = useState<SelectOption>(defaultValue);
 		const controlRef = useRef<HTMLDivElement>(null);
 		const [open, setOpen] = useState(false);
-		const handleChange = React.useCallback((newValue: SelectOption) => {
+		const handleChange = useCallback((newValue: SelectOption) => {
 			setValue(newValue);
 		}, []);
 		const menu = useMemo(
@@ -108,7 +108,7 @@ export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<Se
 			}),
 			[]
 		);
-		const handleKeyDown: KeyboardEventHandler = React.useCallback(
+		const handleKeyDown: KeyboardEventHandler = useCallback(
 			event_ => {
 				if (event_.code === "Enter") {
 					setOpen(false);
@@ -125,7 +125,7 @@ export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<Se
 			},
 			[controlRef]
 		);
-		const handleControlKeyDown: KeyboardEventHandler = React.useCallback(event_ => {
+		const handleControlKeyDown: KeyboardEventHandler = useCallback(event_ => {
 			if (event_.code === "Space") {
 				event_.preventDefault();
 				setOpen(previousValue => !previousValue);

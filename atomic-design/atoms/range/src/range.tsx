@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useMemo, useState } from "react";
+import React, { ChangeEvent, forwardRef, useCallback, useMemo, useState } from "react";
 import { StyledInputWrapper, StyledProgress, StyledRange } from "./styled";
 import { RangeProps } from "./types";
 
@@ -19,7 +19,7 @@ export const Range = forwardRef<HTMLInputElement, RangeProps>(
 	) => {
 		const [value, setValue] = useState(defaultValue);
 		const handleChange = useCallback(
-			(event_: React.ChangeEvent<HTMLInputElement>) => {
+			(event_: ChangeEvent<HTMLInputElement>) => {
 				const newValue = Number.parseFloat(event_.target.value);
 				setValue(newValue);
 				if (onChange) {

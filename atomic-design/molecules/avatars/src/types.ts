@@ -1,4 +1,4 @@
-import React from "react";
+import { HTMLProps } from "react";
 import { Except } from "type-fest";
 
 export interface Person {
@@ -8,6 +8,6 @@ export interface Person {
 }
 
 export interface AvatarsProps<T extends Element = Element>
-	extends Except<React.HTMLProps<T>, "as" | "ref"> {
+	extends Except<HTMLProps<T>, "as" | "ref"> {
 	people: Person[];
 }

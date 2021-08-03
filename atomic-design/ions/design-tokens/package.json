@@ -19,27 +19,27 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
+  "exports": {
+    "./colors/index": "./dist/colors/index.js",
+    "./spaces/index": "./dist/spaces/index.js",
+    "./radiuses/index": "./dist/radiuses/index.js"
+  },
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
-  "typings": "dist/index.d.ts",
-  "exports": {
-    "./colors": "./dist/colors.js",
-    "./spaces": "./dist/spaces.js",
-    "./radiuses": "./dist/radiuses.js"
-  },
   "typesVersions": {
     "*": {
       "colors": [
-        "dist/colors.d.ts"
+        "dist/colors/index.d.ts"
       ],
       "spaces": [
-        "dist/spaces.d.ts"
+        "dist/spaces/index.d.ts"
       ],
       "radiuses": [
-        "dist/radiuses.d.ts"
+        "dist/radiuses/index.d.ts"
       ]
     }
   },
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -48,10 +48,10 @@
     "clean": "rimraf dist",
     "watch": "rollup -cw"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "@dekk-ui/create-token": "0.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

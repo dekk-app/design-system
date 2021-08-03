@@ -1,6 +1,6 @@
 import { clamp } from "@dekk-ui/utils/clamp";
 import { getDeg } from "@dekk-ui/utils/get-deg";
-import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { StyledBubble, StyledInputWrapper, StyledRing } from "./styled";
 import { RangeKnobProps } from "./types";
 
@@ -76,7 +76,7 @@ export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
 		}, [onChange, rect, down, range, min, step]);
 
 		const handleChange = useCallback(
-			(event_: React.ChangeEvent<HTMLInputElement>) => {
+			(event_: ChangeEvent<HTMLInputElement>) => {
 				const newValue = Number.parseFloat(event_.target.value);
 				const moduloValue =
 					newValue <= min

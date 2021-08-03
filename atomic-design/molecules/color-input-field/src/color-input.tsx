@@ -1,5 +1,11 @@
 import { StyledCombinedInput, StyledInput } from "@dekk-ui/input-field/styled";
-import React, { forwardRef, useCallback, useState } from "react";
+import React, {
+	ChangeEventHandler,
+	forwardRef,
+	KeyboardEventHandler,
+	useCallback,
+	useState,
+} from "react";
 import { StyledColorInput } from "./styled";
 import { ColorInputProps } from "./types";
 
@@ -44,24 +50,21 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 		const [value, setValue] = useState(defaultValue);
 		const [valid, setValid] = useState<boolean | null>(null);
 
-		const handleChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(
-			({ target }) => {
-				setValid(target.validity.valid);
-				if (target.value.length > 1 && target.value.startsWith("#")) {
-					setValue(target.value);
-				} else if (target.value === "#") {
-					setValid(null);
-					setValue("");
-				} else if (target.value.length === 0) {
-					setValue(target.value);
-				} else {
-					setValue(`#${target.value}`);
-				}
-			},
-			[]
-		);
+		const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback(({ target }) => {
+			setValid(target.validity.valid);
+			if (target.value.length > 1 && target.value.startsWith("#")) {
+				setValue(target.value);
+			} else if (target.value === "#") {
+				setValid(null);
+				setValue("");
+			} else if (target.value.length === 0) {
+				setValue(target.value);
+			} else {
+				setValue(`#${target.value}`);
+			}
+		}, []);
 
-		const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = useCallback(event_ => {
+		const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = useCallback(event_ => {
 			const selectionText = getSelectionText();
 			if (!hexKeys.has(event_.code) && !modKeys.has(event_.code)) {
 				event_.preventDefault();

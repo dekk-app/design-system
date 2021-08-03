@@ -30,9 +30,6 @@
     "clean": "rimraf dist",
     "watch": "rollup -cw"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "@dekk-ui/fieldset-row": "0.1.0",
     "@dekk-ui/input-field": "0.1.0",
@@ -54,5 +51,8 @@
     "@emotion/styled": "^11.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

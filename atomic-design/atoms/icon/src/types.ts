@@ -1,7 +1,7 @@
 import { IconName, IconSize } from "@dekk-ui/icons";
-import React from "react";
+import { SVGAttributes } from "react";
 
-export interface IconProps extends React.SVGAttributes<SVGSVGElement> {
+export interface IconProps extends SVGAttributes<SVGSVGElement> {
 	icon: IconName;
 	size?: IconSize;
 }

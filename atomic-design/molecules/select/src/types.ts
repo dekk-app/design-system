@@ -1,7 +1,7 @@
-import React from "react";
+import { ReactNode } from "react";
 
 export interface SelectOption {
-	label: React.ReactNode;
+	label: ReactNode;
 	value: string;
 }
 

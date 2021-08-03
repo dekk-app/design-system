@@ -1,5 +1,4 @@
 import { PopoutSelect, SelectProps } from "@dekk-ui/select";
-import { light } from "@dekk-ui/theme";
 import { Story } from "@storybook/react";
 import React from "react";
 
