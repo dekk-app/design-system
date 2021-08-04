@@ -6,6 +6,7 @@ import {
 	darkFill4,
 	darkOutline1,
 	darkText1,
+	highlight,
 	lightest,
 	lightText1,
 	primary,
@@ -21,6 +22,7 @@ export const dark: Theme = {
 			lightest: lightest.value,
 			darkest: darkest.value,
 		},
+		highlight: highlight.value,
 		background: {
 			"1": darkest.value,
 			"2": lightest.value,

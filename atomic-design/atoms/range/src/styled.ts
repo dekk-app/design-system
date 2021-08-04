@@ -1,3 +1,4 @@
+import { focus } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -92,7 +93,7 @@ export const StyledRange = styled.input`
 
 		&:focus-visible {
 			background: ${theme.ui.fill["1"]};
-			box-shadow: 0 0 0 1px ${theme.ui.colors.primary};
+			${focus};
 		}
 	`};
 `;

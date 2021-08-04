@@ -18,6 +18,8 @@ export const lightest = createToken<RGBColor>("Lightest", white.value, "Lightest
 
 export const darkest = createToken<RGBColor>("Darkest", "rgb(35, 36, 36)", "Darkest Brand Color");
 
+export const highlight = createToken<RGBColor>("Highlight", "rgb(46, 147, 255)", "Highlight Color");
+
 // Text Colors
 export const lightText1 = createToken<RGBColor>(
 	"Light Text 1",

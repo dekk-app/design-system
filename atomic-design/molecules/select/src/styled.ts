@@ -1,3 +1,4 @@
+import { focus, focusRing } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -81,15 +82,17 @@ export const StyledControl = styled.div<ReactSelectProps>`
 		border-radius: ${pxToRem(theme.radius.s)};
 		background: ${isFocused ? theme.ui.fill["1"] : theme.ui.fill["2"]};
 		color: ${theme.ui.text["1"]};
-		box-shadow: inset 0 0 0 1px ${isFocused ? theme.ui.colors.primary : theme.ui.outline["1"]};
+		box-shadow: inset 0 0 0 1px ${theme.ui.outline["1"]};
 		caret-color: ${theme.ui.colors.primary};
+
+		${isFocused && focusRing}
 
 		&:hover {
 			background: ${theme.ui.fill["1"]};
 		}
 		&:focus {
 			background: ${theme.ui.fill["1"]};
-			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary};
+			${focus};
 		}
 	`};
 `;
