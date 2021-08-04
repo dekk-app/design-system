@@ -1,3 +1,4 @@
+import { focusRing } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -5,6 +6,7 @@ import { ButtonProps } from "./types";
 
 export const StyledButton = styled.button<ButtonProps>`
 	display: inline-flex;
+	position: relative;
 	align-content: center;
 	align-items: center;
 	justify-content: center;
@@ -27,9 +29,7 @@ export const StyledButton = styled.button<ButtonProps>`
 
 		&:focus-visible {
 			background: ${isSelected ? theme.ci.colors.primaryDark : theme.ui.colors.primary};
-			box-shadow: ${isSelected
-				? `inset 0 0 0 1px ${theme.ci.colors.primaryDark}, inset  0 0 0 2px ${theme.ui.fill["2"]}`
-				: `inset 0 0 0 1px ${theme.ui.colors.primary}, inset  0 0 0 2px ${theme.ui.fill["2"]}`};
+			${focusRing};
 		}
 	`};
 `;

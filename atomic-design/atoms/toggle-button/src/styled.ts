@@ -1,3 +1,4 @@
+import { focus } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -44,9 +45,8 @@ export const StyledToggleButton = styled.button<ToggleButtonProps>`
 		&:focus-visible {
 			z-index: 1;
 			background: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["1"]};
-			box-shadow: ${isSelected
-				? `inset 0 0 0 1px ${theme.ui.colors.primary}, inset  0 0 0 2px ${theme.ui.fill["2"]}`
-				: `inset 0 0 0 1px ${theme.ui.colors.primary}`};
+			${focus};
+
 			&::before {
 				content: unset;
 			}

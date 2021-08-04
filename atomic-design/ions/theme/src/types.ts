@@ -22,6 +22,7 @@ export interface Theme {
 		};
 	};
 	ui: {
+		highlight: RGBColor;
 		colors: {
 			primary: RGBColor;
 			lightest: RGBColor;

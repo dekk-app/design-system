@@ -1,3 +1,4 @@
+import { focusRing } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -49,11 +50,7 @@ export const StyledCheckbox = styled.input`
 		border-radius: ${pxToRem(theme.radius.s)};
 
 		&:focus-visible {
-			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary};
-
-			+ ${StyledSvg} {
-				--background-color: ${theme.ui.colors.primary};
-			}
+			${focusRing}
 		}
 	`};
 `;

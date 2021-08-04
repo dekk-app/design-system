@@ -1,3 +1,4 @@
+import { focus, focusRing } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -24,7 +25,8 @@ export const StyledSuffix = styled.div<PrefixProps>`
 		width: ${width || "auto"};
 		height: ${pxToRem(theme.space.l)};
 		margin: 0 0 0 ${pxToRem(-theme.space.xs + 2)};
-		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)} 0;
+		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)}
+			${pxToRem(theme.space.xs - 2)};
 		line-height: ${pxToRem(theme.space.s)};
 		border-radius: 0 ${pxToRem(theme.radius.s)} ${pxToRem(theme.radius.s)} 0;
 		background: inherit;
@@ -34,6 +36,7 @@ export const StyledSuffix = styled.div<PrefixProps>`
 
 export const StyledInput = styled.input<InputProps>`
 	overflow: hidden;
+	position: relative;
 	border: 0;
 	appearance: none;
 	font-size: ${pxToRem(12)};
@@ -65,7 +68,7 @@ export const StyledInput = styled.input<InputProps>`
 
 		&:focus {
 			background: ${theme.ui.fill["1"]};
-			box-shadow: inset 0 0 0 1px ${theme.ui.colors.primary};
+			${focus};
 		}
 
 		&:invalid {
@@ -89,12 +92,11 @@ export const StyledNumberInput = styled(StyledInput)`
 export const StyledCombinedInput = styled.label<CombinedInputProps>`
 	display: inline-flex;
 	position: relative;
-	overflow: hidden;
 
 	&::before {
 		content: "";
 		position: absolute;
-		z-index: 0;
+		z-index: 1;
 		top: 0;
 		right: 0;
 		bottom: 0;
@@ -127,9 +129,7 @@ export const StyledCombinedInput = styled.label<CombinedInputProps>`
 
 		&:focus-within {
 			background: ${theme.ui.fill["1"]};
-			&::before {
-				box-shadow: inset 0 0 0 1px ${invalid ? "red" : theme.ui.colors.primary}; // @todo add brand color
-			}
+			${focusRing};
 		}
 		${StyledInput}, ${StyledNumberInput} {
 			border-radius: 0;

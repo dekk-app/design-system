@@ -7,7 +7,6 @@ import { clamp } from "@dekk-ui/utils/clamp";
 import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { useTheme } from "@emotion/react";
 import React, { forwardRef, useCallback, useState } from "react";
-import { StyledRangeKnobLabel } from "./styled";
 import { RangeKnobFieldProps } from "./types";
 
 export const RangeKnobField = forwardRef<
@@ -28,18 +27,19 @@ export const RangeKnobField = forwardRef<
 	);
 	return (
 		<FieldsetRow fullWidth columns={`1fr ${pxToRem(36)} 1fr`} gap={pxToRem(theme.space.xs)}>
-			<InputLabel htmlFor={id}>{label}</InputLabel>
-			<StyledRangeKnobLabel>
-				<RangeKnob
-					id={`__${id}__`}
-					value={value}
-					step={step}
-					min={min}
-					max={max}
-					tabIndex={-1}
-					onChange={handleChange}
-				/>
-			</StyledRangeKnobLabel>
+			<InputLabel htmlFor={id} id={`${id}__label`}>
+				{label}
+			</InputLabel>
+			<RangeKnob
+				id={`__${id}__`}
+				aria-labelledby={`${id}__label`}
+				value={value}
+				step={step}
+				min={min}
+				max={max}
+				tabIndex={-1}
+				onChange={handleChange}
+			/>
 			<StyledCombinedInput width={pxToRem(theme.space.l * 2)}>
 				{prefix && <StyledPrefix>{prefix}</StyledPrefix>}
 				<NumberInput
