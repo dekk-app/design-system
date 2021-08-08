@@ -77,6 +77,9 @@ out
 # Storybook
 public
 
+# Build
+dist
+
 # Generated
 package-names.json
 tsconfig.json

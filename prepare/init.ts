@@ -1,12 +1,10 @@
-import path from "path";
-import fs from "fs";
+import { promises } from "fs";
 import globby from "globby";
-import meow from "meow";
-import pify from "pify";
+import path from "path";
 
-const { flags } = meow();
-const writeFile = pify(fs.writeFile);
+const { writeFile } = promises;
 const cwd = process.cwd();
+const build = process.argv.includes("--build");
 
 function sort(array: string[]): string[] {
 	array.sort((a, b) => {
@@ -64,7 +62,7 @@ async function getNames() {
 	await writeFile(path.resolve(cwd, "package-names.json"), JSON.stringify(names, null, 4));
 	console.log("Generated package names as JSON");
 	const { default: tsconfig } = await import("./tsconfig.tpl.json");
-	if (flags.build) {
+	if (build) {
 		await writeFile(path.resolve(cwd, "tsconfig.json"), JSON.stringify(tsconfig, null, 4));
 	} else {
 		const paths = {
