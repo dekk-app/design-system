@@ -1,6 +1,7 @@
 import { StyledCombinedInput, StyledInput } from "@dekk-ui/input-field/styled";
 import React, {
 	ChangeEventHandler,
+	FocusEventHandler,
 	forwardRef,
 	KeyboardEventHandler,
 	useCallback,
@@ -29,6 +30,7 @@ const hexKeys = new Set([
 ]);
 
 const modKeys = new Set(["Backspace", "Tab", "ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"]);
+const copyAndPasteKeys = new Set(["KeyC", "KeyV", "KeyX"]);
 function getSelectionText() {
 	const activeElement: HTMLInputElement | Element | null = document.activeElement;
 	if (activeElement.tagName === "INPUT") {
@@ -52,7 +54,10 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 
 		const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback(({ target }) => {
 			setValid(target.validity.valid);
-			if (target.value.length > 1 && target.value.startsWith("#")) {
+			if (target.value.length > 7 && target.value.startsWith("#")) {
+				setValid(true);
+				setValue(target.value.slice(0, 7));
+			} else if (target.value.length > 1 && target.value.startsWith("#")) {
 				setValue(target.value);
 			} else if (target.value === "#") {
 				setValid(null);
@@ -60,13 +65,17 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 			} else if (target.value.length === 0) {
 				setValue(target.value);
 			} else {
-				setValue(`#${target.value}`);
+				setValue(`#${target.value.slice(0, 6)}`);
 			}
 		}, []);
 
 		const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = useCallback(event_ => {
 			const selectionText = getSelectionText();
-			if (!hexKeys.has(event_.code) && !modKeys.has(event_.code)) {
+			if (
+				!hexKeys.has(event_.code) &&
+				!modKeys.has(event_.code) &&
+				!(event_.metaKey && copyAndPasteKeys.has(event_.code))
+			) {
 				event_.preventDefault();
 			} else if (
 				!modKeys.has(event_.code) &&
@@ -74,6 +83,14 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 					selectionText.includes("#"))
 			) {
 				event_.preventDefault();
+			}
+		}, []);
+
+		const handleBlur: FocusEventHandler<HTMLInputElement> = useCallback(({ target }) => {
+			if (target.value.length === 4 && target.value.startsWith("#")) {
+				const [, _1, _2, _3] = target.value.split("");
+				setValid(true);
+				setValue(`#${_1}${_1}${_2}${_2}${_3}${_3}`);
 			}
 		}, []);
 
@@ -92,6 +109,7 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 					pattern="^#[a-f0-9]{6}"
 					onChange={handleChange}
 					onKeyDown={handleKeyDown}
+					onBlur={handleBlur}
 				/>
 				<StyledColorInput ref={ref} value={value} type="color" onChange={handleChange} />
 			</StyledCombinedInput>
