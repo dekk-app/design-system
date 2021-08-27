@@ -25,6 +25,15 @@ module.exports = {
 		"@storybook/addon-a11y",
 		"storybook-dark-mode",
 	],
+	typescript: {
+		check: false,
+		checkOptions: {},
+		reactDocgen: "react-docgen-typescript",
+		reactDocgenTypescriptOptions: {
+			shouldExtractLiteralValuesFromEnum: true,
+			propFilter: prop => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+		},
+	},
 	webpackFinal: async config => {
 		config.module.rules.push({
 			test: /\.(ts|tsx)$/,
@@ -49,14 +58,6 @@ module.exports = {
 								},
 							],
 						],
-					},
-				},
-				{
-					loader: require.resolve("react-docgen-typescript-loader"),
-					options: {
-						// Provide the path to your tsconfig.json so that your stories can
-						// display types from outside each individual story.
-						tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
 					},
 				},
 			],

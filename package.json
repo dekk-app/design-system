@@ -18,6 +18,7 @@
     "prebuild": "yarn setup --build && lerna run clean",
     "build": "lerna run build",
     "build-storybook": "build-storybook -c .storybook -o public --quiet && percy storybook ./public",
+    "build-storybook:local": "build-storybook -c .storybook -o public --quiet",
     "clean": "lerna run clean",
     "dev": "start-storybook",
     "ncu:major": "npx npm-check-updates@11.8.3",
@@ -25,6 +26,7 @@
     "ncu:patch": "npx npm-check-updates@11.8.3 -t patch",
     "prepare": "yarn setup",
     "setup": "babel-node prepare/init.ts -x '.ts'",
+    "serve:storybook": "npx serve@12.0.0 ./public",
     "spj": "npx sort-package-json@1.48 package.json \"atomic-design/*/*/package.json\"",
     "unimported": "npx unimported@1.13.0",
     "watch": "lerna run watch"
@@ -91,7 +93,7 @@
     "stylelint-processor-styled-components": "^1.10.0",
     "ts-node": "^10.1.0",
     "type-fest": "^2.0.0",
-    "typescript": "4.2.4",
+    "typescript": "^4.3.5",
     "use-dark-mode": "^2.3.1",
     "webpack": "^5.49.0",
     "xo": "^0.43.0"
