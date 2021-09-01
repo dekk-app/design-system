@@ -20,6 +20,7 @@
     "email": "greg@pixelass.com"
   },
   "exports": {
+    ".": "./dist/index.js",
     "./styled": "./dist/styled.js"
   },
   "main": "dist/index.js",

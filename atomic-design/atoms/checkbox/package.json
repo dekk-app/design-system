@@ -20,6 +20,7 @@
     "email": "ok@0x04.de"
   },
   "exports": {
+    ".": "./dist/index.js",
     "./styled": "./dist/styled.js"
   },
   "main": "dist/index.js",

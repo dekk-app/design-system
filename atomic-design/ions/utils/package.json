@@ -20,6 +20,7 @@
     "email": "greg@pixelass.com"
   },
   "exports": {
+    ".": "./dist/index.js",
     "./clamp": "./dist/clamp.js",
     "./get-deg": "./dist/get-deg.js",
     "./px-to-rem": "./dist/px-to-rem.js",

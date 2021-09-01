@@ -22,6 +22,7 @@
     "email": "greg@pixelass.com"
   },
   "exports": {
+    ".": "./dist/index.js",
     "./number-input": "./dist/number-input.js",
     "./text-input": "./dist/text-input.js",
     "./styled": "./dist/styled.js"

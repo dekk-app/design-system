@@ -28,13 +28,13 @@ const commonPlugins = [
 module.exports = () => {
 	const cwd = process.cwd();
 	const pkg = require(path.resolve(cwd, "package.json"));
-	const packageExports = pkg.exports ? Object.keys(pkg.exports) : [];
+	const packageExports = pkg.exports ? Object.keys(pkg.exports).filter(key => key !== ".") : [];
 	const tsconfig = path.resolve(cwd, "tsconfig.json");
 	const external = [
 		...Object.keys(pkg.dependencies || {}),
-		...Object.keys(pkg.dependencies || {}).map(key => new RegExp(`key/.*`)),
+		...Object.keys(pkg.dependencies || {}).map(() => new RegExp(`key/.*`)),
 		...Object.keys(pkg.peerDependencies || {}),
-		...Object.keys(pkg.peerDependencies || {}).map(key => new RegExp(`key/.*`)),
+		...Object.keys(pkg.peerDependencies || {}).map(() => new RegExp(`key/.*`)),
 		"path",
 		"fs",
 	];
@@ -49,7 +49,14 @@ module.exports = () => {
 					format: "cjs",
 				},
 			],
-			plugins: [...commonPlugins, typescript({ tsconfig, declaration: true })],
+			plugins: [
+				...commonPlugins,
+				typescript({
+					tsconfig,
+					//sourceMap: false,
+					declaration: true,
+				}),
+			],
 		},
 		{
 			input: `src/index.ts`,
@@ -65,6 +72,7 @@ module.exports = () => {
 				...commonPlugins,
 				typescript({
 					tsconfig,
+					//sourceMap: false,
 					declaration: false,
 				}),
 			],

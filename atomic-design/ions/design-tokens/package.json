@@ -20,9 +20,10 @@
     "email": "greg@pixelass.com"
   },
   "exports": {
-    "./colors/index": "./dist/colors/index.js",
-    "./spaces/index": "./dist/spaces/index.js",
-    "./radiuses/index": "./dist/radiuses/index.js"
+    ".": "./dist/index.js",
+    "./colors": "./dist/colors/index.js",
+    "./spaces": "./dist/spaces/index.js",
+    "./radiuses": "./dist/radiuses/index.js"
   },
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
