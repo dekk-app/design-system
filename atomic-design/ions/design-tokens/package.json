@@ -21,9 +21,9 @@
   },
   "exports": {
     ".": "./dist/index.js",
-    "./colors": "./dist/colors/index.js",
-    "./spaces": "./dist/spaces/index.js",
-    "./radiuses": "./dist/radiuses/index.js"
+    "./colors": "./dist/colors.js",
+    "./spaces": "./dist/spaces.js",
+    "./radiuses": "./dist/radiuses.js"
   },
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
