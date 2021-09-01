@@ -82,7 +82,7 @@ dist
 
 # Generated
 package-names.json
-tsconfig.json
+/tsconfig.json
 
 # Unignore
 !atomic-design/atoms/icon
