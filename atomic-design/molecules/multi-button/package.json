@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/multi-button",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "component library",
     "design system",
@@ -32,8 +32,8 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/avatar": "^0.1.1",
-    "@dekk-ui/theme": "^0.1.1",
+    "@dekk-ui/avatar": "^0.1.2",
+    "@dekk-ui/theme": "^0.1.2",
     "@dekk-ui/utils": "^0.1.1"
   },
   "devDependencies": {

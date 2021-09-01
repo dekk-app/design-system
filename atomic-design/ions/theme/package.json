@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/theme",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "component library",
     "design system",
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@dekk-ui/create-token": "^0.1.0",
-    "@dekk-ui/design-tokens": "^0.1.1"
+    "@dekk-ui/design-tokens": "^0.1.2"
   },
   "publishConfig": {
     "access": "public"

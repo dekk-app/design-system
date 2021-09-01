@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/icon",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "component library",
     "design system",
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@dekk-ui/icons": "^0.1.0",
-    "@dekk-ui/theme": "^0.1.1",
+    "@dekk-ui/theme": "^0.1.2",
     "@dekk-ui/utils": "^0.1.1"
   },
   "devDependencies": {

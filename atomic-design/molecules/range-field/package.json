@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/range-field",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "component library",
     "design system",
@@ -31,11 +31,11 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/fieldset-row": "^0.1.1",
-    "@dekk-ui/input-field": "^0.1.1",
-    "@dekk-ui/input-label": "^0.1.1",
-    "@dekk-ui/range": "^0.1.1",
-    "@dekk-ui/theme": "^0.1.1",
+    "@dekk-ui/fieldset-row": "^0.1.2",
+    "@dekk-ui/input-field": "^0.1.2",
+    "@dekk-ui/input-label": "^0.1.2",
+    "@dekk-ui/range": "^0.1.2",
+    "@dekk-ui/theme": "^0.1.2",
     "@dekk-ui/utils": "^0.1.1"
   },
   "devDependencies": {
