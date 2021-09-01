@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/input-field",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "component library",
     "design system",
@@ -52,8 +52,8 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/theme": "^0.1.0",
-    "@dekk-ui/utils": "^0.1.0",
+    "@dekk-ui/theme": "^0.1.1",
+    "@dekk-ui/utils": "^0.1.1",
     "type-fest": "^2.0.0"
   },
   "devDependencies": {
