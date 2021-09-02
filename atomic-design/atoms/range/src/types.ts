@@ -1,8 +1,7 @@
-import { InputProps } from "@dekk-ui/input-field";
+import { HTMLProps } from "react";
 import { Except } from "type-fest";
 
-export interface RangeProps
-	extends Except<InputProps, "onChange" | "min" | "max" | "step" | "value" | "defaultValue"> {
+export interface RangeProps extends Except<HTMLProps<HTMLInputElement>, "ref" | "as" | "onChange"> {
 	min?: number;
 	max?: number;
 	step?: number;
