@@ -41,10 +41,24 @@ module.exports = {
 			files: "**/*.{ts,tsx}",
 			rules: {
 				"@typescript-eslint/consistent-type-assertions": [
-					"warn",
+					1,
 					{
 						assertionStyle: "as",
 						objectLiteralTypeAssertions: "allow-as-parameter",
+					},
+				],
+				"react/prop-types": 0,
+				"react/display-name": 0,
+				"arrow-body-style": 0,
+				"import/extensions": [
+					1,
+					{
+						js: "never",
+						jsx: "never",
+						ts: "never",
+						tsx: "never",
+						css: "always",
+						json: "always",
 					},
 				],
 			},
@@ -52,12 +66,7 @@ module.exports = {
 	],
 	prettier: true,
 	rules: {
-		"react/prop-types": 0,
-		"unicorn/no-array-reduce": 0,
-		"prettier/prettier": 0,
-		"react/jsx-uses-react": 1,
-		"react/jsx-uses-vars": 1,
-		"no-unused-vars": 2,
 		"unicorn/prefer-node-protocol": 0,
+		"import/order": 0,
 	},
 };

@@ -1,6 +1,7 @@
 import { promises } from "fs";
 import globby from "globby";
 import path from "path";
+import process from "process";
 
 const { writeFile } = promises;
 const cwd = process.cwd();

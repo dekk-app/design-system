@@ -1,9 +1,9 @@
-import { dark, light } from "@dekk-ui/theme";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "@storybook/theming";
 import React, { FC } from "react";
 import { useDarkMode } from "storybook-dark-mode";
+import { dark, light } from "../../atomic-design/ions/theme/src";
 
 const StyledWrapper = styled.div`
 	box-sizing: border-box;

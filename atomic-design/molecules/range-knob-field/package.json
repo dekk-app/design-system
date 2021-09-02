@@ -34,7 +34,7 @@
     "@dekk-ui/fieldset-row": "^0.1.2",
     "@dekk-ui/input-field": "^0.1.2",
     "@dekk-ui/input-label": "^0.1.2",
-    "@dekk-ui/range": "^0.1.2",
+    "@dekk-ui/range-knob": "^0.1.2",
     "@dekk-ui/theme": "^0.1.2",
     "@dekk-ui/utils": "^0.1.1"
   },

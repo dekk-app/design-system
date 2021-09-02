@@ -21,6 +21,7 @@
     "build-storybook:local": "build-storybook -c .storybook -o public --quiet",
     "clean": "lerna run clean",
     "dev": "start-storybook",
+    "lint": "yarn tsc:noEmit && yarn xo && yarn stylelint",
     "ncu:major": "npx npm-check-updates@11.8.3",
     "ncu:minor": "npx npm-check-updates@11.8.3 -t minor",
     "ncu:patch": "npx npm-check-updates@11.8.3 -t patch",
@@ -31,12 +32,14 @@
     "release:rc": "lerna publish --canary --preid rc --pre-dist-tag next",
     "prerelease:beta": "yarn build",
     "release:beta": "lerna publish --canary --preid beta --pre-dist-tag beta",
-
+    "stylelint": "stylelint 'atomic-design/**/*.{ts,tsx}'",
     "setup": "babel-node prepare/init.ts -x '.ts'",
     "serve:storybook": "npx serve@12.0.0 ./public",
     "spj": "npx sort-package-json@1.48 package.json \"atomic-design/*/*/package.json\"",
+    "tsc:noEmit": "tsc --noEmit",
     "unimported": "npx unimported@1.13.0",
-    "watch": "lerna run watch"
+    "watch": "lerna run watch",
+    "xo": "xo 'atomic-design/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@babel/cli": "^7.14.8",
@@ -67,6 +70,7 @@
     "@storybook/addon-essentials": "^6.3.6",
     "@storybook/addon-links": "^6.3.6",
     "@storybook/react": "^6.3.6",
+    "@storybook/theming": "^6.3.7",
     "@types/node": "^16.4.13",
     "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",

@@ -5,12 +5,14 @@ import { display } from "./utils";
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 	({ className, checked: controlledChecked, indeterminate, onChange, style, ...props }, ref) => {
-		const [isChecked, setIsChecked] = useState(!!controlledChecked);
+		const [isChecked, setIsChecked] = useState(Boolean(controlledChecked));
 		const handleChange: ChangeEventHandler<HTMLInputElement> = useCallback(
 			event_ => {
 				const { checked } = event_.target;
 				setIsChecked(checked);
-				onChange?.(checked);
+				if (onChange) {
+					onChange(checked);
+				}
 			},
 			[onChange]
 		);
