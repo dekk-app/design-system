@@ -12,24 +12,37 @@ export const StyledButton = styled.button<ButtonProps>`
 	justify-content: center;
 	margin: 0;
 	border: 0;
+	font-family: inherit;
 
 	&:focus {
 		outline: 0;
 	}
 
-	${({ theme, isSelected }) => css`
+	${({ theme, variant = "default" }) => css`
 		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.s)};
-		background: ${isSelected ? theme.ci.colors.primaryDark : theme.ui.colors.primary};
-		color: ${theme.ui.colors.lightest};
+		background-color: ${variant === "primary"
+			? theme.ui.colors.primary
+			: variant === "default"
+			? theme.ui.fill["1"]
+			: "transparent"};
+		color: ${variant === "primary"
+			? theme.ui.colors.lightest
+			: variant === "default"
+			? theme.ui.text["1"]
+			: "currentColor"};
 		border-radius: ${pxToRem(theme.radius.s)};
 
-		&:hover {
-			background: ${isSelected ? theme.ui.colors.primary : theme.ci.colors.primaryDark};
+		&:focus-visible {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+			${focusRing};
 		}
 
-		&:focus-visible {
-			background: ${isSelected ? theme.ci.colors.primaryDark : theme.ui.colors.primary};
-			${focusRing};
+		&:hover {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+		}
+
+		&:active {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 		}
 	`};
 `;

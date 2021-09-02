@@ -21,47 +21,23 @@ export const StyledToggleButton = styled.button<ToggleButtonProps>`
 		outline: 0;
 	}
 
-	&::before {
-		position: absolute;
-		top: 50%;
-		right: 0;
-		width: 1px;
-	}
-
 	${({ theme, isSelected }) => css`
 		border-radius: ${pxToRem(theme.radius.s)};
-		background: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["2"]};
+		background-color: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["2"]};
 		color: ${isSelected ? theme.ui.colors.lightest : theme.ui.text["1"]};
-		&::before {
-			content: ${isSelected ? "unset" : `""`};
-		}
-		&:hover {
-			background: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["1"]};
-			&::before {
-				content: unset;
-			}
-		}
 
 		&:focus-visible {
 			z-index: 1;
-			background: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["1"]};
+			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 			${focus};
-
-			&::before {
-				content: unset;
-			}
 		}
 
-		&:last-of-type {
-			&::before {
-				content: unset;
-			}
+		&:hover {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 		}
 
-		&::before {
-			height: ${pxToRem(theme.space.xs)};
-			margin-top: calc(${pxToRem(theme.space.xs)} / -2);
-			background: ${isSelected ? theme.ui.colors.primary : theme.ui.outline["1"]};
+		&:active {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 		}
 	`};
 `;

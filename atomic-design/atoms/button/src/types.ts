@@ -1,5 +1,7 @@
-import { HTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from "react";
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-	isSelected?: boolean;
+export type ButtonVariant = "primary" | "default" | "text";
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+	variant?: ButtonVariant;
 }

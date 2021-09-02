@@ -1,7 +1,7 @@
 import { IconName, IconSize } from "@dekk-ui/icons";
-import { HTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from "react";
 
-export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	isSelected?: boolean;
 	icon: IconName;
 	size?: IconSize;
