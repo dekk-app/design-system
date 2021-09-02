@@ -1,8 +1,8 @@
 import { RGBColor } from "@dekk-ui/design-tokens";
 import { pxToRem } from "@dekk-ui/utils";
-import { base } from "../src/base";
-import { Theme, light, dark } from "../src";
 import React, { FC } from "react";
+import { dark, light, Theme } from "../src";
+import { base } from "../src/base";
 
 export interface SwatchProps {
 	colorName: string;

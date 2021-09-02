@@ -35,17 +35,21 @@ export const StyledButton = styled.button<Except<IconButtonProps, "icon" | "size
 		width: ${pxToRem(theme.space.l)};
 		min-width: ${pxToRem(theme.space.l)};
 		height: ${pxToRem(theme.space.l)};
-		background: ${isSelected ? theme.ui.colors.primary : "none"};
+		background-color: ${isSelected ? theme.ui.colors.primary : "transparent"};
 		color: ${isSelected ? theme.ui.colors.lightest : "currentColor"};
 		border-radius: ${pxToRem(theme.radius.s)};
 
 		&:focus-visible {
-			background: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["1"]};
+			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 			${focusRing};
 		}
 
 		&:hover {
-			background: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["1"]};
+			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+		}
+
+		&:active {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 		}
 	`};
 `;

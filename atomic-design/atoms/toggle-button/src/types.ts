@@ -1,5 +1,5 @@
-import { HTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from "react";
 
-export interface ToggleButtonProps extends HTMLAttributes<HTMLButtonElement> {
+export interface ToggleButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	isSelected?: boolean;
 }
