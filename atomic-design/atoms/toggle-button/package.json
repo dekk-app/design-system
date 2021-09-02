@@ -43,6 +43,7 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
+    "@dekk-ui/focus-ring": "^0.1.2",
     "@dekk-ui/theme": "^0.1.2",
     "@dekk-ui/utils": "^0.1.1"
   },
