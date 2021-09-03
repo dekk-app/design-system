@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/dekk-app/design-system/compare/v0.1.2...v0.2.0) (2021-09-03)
+
+
+### Bug Fixes
+
+* add missing dependency focus-ring ([cb168eb](https://github.com/dekk-app/design-system/commit/cb168ebc17fc69b3783b5ee17d29c99c4483036f))
+
+
+
+
+
 ## [0.1.2](https://github.com/dekk-app/design-system/compare/v0.1.1...v0.1.2) (2021-09-01)
 
 **Note:** Version bump only for package @dekk-ui/range-knob

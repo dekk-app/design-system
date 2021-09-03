@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/range-knob",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "keywords": [
     "component library",
     "design system",
@@ -42,9 +42,9 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/focus-ring": "^0.1.2",
-    "@dekk-ui/theme": "^0.1.2",
-    "@dekk-ui/utils": "^0.1.1",
+    "@dekk-ui/focus-ring": "^0.2.0",
+    "@dekk-ui/theme": "^0.2.0",
+    "@dekk-ui/utils": "^0.2.0",
     "type-fest": "^2.0.0"
   },
   "devDependencies": {

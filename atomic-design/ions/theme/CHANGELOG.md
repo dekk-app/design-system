@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/dekk-app/design-system/compare/v0.1.2...v0.2.0) (2021-09-03)
+
+
+### Features
+
+* add hover and active styles to all buttons ([#11](https://github.com/dekk-app/design-system/issues/11)) ([9a3eaf1](https://github.com/dekk-app/design-system/commit/9a3eaf1ed1202f937c3efabf3189c51762e8fd61))
+
+
+
+
+
 ## [0.1.2](https://github.com/dekk-app/design-system/compare/v0.1.1...v0.1.2) (2021-09-01)
 
 **Note:** Version bump only for package @dekk-ui/theme
