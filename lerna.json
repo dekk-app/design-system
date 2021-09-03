@@ -1,6 +1,7 @@
 {
   "npmClient": "yarn",
   "packages": [
+    "tools",
     "atomic-design/atoms",
     "atomic-design/ions",
     "atomic-design/molecules",
