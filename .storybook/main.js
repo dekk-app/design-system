@@ -24,6 +24,7 @@ module.exports = {
 		"@storybook/addon-links",
 		"@storybook/addon-a11y",
 		"storybook-dark-mode",
+		"@ergosign/storybook-addon-pseudo-states-react/register",
 	],
 	typescript: {
 		check: false,
@@ -48,6 +49,12 @@ module.exports = {
 						],
 						plugins: [
 							"@babel/plugin-transform-runtime",
+							[
+								"babel-plugin-transform-inline-environment-variables",
+								{
+									include: ["STORYBOOK_PSEUDO_CLASSES"],
+								},
+							],
 							[
 								"@emotion/babel-plugin",
 								{

@@ -13,6 +13,7 @@ export interface SwatchProps {
 const Swatches: FC = ({ children }) => (
 	<div style={{ display: "flex", flexWrap: "wrap", margin: -base.space.s }}>{children}</div>
 );
+
 const Swatch = ({ colorName, colorValue, theme }: SwatchProps) => {
 	return (
 		<div
@@ -46,35 +47,43 @@ export const Light = () => {
 	return (
 		<div>
 			<h1>Light</h1>
-			<h2>Colors</h2>
+			<h2>CI</h2>
+			<h3>Colors</h3>
+			<Swatches>
+				{Object.entries(light.ci.colors).map(([key, value]) => (
+					<Swatch key={key} colorName={key} colorValue={value} theme={light} />
+				))}
+			</Swatches>
+			<h3>Colors</h3>
 			<Swatches>
 				{Object.entries(light.ui.colors).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={light} />
 				))}
 			</Swatches>
-			<h2>Text</h2>
+			<h2>UI</h2>
+			<h3>Text</h3>
 			<div style={{ display: "flex", flexWrap: "wrap" }}>
 				{Object.entries(light.ui.text).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={light} />
 				))}
 			</div>
-			<h2>Background</h2>
+			<h3>Background</h3>
 			<Swatches>
 				{Object.entries(light.ui.background).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={light} />
 				))}
 			</Swatches>
-			<h2>Fill</h2>
+			<h3>Fill</h3>
 			<Swatches>
 				{Object.entries(light.ui.fill).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={light} />
 				))}
 			</Swatches>
-			<h2>Highlight</h2>
+			<h3>Highlight</h3>
 			<Swatches>
 				<Swatch colorName="highlight" colorValue={light.ui.highlight} theme={light} />
 			</Swatches>
-			<h2>Outline</h2>
+			<h3>Outline</h3>
 			<Swatches>
 				{Object.entries(light.ui.outline).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={light} />
@@ -88,35 +97,43 @@ export const Dark = () => {
 	return (
 		<div>
 			<h1>Dark</h1>
-			<h2>Colors</h2>
+			<h2>CI</h2>
+			<h3>Colors</h3>
+			<Swatches>
+				{Object.entries(dark.ci.colors).map(([key, value]) => (
+					<Swatch key={key} colorName={key} colorValue={value} theme={dark} />
+				))}
+			</Swatches>
+			<h2>UI</h2>
+			<h3>Colors</h3>
 			<Swatches>
 				{Object.entries(dark.ui.colors).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={dark} />
 				))}
 			</Swatches>
-			<h2>Text</h2>
+			<h3>Text</h3>
 			<Swatches>
 				{Object.entries(dark.ui.text).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={dark} />
 				))}
 			</Swatches>
-			<h2>Background</h2>
+			<h3>Background</h3>
 			<Swatches>
 				{Object.entries(dark.ui.background).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={dark} />
 				))}
 			</Swatches>
-			<h2>Fill</h2>
+			<h3>Fill</h3>
 			<Swatches>
 				{Object.entries(dark.ui.fill).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={dark} />
 				))}
 			</Swatches>
-			<h2>Highlight</h2>
+			<h3>Highlight</h3>
 			<Swatches>
 				<Swatch colorName="highlight" colorValue={dark.ui.highlight} theme={dark} />
 			</Swatches>
-			<h2>Outline</h2>
+			<h3>Outline</h3>
 			<Swatches>
 				{Object.entries(dark.ui.outline).map(([key, value]) => (
 					<Swatch key={key} colorName={key} colorValue={value} theme={dark} />

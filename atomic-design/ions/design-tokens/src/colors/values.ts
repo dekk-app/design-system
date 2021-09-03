@@ -6,19 +6,19 @@ export const black = createToken<RGBColor>("Black", "rgb(0, 0, 0)", "Black");
 
 // Brand Colors
 
-export const primary = createToken<RGBColor>("Primary", "rgb(106, 40, 234)", "Primary Brand Color");
+export const primary = createToken<RGBColor>("Primary", "rgb(106, 38, 233)", "Primary Brand Color");
 
 export const primaryDark = createToken<RGBColor>(
 	"Primary Dark",
-	"rgb(79, 19, 194)",
+	"rgb(79, 19, 192)",
 	"Primary Dark Brand Color"
 );
 
 export const lightest = createToken<RGBColor>("Lightest", white.value, "Lightest Brand Color");
 
-export const darkest = createToken<RGBColor>("Darkest", "rgb(35, 36, 36)", "Darkest Brand Color");
+export const darkest = createToken<RGBColor>("Darkest", "rgb(35, 36, 33)", "Darkest Brand Color");
 
-export const highlight = createToken<RGBColor>("Highlight", "rgb(46, 147, 255)", "Highlight Color");
+export const highlight = createToken<RGBColor>("Highlight", "rgb(43, 147, 255)", "Highlight Color");
 
 // Text Colors
 export const lightText1 = createToken<RGBColor>(
@@ -36,38 +36,38 @@ export const darkText1 = createToken<RGBColor>(
 // Outline Colors
 export const lightOutline1 = createToken<RGBColor>(
 	"Light Outline 1",
-	"rgb(238, 238, 238)",
+	"rgb(220, 220, 225)",
 	"Light Mode Outline Color 1"
 );
 
 export const darkOutline1 = createToken<RGBColor>(
 	"Dark Outline 1",
-	"rgb(42, 42, 42)",
+	"rgb(44, 44, 46)",
 	"Dark Mode Outline Color 1"
 );
 
 // Fill Colors
 export const lightFill1 = createToken<RGBColor>(
 	"Light Fill 1",
-	"rgb(248, 249, 253)",
+	"rgb(236,237,239)",
 	"Light Mode Fill Color 1"
 );
 
 export const darkFill1 = createToken<RGBColor>(
 	"Dark Fill 1",
-	"rgb(51, 51, 51)",
+	"rgb(56, 56, 56)",
 	"Dark Mode Fill Color 1"
 );
 
 export const lightFill2 = createToken<RGBColor>(
 	"Light Fill 2",
-	"rgb(247, 247, 248)",
+	"rgb(239,239,243)",
 	"Light Mode Fill Color 2"
 );
 
 export const darkFill2 = createToken<RGBColor>(
 	"Dark Fill 2",
-	"rgb(29, 29, 29)",
+	"rgb(27, 27, 27)",
 	"Dark Mode Fill Color 2"
 );
 

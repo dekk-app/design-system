@@ -1,6 +1,7 @@
 import { focusRing } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils";
-import { css } from "@emotion/react";
+import { withPseudoClasses } from "@dekk-ui/utils/with-pseudo-classes";
+import { css, SerializedStyles } from "@emotion/react";
 import styled from "@emotion/styled";
 import { ButtonProps } from "./types";
 
@@ -10,13 +11,17 @@ export const StyledButton = styled.button<ButtonProps>`
 	align-content: center;
 	align-items: center;
 	justify-content: center;
+	width: max-content;
 	margin: 0;
 	border: 0;
 	font-family: inherit;
 
-	&:focus {
-		outline: 0;
-	}
+	${withPseudoClasses(
+		"focus",
+		css`
+			outline: 0;
+		`
+	)};
 
 	${({ theme, variant = "default" }) => css`
 		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.s)};
@@ -32,17 +37,26 @@ export const StyledButton = styled.button<ButtonProps>`
 			: "currentColor"};
 		border-radius: ${pxToRem(theme.radius.s)};
 
-		&:focus-visible {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-			${focusRing};
-		}
+		${withPseudoClasses(
+			"focus-visible",
+			css`
+				background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+				${focusRing};
+			`
+		)};
 
-		&:hover {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-		}
+		${withPseudoClasses(
+			"hover",
+			css`
+				background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+			`
+		)};
 
-		&:active {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-		}
+		${withPseudoClasses(
+			"active",
+			css`
+				background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+			`
+		)};
 	`};
 `;

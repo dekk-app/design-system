@@ -25,7 +25,8 @@
     "./get-deg": "./dist/get-deg.js",
     "./px-to-rem": "./dist/px-to-rem.js",
     "./rem": "./dist/rem.js",
-    "./take": "./dist/take.js"
+    "./take": "./dist/take.js",
+    "./with-pseudo-classes": "./dist/with-pseudo-classes.js"
   },
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
@@ -45,6 +46,9 @@
       ],
       "take": [
         "dist/take.d.ts"
+      ],
+      "with-pseudo-classes": [
+        "dist/with-pseudo-classes.d.ts"
       ]
     }
   },
@@ -56,6 +60,18 @@
     "build": "rollup -c",
     "clean": "rimraf dist",
     "watch": "rollup -cw"
+  },
+  "devDependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "react": "^17.0.2"
   },
   "publishConfig": {
     "access": "public"

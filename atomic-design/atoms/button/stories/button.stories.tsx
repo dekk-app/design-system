@@ -1,4 +1,5 @@
 import { Button, ButtonProps } from "@dekk-ui/button";
+import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
 import React from "react";
 
@@ -34,10 +35,37 @@ const Template: Story<ButtonProps> = ({ children, ...args }) => {
 };
 
 export const Simple = Template.bind({});
-
 Simple.args = {
 	children: "Click Me",
 };
+
+const PseudoStatesTemplate: Story<ButtonProps> = ({ children, ...args }) => {
+	return (
+		<div style={{ width: "max-content" }}>
+			<Button {...args} type="button">
+				{children}
+			</Button>
+		</div>
+	);
+};
+export const PseudoStates = PseudoStatesTemplate.bind({});
+
+PseudoStates.args = {
+	children: "Click Me",
+};
+
+PseudoStates.parameters = {
+	withPseudo: {
+		selector: "button",
+		pseudos: ["hover", "active", "focus-visible"],
+		attributes: ["disabled"],
+		styles: {
+			orientation: "COLUMN",
+		},
+	},
+};
+
+PseudoStates.decorators = [withPseudo];
 
 const story = {
 	component: Button,
