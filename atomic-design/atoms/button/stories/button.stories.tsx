@@ -39,27 +39,41 @@ Simple.args = {
 	children: "Click Me",
 };
 
-const PseudoStatesTemplate: Story<ButtonProps> = ({ children, ...args }) => {
-	return (
-		<div style={{ width: "max-content" }}>
-			<Button {...args} type="button">
-				{children}
-			</Button>
-		</div>
-	);
+const PseudoStatesTemplate: Story<ButtonProps> = () => {
+	return <Button type="button">Submit</Button>;
 };
-export const PseudoStates = PseudoStatesTemplate.bind({});
+export const PseudoStates = PseudoStatesTemplate.bind(null);
 
-PseudoStates.args = {
-	children: "Click Me",
+PseudoStates.argTypes = {
+	variant: {
+		table: {
+			disable: true,
+		},
+	},
+	children: {
+		table: {
+			disable: true,
+		},
+	},
 };
 
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
 		selector: "button",
-		pseudos: ["hover", "active", "focus-visible"],
+		pseudos: [
+			"hover",
+			"active",
+			"focus-visible",
+			"focus-visible & hover",
+			"focus-visible & active",
+		],
 		prefix: "pseudoclass--",
 		attributes: ["disabled"],
+		permutations: [
+			{ attr: "variant", value: "primary", label: "Primary" },
+			{ attr: "variant", value: "text", label: "Text" },
+		],
 	},
 };
 

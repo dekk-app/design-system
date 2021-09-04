@@ -2,17 +2,23 @@ import { focusRing } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { StyledInputWrapperProps } from "./types";
 
-export const StyledInputWrapper = styled.span`
+export const StyledInputWrapper = styled.span<StyledInputWrapperProps>`
 	display: inline-flex;
 	position: relative;
 	width: ${pxToRem(48)};
 	height: ${pxToRem(48)};
 	margin: ${pxToRem(-8)} ${pxToRem(-6)};
-	${({ theme }) => css`
+	${({ theme, isDisabled }) => css`
+		${isDisabled &&
+		css`
+			opacity: 0.5;
+			pointer-events: none;
+		`};
 		border-radius: ${pxToRem(theme.radius.s)};
+
 		&:focus-within {
-			background: ${theme.ui.fill["1"]};
 			${focusRing};
 		}
 	`};

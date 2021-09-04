@@ -13,6 +13,7 @@ export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
 			min = 0,
 			max = 100,
 			step = 1,
+			disabled,
 			...props
 		},
 		inputRef
@@ -91,7 +92,7 @@ export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
 		);
 
 		return (
-			<StyledInputWrapper ref={ref} onMouseDown={handleStart}>
+			<StyledInputWrapper ref={ref} isDisabled={disabled} onMouseDown={handleStart}>
 				<StyledRing
 					style={{
 						transform: `rotate3d(0,0,1,${Math.round(
@@ -103,6 +104,7 @@ export const RangeKnob = forwardRef<HTMLInputElement, RangeKnobProps>(
 						{...props}
 						ref={inputRef}
 						type="range"
+						disabled={disabled}
 						value={controlledValue ?? value}
 						max={max}
 						min={min - step}

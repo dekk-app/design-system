@@ -2,23 +2,31 @@ import { focus, focusRing } from "@dekk-ui/focus-ring";
 import { pxToRem } from "@dekk-ui/utils/px-to-rem";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { ReactSelectProps, SelectProps } from "./types";
+import { ReactSelectProps, StyledSelectProps } from "./types";
 
-export const StyledSelect = styled.div<SelectProps>`
+export const StyledSelect = styled.div<StyledSelectProps>`
 	display: inline-block;
 	position: relative;
 	vertical-align: bottom;
-	${({ theme, fullWidth, width, flex }) => css`
+	${({ theme, fullWidth, width, flex, isDisabled }) => css`
+		${isDisabled &&
+		css`
+			opacity: 0.5;
+			pointer-events: none;
+		`};
 		flex: ${flex ? 1 : "initial"};
 		width: ${fullWidth ? "100%" : width || "auto"};
 		min-width: ${pxToRem(theme.space.xl)};
 	`};
 `;
+
 export const StyledPopoutMenu = styled.div``;
+
 export const StyledSingleValue = styled.div`
 	background: none;
 	color: inherit;
 `;
+
 export const StyledInput = styled.input<ReactSelectProps>`
 	min-width: 1ex;
 	margin: 0;
@@ -34,6 +42,7 @@ export const StyledInput = styled.input<ReactSelectProps>`
 		outline: 0;
 	}
 `;
+
 export const StyledIndicatorsContainer = styled.div<ReactSelectProps>`
 	display: flex;
 	align-content: center;
@@ -46,6 +55,7 @@ export const StyledIndicatorsContainer = styled.div<ReactSelectProps>`
 		color: ${theme.ui.fill[4]};
 	`};
 `;
+
 export const StyledOption = styled.div<ReactSelectProps>`
 	display: flex;
 	align-content: center;
@@ -64,6 +74,7 @@ export const StyledOption = styled.div<ReactSelectProps>`
 		opacity: ${isDisabled ? 0.2 : 1};
 	`};
 `;
+
 export const StyledControl = styled.div<ReactSelectProps>`
 	display: flex;
 	overflow: hidden;
@@ -91,7 +102,6 @@ export const StyledControl = styled.div<ReactSelectProps>`
 			background: ${theme.ui.fill["1"]};
 		}
 		&:focus {
-			background: ${theme.ui.fill["1"]};
 			${focus};
 		}
 	`};

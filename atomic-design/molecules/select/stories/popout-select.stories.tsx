@@ -24,25 +24,44 @@ Simple.args = {
 	options,
 };
 
-const PseudoStatesTemplate: Story<SelectProps> = args => {
-	return <PopoutSelect {...args} />;
+const PseudoStatesTemplate: Story<SelectProps> = () => {
+	return (
+		<PopoutSelect options={options} placeholder="Search…" width="132px" maxMenuHeight={150} />
+	);
 };
 
-export const PseudoStates = PseudoStatesTemplate.bind({});
+export const PseudoStates = PseudoStatesTemplate.bind(null);
 
-PseudoStates.args = {
-	placeholder: "Search…",
-	width: "132px",
-	maxMenuHeight: 150,
-	options,
+PseudoStates.argTypes = {
+	placeholder: {
+		table: {
+			disable: true,
+		},
+	},
+	width: {
+		table: {
+			disable: true,
+		},
+	},
+	maxMenuHeight: {
+		table: {
+			disable: true,
+		},
+	},
+	options: {
+		table: {
+			disable: true,
+		},
+	},
 };
 
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
 		selector: ".pseudo-states-addon__story__container > div > div",
-		pseudos: ["hover", "focus"],
+		pseudos: ["hover", "focus", "focus & hover"],
 		prefix: "pseudoclass--",
-		attributes: [],
+		attributes: ["disabled"],
 	},
 };
 

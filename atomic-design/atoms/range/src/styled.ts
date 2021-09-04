@@ -54,6 +54,11 @@ export const StyledRange = styled.input`
 		outline: 0;
 	}
 
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
 	&::-webkit-slider-thumb {
 		${thumb};
 		margin-top: calc(${pxToRem(-6)} + var(--track-height) / 2);
@@ -92,7 +97,6 @@ export const StyledRange = styled.input`
 		}
 
 		&:focus-visible {
-			background: ${theme.ui.fill["1"]};
 			${focus};
 		}
 	`};

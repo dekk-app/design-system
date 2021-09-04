@@ -15,23 +15,44 @@ Simple.args = {
 	size: IconSize.m,
 };
 
-const PseudoStatesTemplate: Story<IconButtonProps> = args => {
-	return <IconButton {...args} />;
+const PseudoStatesTemplate: Story<IconButtonProps> = () => {
+	return <IconButton icon="plus" />;
 };
 
-export const PseudoStates = PseudoStatesTemplate.bind({});
+export const PseudoStates = PseudoStatesTemplate.bind(null);
 
-PseudoStates.args = {
-	icon: "plus",
-	size: IconSize.m,
+PseudoStates.argTypes = {
+	icon: {
+		table: {
+			disable: true,
+		},
+	},
+	size: {
+		table: {
+			disable: true,
+		},
+	},
+	isSelected: {
+		table: {
+			disable: true,
+		},
+	},
 };
 
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
 		selector: "button",
-		pseudos: ["hover", "active", "focus-visible"],
+		pseudos: [
+			"hover",
+			"active",
+			"focus-visible",
+			"focus-visible & hover",
+			"focus-visible & active",
+		],
 		prefix: "pseudoclass--",
 		attributes: ["disabled"],
+		permutations: [{ attr: "isSelected", value: true, label: "Selected" }],
 	},
 };
 

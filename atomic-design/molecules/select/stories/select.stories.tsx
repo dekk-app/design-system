@@ -9,34 +9,51 @@ const Template: Story<SelectProps> = args => {
 };
 
 export const Simple = Template.bind({});
-
+const options = range(12).map(x => ({ value: x, label: x }));
 Simple.args = {
 	placeholder: "0",
 	id: "select-0",
 	width: "132px",
 	maxMenuHeight: 150,
-	options: range(12).map(x => ({ value: x, label: x })),
+	options,
 };
 
-const PseudoStatesTemplate: Story<SelectProps> = args => {
-	return <Select {...args} />;
+const PseudoStatesTemplate: Story<SelectProps> = () => {
+	return <Select options={options} placeholder="0" width="132px" maxMenuHeight={150} />;
 };
 
-export const PseudoStates = PseudoStatesTemplate.bind({});
+export const PseudoStates = PseudoStatesTemplate.bind(null);
 
-PseudoStates.args = {
-	placeholder: "0",
-	width: "132px",
-	maxMenuHeight: 150,
-	options: range(12).map(x => ({ value: x, label: x })),
+PseudoStates.argTypes = {
+	placeholder: {
+		table: {
+			disable: true,
+		},
+	},
+	width: {
+		table: {
+			disable: true,
+		},
+	},
+	maxMenuHeight: {
+		table: {
+			disable: true,
+		},
+	},
+	options: {
+		table: {
+			disable: true,
+		},
+	},
 };
 
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
 		selector: ".pseudo-states-addon__story__container > div > div > div",
-		pseudos: ["hover", "focus"],
+		pseudos: ["hover", "focus", "focus & hover"],
 		prefix: "pseudoclass--",
-		attributes: [],
+		attributes: ["disabled"],
 	},
 };
 

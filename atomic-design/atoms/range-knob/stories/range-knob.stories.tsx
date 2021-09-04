@@ -15,21 +15,49 @@ export const Simple = Template.bind({});
 
 Simple.args = {};
 
-const PseudoStatesTemplate: Story<RangeKnobProps> = args => {
-	return (
-		<label>
-			<RangeKnob {...args} />
-		</label>
-	);
+const PseudoStatesTemplate: Story<RangeKnobProps> = () => {
+	return <RangeKnob />;
 };
 
-export const PseudoStates = PseudoStatesTemplate.bind({});
+export const PseudoStates = PseudoStatesTemplate.bind(null);
 
-PseudoStates.args = {};
+PseudoStates.argTypes = {
+	min: {
+		table: {
+			disable: true,
+		},
+	},
+	max: {
+		table: {
+			disable: true,
+		},
+	},
+	step: {
+		table: {
+			disable: true,
+		},
+	},
+	value: {
+		table: {
+			disable: true,
+		},
+	},
+	defaultValue: {
+		table: {
+			disable: true,
+		},
+	},
+	onChange: {
+		table: {
+			disable: true,
+		},
+	},
+};
 
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
-		selector: "label > span",
+		selector: ".pseudo-states-addon__story__container > span",
 		pseudos: ["focus-within"],
 		prefix: "pseudoclass--",
 		attributes: ["disabled"],

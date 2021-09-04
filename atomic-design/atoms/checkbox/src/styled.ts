@@ -40,18 +40,23 @@ export const StyledCheckbox = styled.input`
 	width: 100%; /* chromium */
 	height: 100%; /* chromium */
 	margin: 0;
+	color: currentColor;
 
 	&:focus {
 		outline: 0;
 	}
 
-	${({ theme }) => css`
-		box-shadow: inset 0 0 0 1px ${theme.ui.text["1"]};
-		border-radius: ${pxToRem(theme.radius.s)};
+	&:focus-visible + ${StyledSvg} {
+		${focusRing}
+	}
 
-		&:focus-visible {
-			${focusRing}
-		}
+	&[disabled] {
+		opacity: 0.5;
+	}
+
+	${({ theme }) => css`
+		box-shadow: inset 0 0 0 1px;
+		border-radius: ${pxToRem(theme.radius.s)};
 	`};
 `;
 
