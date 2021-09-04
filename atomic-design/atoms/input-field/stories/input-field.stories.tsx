@@ -7,6 +7,7 @@ import {
 	StyledSuffix,
 	TextInput,
 } from "@dekk-ui/input-field";
+import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
 import React from "react";
 
@@ -62,6 +63,29 @@ Combined.args = {
 	textAlign: "right",
 	width: "120px",
 };
+
+const PseudoStatesTemplate: Story<InputProps> = args => {
+	return (
+		<label>
+			<TextInput {...args} />
+		</label>
+	);
+};
+
+export const PseudoStates = PseudoStatesTemplate.bind({});
+
+PseudoStates.args = {};
+
+PseudoStates.parameters = {
+	withPseudo: {
+		selector: "input",
+		pseudos: ["hover", "focus"],
+		prefix: "pseudoclass--",
+		attributes: ["disabled"],
+	},
+};
+
+PseudoStates.decorators = [withPseudo];
 
 const story = {
 	component: TextInput,

@@ -1,4 +1,5 @@
 import { PopoutSelect, SelectProps } from "@dekk-ui/select";
+import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
 import React from "react";
 
@@ -22,6 +23,30 @@ Simple.args = {
 	maxMenuHeight: 150,
 	options,
 };
+
+const PseudoStatesTemplate: Story<SelectProps> = args => {
+	return <PopoutSelect {...args} />;
+};
+
+export const PseudoStates = PseudoStatesTemplate.bind({});
+
+PseudoStates.args = {
+	placeholder: "Search…",
+	width: "132px",
+	maxMenuHeight: 150,
+	options,
+};
+
+PseudoStates.parameters = {
+	withPseudo: {
+		selector: ".pseudo-states-addon__story__container > div > div",
+		pseudos: ["hover", "focus"],
+		prefix: "pseudoclass--",
+		attributes: [],
+	},
+};
+
+PseudoStates.decorators = [withPseudo];
 
 const story = {
 	component: PopoutSelect,

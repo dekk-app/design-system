@@ -1,4 +1,5 @@
 import { Checkbox, CheckboxProps } from "@dekk-ui/checkbox";
+import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
 import React from "react";
 
@@ -36,6 +37,29 @@ export const Scaling: Story<CheckboxProps> = args => {
 };
 
 Scaling.args = {};
+
+const PseudoStatesTemplate: Story<CheckboxProps> = args => {
+	return (
+		<label>
+			<Checkbox {...args} />
+		</label>
+	);
+};
+
+export const PseudoStates = PseudoStatesTemplate.bind({});
+
+PseudoStates.args = {};
+
+PseudoStates.parameters = {
+	withPseudo: {
+		selector: `input[type="checkbox"]`,
+		pseudos: ["focus-visible"],
+		prefix: "pseudoclass--",
+		attributes: ["disabled"],
+	},
+};
+
+PseudoStates.decorators = [withPseudo];
 
 const story = {
 	component: Checkbox,
