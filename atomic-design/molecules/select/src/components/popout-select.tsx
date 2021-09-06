@@ -87,7 +87,7 @@ export const popoutComponents: Props["components"] = {
 	},
 };
 export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<SelectOption>>(
-	({ defaultValue, placeholder, width, fullWidth, flex, ...props }, ref) => {
+	({ defaultValue, disabled, placeholder, width, fullWidth, flex, ...props }, ref) => {
 		const [value, setValue] = useState<SelectOption>(defaultValue);
 		const controlRef = useRef<HTMLDivElement>(null);
 		const [open, setOpen] = useState(false);
@@ -137,7 +137,7 @@ export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<Se
 
 		return (
 			<PopoutContext.Provider value={menu}>
-				<StyledSelect width={width} fullWidth={fullWidth} flex={flex}>
+				<StyledSelect width={width} fullWidth={fullWidth} flex={flex} isDisabled={disabled}>
 					<StyledControl
 						ref={controlRef}
 						tabIndex={0}
@@ -164,6 +164,7 @@ export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<Se
 								menuIsOpen
 								controlRef={ref}
 								value={value}
+								isDisabled={disabled}
 								placeholder={placeholder || ""}
 								components={popoutComponents}
 								isClearable={false}

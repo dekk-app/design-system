@@ -45,6 +45,11 @@ export const StyledInput = styled.input<InputProps>`
 		outline: 0;
 	}
 
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
 	${({ theme, fullWidth, width, textAlign }) => css`
 		width: ${fullWidth ? "100%" : width || "auto"};
 		min-width: ${pxToRem(theme.space.l)};
@@ -67,7 +72,6 @@ export const StyledInput = styled.input<InputProps>`
 		}
 
 		&:focus {
-			background: ${theme.ui.fill["1"]};
 			${focus};
 		}
 
@@ -128,16 +132,15 @@ export const StyledCombinedInput = styled.label<CombinedInputProps>`
 		}
 
 		&:focus-within {
-			background: ${theme.ui.fill["1"]};
 			${focusRing};
 		}
 		${StyledInput}, ${StyledNumberInput} {
-			border-radius: 0;
 			box-shadow: none;
 
 			&:focus-visible {
 				box-shadow: none;
 			}
+
 			&:first-of-type {
 				flex: 1;
 			}

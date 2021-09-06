@@ -15,19 +15,57 @@ export const Simple = Template.bind({});
 
 Simple.args = {};
 
-const PseudoStatesTemplate: Story<RangeProps> = args => {
-	return (
-		<label>
-			<Range {...args} />
-		</label>
-	);
+const PseudoStatesTemplate: Story<RangeProps> = () => {
+	return <Range />;
 };
 
-export const PseudoStates = PseudoStatesTemplate.bind({});
+export const PseudoStates = PseudoStatesTemplate.bind(null);
 
-PseudoStates.args = {};
+PseudoStates.argTypes = {
+	min: {
+		table: {
+			disable: true,
+		},
+	},
+	max: {
+		table: {
+			disable: true,
+		},
+	},
+	step: {
+		table: {
+			disable: true,
+		},
+	},
+	width: {
+		table: {
+			disable: true,
+		},
+	},
+	fullWidth: {
+		table: {
+			disable: true,
+		},
+	},
+	value: {
+		table: {
+			disable: true,
+		},
+	},
+	defaultValue: {
+		table: {
+			disable: true,
+		},
+	},
+	onChange: {
+		table: {
+			disable: true,
+		},
+	},
+};
 
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
 		selector: "input",
 		pseudos: ["focus-visible"],

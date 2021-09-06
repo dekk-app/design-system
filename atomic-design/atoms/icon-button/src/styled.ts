@@ -27,6 +27,11 @@ export const StyledButton = styled.button<Except<IconButtonProps, "icon" | "size
 		outline: 0;
 	}
 
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
 	${StyledSvg} {
 		pointer-events: none;
 	}
@@ -40,16 +45,15 @@ export const StyledButton = styled.button<Except<IconButtonProps, "icon" | "size
 		border-radius: ${pxToRem(theme.radius.s)};
 
 		&:focus-visible {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 			${focusRing};
 		}
 
 		&:hover {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 		}
 
 		&:active {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+			background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 		}
 	`};
 `;

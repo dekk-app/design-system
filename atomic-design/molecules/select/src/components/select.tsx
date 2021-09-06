@@ -66,12 +66,13 @@ export const customComponents: Props["components"] = {
 };
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps & Props<SelectOption>>(
-	({ id, width, fullWidth, placeholder, flex, ...props }, ref) => {
+	({ id, disabled, width, fullWidth, placeholder, flex, ...props }, ref) => {
 		return (
-			<StyledSelect width={width} fullWidth={fullWidth} flex={flex}>
+			<StyledSelect width={width} fullWidth={fullWidth} flex={flex} isDisabled={disabled}>
 				<ReactSelect
 					{...props}
 					id={id && `__${id}__`}
+					isDisabled={disabled}
 					inputId={id}
 					controlRef={ref}
 					placeholder={placeholder || ""}

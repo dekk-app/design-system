@@ -1,5 +1,4 @@
 import { Icon } from "@dekk-ui/icon";
-import { IconSize } from "@dekk-ui/icons";
 import { ToggleButton, ToggleButtonProps } from "@dekk-ui/toggle-button";
 import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
@@ -17,27 +16,36 @@ export const Simple = Template.bind({});
 
 Simple.args = {};
 
-const PseudoStatesTemplate: Story<ToggleButtonProps> = args => {
+const PseudoStatesTemplate: Story<ToggleButtonProps> = () => {
 	return (
-		<ToggleButton {...args}>
+		<ToggleButton>
 			<Icon icon="editorImage" />
 		</ToggleButton>
 	);
 };
 
-export const PseudoStates = PseudoStatesTemplate.bind({});
-
-PseudoStates.args = {
-	icon: "plus",
-	size: IconSize.m,
+export const PseudoStates = PseudoStatesTemplate.bind(null);
+PseudoStates.argTypes = {
+	isSelected: {
+		table: {
+			disable: true,
+		},
+	},
 };
-
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
 		selector: "button",
-		pseudos: ["hover", "active", "focus-visible"],
+		pseudos: [
+			"hover",
+			"active",
+			"focus-visible",
+			"focus-visible & hover",
+			"focus-visible & active",
+		],
 		prefix: "pseudoclass--",
 		attributes: ["disabled"],
+		permutations: ["isSelected"],
 	},
 };
 

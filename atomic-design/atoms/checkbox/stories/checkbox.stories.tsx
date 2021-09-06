@@ -38,24 +38,33 @@ export const Scaling: Story<CheckboxProps> = args => {
 
 Scaling.args = {};
 
-const PseudoStatesTemplate: Story<CheckboxProps> = args => {
-	return (
-		<label>
-			<Checkbox {...args} />
-		</label>
-	);
+const PseudoStatesTemplate: Story<CheckboxProps> = () => {
+	return <Checkbox />;
 };
 
-export const PseudoStates = PseudoStatesTemplate.bind({});
+export const PseudoStates = PseudoStatesTemplate.bind(null);
 
 PseudoStates.args = {};
 
+PseudoStates.argTypes = {
+	indeterminate: {
+		table: {
+			disable: true,
+		},
+	},
+	onChange: {
+		table: {
+			disable: true,
+		},
+	},
+};
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
 		selector: `input[type="checkbox"]`,
 		pseudos: ["focus-visible"],
 		prefix: "pseudoclass--",
-		attributes: ["disabled"],
+		attributes: ["disabled", "checked", "indeterminate"],
 	},
 };
 

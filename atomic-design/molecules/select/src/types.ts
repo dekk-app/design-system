@@ -10,6 +10,15 @@ export interface SelectProps<T extends SelectOption = SelectOption> {
 	fullWidth?: boolean;
 	width?: string;
 	defaultValue?: T;
+	disabled?: boolean;
+}
+
+export interface StyledSelectProps<T extends SelectOption = SelectOption> {
+	flex?: boolean;
+	fullWidth?: boolean;
+	width?: string;
+	defaultValue?: T;
+	isDisabled?: boolean;
 }
 
 export interface ReactSelectProps {

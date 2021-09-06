@@ -21,6 +21,11 @@ export const StyledToggleButton = styled.button<ToggleButtonProps>`
 		outline: 0;
 	}
 
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
 	${({ theme, isSelected }) => css`
 		border-radius: ${pxToRem(theme.radius.s)};
 		background-color: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["2"]};
@@ -28,16 +33,15 @@ export const StyledToggleButton = styled.button<ToggleButtonProps>`
 
 		&:focus-visible {
 			z-index: 1;
-			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 			${focus};
 		}
 
 		&:hover {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 		}
 
 		&:active {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+			background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 		}
 	`};
 `;

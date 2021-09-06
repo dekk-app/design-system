@@ -13,9 +13,15 @@ export const StyledButton = styled.button<ButtonProps>`
 	margin: 0;
 	border: 0;
 	font-family: inherit;
+	white-space: nowrap;
 
 	&:focus {
 		outline: 0;
+	}
+
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
 	}
 
 	${({ theme, variant = "default" }) => css`
@@ -33,16 +39,15 @@ export const StyledButton = styled.button<ButtonProps>`
 		border-radius: ${pxToRem(theme.radius.s)};
 
 		&:focus-visible {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 			${focusRing};
 		}
 
 		&:hover {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 		}
 
 		&:active {
-			background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+			background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 		}
 	`};
 `;

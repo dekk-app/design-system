@@ -10,3 +10,7 @@ export interface RangeKnobProps
 	defaultValue?: number;
 	onChange?(value: number): void;
 }
+
+export interface StyledInputWrapperProps {
+	isDisabled?: boolean;
+}

@@ -64,24 +64,52 @@ Combined.args = {
 	width: "120px",
 };
 
-const PseudoStatesTemplate: Story<InputProps> = args => {
-	return (
-		<label>
-			<TextInput {...args} />
-		</label>
-	);
+const PseudoStatesTemplate: Story<InputProps> = () => {
+	return <TextInput />;
 };
 
-export const PseudoStates = PseudoStatesTemplate.bind({});
-
-PseudoStates.args = {};
+export const PseudoStates = PseudoStatesTemplate.bind(null);
 
 PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
 	withPseudo: {
 		selector: "input",
-		pseudos: ["hover", "focus"],
+		pseudos: ["hover", "focus", "focus & hover"],
 		prefix: "pseudoclass--",
 		attributes: ["disabled"],
+	},
+};
+
+PseudoStates.argTypes = {
+	prefix: {
+		table: {
+			disable: true,
+		},
+	},
+	suffix: {
+		table: {
+			disable: true,
+		},
+	},
+	textAlign: {
+		table: {
+			disable: true,
+		},
+	},
+	width: {
+		table: {
+			disable: true,
+		},
+	},
+	fullWidth: {
+		table: {
+			disable: true,
+		},
+	},
+	placeholder: {
+		table: {
+			disable: true,
+		},
 	},
 };
 

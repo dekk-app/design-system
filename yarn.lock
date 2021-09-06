@@ -1723,10 +1723,10 @@
   resolved "https://registry.npmjs.org/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@ergosign/storybook-addon-pseudo-states-react@^0.0.1-alpha.47":
-  version "0.0.1-alpha.47"
-  resolved "https://registry.npmjs.org/@ergosign/storybook-addon-pseudo-states-react/-/storybook-addon-pseudo-states-react-0.0.1-alpha.47.tgz"
-  integrity sha512-xrvfsZnuBERYpOWuWF+KQ6BChMSMWVw5qSQqT15yDove74px+d/rXFCyurw2EORhO4K8iCbdM2sYxLYWsel5OQ==
+"@ergosign/storybook-addon-pseudo-states-react@^0.0.1-alpha.48":
+  version "0.0.1-alpha.48"
+  resolved "https://registry.yarnpkg.com/@ergosign/storybook-addon-pseudo-states-react/-/storybook-addon-pseudo-states-react-0.0.1-alpha.48.tgz#ef17be654e23489cff06954056703da94608d68e"
+  integrity sha512-rcnIjlz2QAi/J+JPZtoSgb59rtIPQL/4E1Sj72vHu3cH72wfWaJ7bCklAcLnoyJ3yY1y5YKGFPIwGkUOmokI/w==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
