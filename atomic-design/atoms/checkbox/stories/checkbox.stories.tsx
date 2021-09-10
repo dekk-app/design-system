@@ -75,8 +75,10 @@ export const Indeterminate: Story<CheckboxProps> = args => {
 	const [indeterminate, setIndeterminate] = useState(false);
 
 	useEffect(() => {
-		setIndeterminate(checkboxRef.current.indeterminate);
-	});
+		if (checkboxRef) {
+			setIndeterminate(checkboxRef.current.indeterminate);
+		}
+	}, [checkboxRef]);
 
 	return (
 		<div>
