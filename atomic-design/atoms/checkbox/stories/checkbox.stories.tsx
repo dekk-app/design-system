@@ -1,7 +1,7 @@
 import { Checkbox, CheckboxProps } from "@dekk-ui/checkbox";
 import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export const Simple: Story<CheckboxProps> = args => {
 	return (
@@ -69,6 +69,29 @@ PseudoStates.parameters = {
 };
 
 PseudoStates.decorators = [withPseudo];
+
+export const Indeterminate: Story<CheckboxProps> = args => {
+	const checkboxRef = useRef(null);
+	const [indeterminate, setIndeterminate] = useState(false);
+
+	useEffect(() => {
+		setIndeterminate(checkboxRef.current.indeterminate);
+	});
+
+	return (
+		<div>
+			<p>
+				<Checkbox {...args} ref={checkboxRef} /> Value of{" "}
+				<code>checkbox.indeterminate: {indeterminate.toString()}</code>
+			</p>
+			<p>
+				<Checkbox disabled={true} indeterminate={true} /> Set via indeterminate property
+			</p>
+		</div>
+	);
+};
+
+Indeterminate.args = {};
 
 const story = {
 	component: Checkbox,
