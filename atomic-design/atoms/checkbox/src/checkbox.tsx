@@ -1,4 +1,12 @@
-import React, { ChangeEventHandler, forwardRef, useCallback, useState } from "react";
+import React, {
+	ChangeEventHandler,
+	forwardRef,
+	useCallback,
+	useEffect,
+	useImperativeHandle,
+	useRef,
+	useState,
+} from "react";
 import { StyledCheckbox, StyledCheckboxWrapper, StyledPath, StyledSvg } from "./styled";
 import { CheckboxProps } from "./types";
 import { display } from "./utils";
@@ -16,14 +24,19 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 			},
 			[onChange]
 		);
+		const inputRef = useRef<HTMLInputElement>();
 
-		// TODO: Set `indeterminate` property on Input-DOM-Element
+		useImperativeHandle(ref, () => inputRef.current);
+
+		useEffect(() => {
+			inputRef.current.indeterminate = indeterminate;
+		}, [indeterminate]);
 
 		return (
 			<StyledCheckboxWrapper className={className} style={style}>
 				<StyledCheckbox
 					{...props}
-					ref={ref}
+					ref={inputRef}
 					type="checkbox"
 					checked={isChecked}
 					onChange={handleChange}
