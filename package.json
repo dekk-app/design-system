@@ -9,7 +9,6 @@
   "author": "Gregor Adams <greg@pixelass.com>",
   "main": "n/a",
   "workspaces": [
-    "tools/*",
     "atomic-design/atoms/*",
     "atomic-design/ions/*",
     "atomic-design/molecules/*",
@@ -81,6 +80,7 @@
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "babel-loader": "^8.2.2",
+    "babel-plugin-storybook-addon-pseudo-states-emotion": "^0.2.1",
     "eslint": "^7.32.0",
     "eslint-config-xo-react": "^0.25.0",
     "eslint-config-xo-typescript": "^0.43.0",
