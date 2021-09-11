@@ -1,6 +1,5 @@
 {
   "upgrade": true,
   "deep": true,
-  "filter": "express",
   "reject": ["/^@dekk-ui/.*$/", "globby", "typescript"]
 }

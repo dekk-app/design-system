@@ -42,20 +42,20 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.4",
     "@dekk-ui/theme": "^0.2.1",
     "@dekk-ui/utils": "^0.2.1"
   },
   "devDependencies": {
     "@emotion/core": "^11.0.0",
-    "@emotion/react": "^11.4.0",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "peerDependencies": {
     "@emotion/core": "^11.0.0",
-    "@emotion/react": "^11.4.0",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
