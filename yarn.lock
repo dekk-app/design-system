@@ -5195,6 +5195,13 @@ babel-plugin-react-docgen@^4.2.1:
     lodash "^4.17.15"
     react-docgen "^5.0.0"
 
+babel-plugin-storybook-addon-pseudo-states-emotion@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-storybook-addon-pseudo-states-emotion/-/babel-plugin-storybook-addon-pseudo-states-emotion-0.2.1.tgz#6122b4ca3674e86b07c68b76bab5056abf10932f"
+  integrity sha512-p8OywXQXjyBW7XYxcbUJ7GViC2nBWfmVHKYLdJToNqa2qVWHeEN3+XUOPzym7bQKy37WBGdKuKiyStLtfJch0g==
+  dependencies:
+    "@babel/plugin-syntax-jsx" "^7.14.5"
+
 babel-plugin-syntax-jsx@^6.18.0:
   version "6.18.0"
   resolved "https://registry.npmjs.org/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz"

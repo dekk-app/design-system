@@ -50,7 +50,7 @@ module.exports = {
 						plugins: [
 							"@babel/plugin-transform-runtime",
 							[
-								toPath("tools/babel-plugin-storybook-addon-pseudo-states-emotion"),
+								"babel-plugin-storybook-addon-pseudo-states-emotion",
 								{ prefix: "pseudoclass--" },
 							],
 							[
