@@ -28,13 +28,17 @@ const commonPlugins = [
 module.exports = () => {
 	const cwd = process.cwd();
 	const pkg = require(path.resolve(cwd, "package.json"));
-	const packageExports = pkg.exports ? Object.keys(pkg.exports).filter(key => key !== ".") : [];
+	const packageExports = pkg.exports
+		? Object.keys(pkg.exports)
+				.filter(key => key !== ".")
+				.map(key => key.replace(/^\.\//, ""))
+		: [];
 	const tsconfig = path.resolve(cwd, "tsconfig.json");
 	const external = [
 		...Object.keys(pkg.dependencies || {}),
-		...Object.keys(pkg.dependencies || {}).map(() => new RegExp(`key/.*`)),
+		...Object.keys(pkg.dependencies || {}).map(key => new RegExp(`${key}/.*`)),
 		...Object.keys(pkg.peerDependencies || {}),
-		...Object.keys(pkg.peerDependencies || {}).map(() => new RegExp(`key/.*`)),
+		...Object.keys(pkg.peerDependencies || {}).map(key => new RegExp(`${key}/.*`)),
 		"path",
 		"fs",
 	];
@@ -53,8 +57,6 @@ module.exports = () => {
 				...commonPlugins,
 				typescript({
 					tsconfig,
-					//sourceMap: false,
-					declaration: true,
 				}),
 			],
 		},
@@ -72,7 +74,6 @@ module.exports = () => {
 				...commonPlugins,
 				typescript({
 					tsconfig,
-					//sourceMap: false,
 					declaration: false,
 				}),
 			],
@@ -86,6 +87,18 @@ module.exports = () => {
 					file: `dist/${packageExport}.js`,
 					format: "cjs",
 				},
+			],
+			plugins: [
+				...commonPlugins,
+				typescript({
+					tsconfig,
+				}),
+			],
+		})),
+		...packageExports.map(packageExport => ({
+			input: `src/${packageExport}.ts`,
+			external,
+			output: [
 				{
 					banner: createBanner(pkg),
 					file: `dist/esm/${packageExport}.js`,

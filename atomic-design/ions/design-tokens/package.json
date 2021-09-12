@@ -30,13 +30,13 @@
   "typesVersions": {
     "*": {
       "colors": [
-        "dist/colors/index.d.ts"
+        "dist/colors.d.ts"
       ],
       "spaces": [
-        "dist/spaces/index.d.ts"
+        "dist/spaces.d.ts"
       ],
       "radiuses": [
-        "dist/radiuses/index.d.ts"
+        "dist/radiuses.d.ts"
       ]
     }
   },
