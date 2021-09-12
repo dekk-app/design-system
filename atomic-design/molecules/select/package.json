@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/select",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "keywords": [
     "component library",
     "design system",
@@ -50,12 +50,12 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/focus-ring": "^0.2.1",
-    "@dekk-ui/icon": "^0.2.1",
-    "@dekk-ui/icons": "^0.2.1",
-    "@dekk-ui/input-field": "^0.2.1",
-    "@dekk-ui/theme": "^0.2.1",
-    "@dekk-ui/utils": "^0.2.1",
+    "@dekk-ui/focus-ring": "^0.3.0",
+    "@dekk-ui/icon": "^0.3.0",
+    "@dekk-ui/icons": "^0.3.0",
+    "@dekk-ui/input-field": "^0.3.0",
+    "@dekk-ui/theme": "^0.3.0",
+    "@dekk-ui/utils": "^0.3.0",
     "react-select": "^4.3.1"
   },
   "devDependencies": {
