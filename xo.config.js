@@ -46,6 +46,7 @@ module.exports = {
 				"react/prop-types": 0,
 				"react/display-name": 0,
 				"arrow-body-style": 0,
+				"@typescript-eslint/no-unsafe-member-access": 0,
 				"import/extensions": [
 					1,
 					{

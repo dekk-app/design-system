@@ -13,7 +13,7 @@ Simple.args = {
 	id: "opacity-0",
 	min: 0,
 	max: 100,
-	suffix: "%",
+	endAdornment: "%",
 };
 
 const story = {

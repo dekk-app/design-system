@@ -12,7 +12,7 @@ Simple.args = {
 	label: "Rotation",
 	max: 360,
 	id: "rotation-0",
-	suffix: "°",
+	endAdornment: "°",
 };
 
 const story = {
