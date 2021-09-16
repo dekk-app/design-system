@@ -1,17 +1,9 @@
-import {
-	InputProps,
-	NumberInput,
-	NumberInputProps,
-	StyledCombinedInput,
-	StyledPrefix,
-	StyledSuffix,
-	TextInput,
-} from "@dekk-ui/input-field";
+import { NumberInput, NumberInputProps, TextInput, TextInputProps } from "@dekk-ui/input-field";
 import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
 import React from "react";
 
-const TextTemplate: Story<InputProps> = args => {
+export const Text: Story<TextInputProps> = args => {
 	return (
 		<label>
 			<TextInput {...args} />
@@ -19,13 +11,7 @@ const TextTemplate: Story<InputProps> = args => {
 	);
 };
 
-export const Text = TextTemplate.bind({});
-
-Text.args = {
-	placeholder: "Text",
-};
-
-const NumberTemplate: Story<NumberInputProps> = args => {
+export const Number: Story<NumberInputProps> = args => {
 	return (
 		<label>
 			<NumberInput {...args} />
@@ -33,42 +19,9 @@ const NumberTemplate: Story<NumberInputProps> = args => {
 	);
 };
 
-export const Number = NumberTemplate.bind({});
-
-Number.args = {
-	placeholder: "Number",
-};
-
-const CombinedTemplate: Story<NumberInputProps & { suffix?: string }> = ({
-	fullWidth,
-	width,
-	prefix,
-	suffix,
-	...args
-}) => {
-	return (
-		<StyledCombinedInput fullWidth={fullWidth} width={width}>
-			{prefix && <StyledPrefix>{prefix}</StyledPrefix>}
-			<NumberInput {...args} />
-			{suffix && <StyledSuffix>{suffix}</StyledSuffix>}
-		</StyledCombinedInput>
-	);
-};
-
-export const Combined = CombinedTemplate.bind({});
-
-Combined.args = {
-	prefix: "Width:",
-	suffix: "px",
-	textAlign: "right",
-	width: "120px",
-};
-
-const PseudoStatesTemplate: Story<InputProps> = () => {
+export const PseudoStates: Story<TextInputProps> = () => {
 	return <TextInput />;
 };
-
-export const PseudoStates = PseudoStatesTemplate.bind(null);
 
 PseudoStates.parameters = {
 	controls: { hideNoControlsWarning: true },

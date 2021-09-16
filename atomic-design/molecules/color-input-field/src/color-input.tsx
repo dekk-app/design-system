@@ -1,4 +1,5 @@
-import { StyledCombinedInput, StyledInput } from "@dekk-ui/input-field/styled";
+import { StyledCombinedInput } from "@dekk-ui/combined-input-field/styled";
+import { StyledInput } from "@dekk-ui/input-field/styled";
 import React, {
 	ChangeEventHandler,
 	FocusEventHandler,
@@ -96,7 +97,7 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 
 		return (
 			<StyledCombinedInput
-				invalid={valid === null ? undefined : !valid}
+				isInvalid={valid === null ? undefined : !valid}
 				fullWidth={fullWidth}
 				width={width}
 			>
@@ -107,6 +108,7 @@ export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
 					autoCapitalize="off"
 					spellCheck="false"
 					pattern="^#[a-f0-9]{6}"
+					invalid={valid === null ? undefined : !valid}
 					onChange={handleChange}
 					onKeyDown={handleKeyDown}
 					onBlur={handleBlur}

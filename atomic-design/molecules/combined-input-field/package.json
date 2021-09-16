@@ -1,10 +1,10 @@
 {
-  "name": "@dekk-ui/range-knob-field",
+  "name": "@dekk-ui/combined-input-field",
   "version": "0.3.1",
   "keywords": [
     "component library",
     "design system",
-    "range-field"
+    "combined-input"
   ],
   "homepage": "https://dekk-ui.dekk.app",
   "bugs": {
@@ -19,8 +19,19 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
+  "exports": {
+    ".": "./dist/index.js",
+    "./styled": "./dist/styled.js"
+  },
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
+  "typesVersions": {
+    "*": {
+      "styled": [
+        "dist/styled.d.ts"
+      ]
+    }
+  },
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
@@ -31,11 +42,8 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/combined-input-field": "^0.3.1",
-    "@dekk-ui/fieldset-row": "^0.3.1",
+    "@dekk-ui/focus-ring": "^0.3.1",
     "@dekk-ui/input-field": "^0.3.1",
-    "@dekk-ui/input-label": "^0.3.1",
-    "@dekk-ui/range-knob": "^0.3.1",
     "@dekk-ui/theme": "^0.3.1",
     "@dekk-ui/utils": "^0.3.1"
   },

@@ -1,6 +1,11 @@
+import { CombinedInputProps } from "@dekk-ui/combined-input-field";
+import {
+	StyledCombinedInput,
+	StyledPrefix,
+	StyledSuffix,
+} from "@dekk-ui/combined-input-field/styled";
 import { FieldsetRow } from "@dekk-ui/fieldset-row";
 import { NumberInput } from "@dekk-ui/input-field/number-input";
-import { StyledCombinedInput, StyledPrefix, StyledSuffix } from "@dekk-ui/input-field/styled";
 import { InputLabel } from "@dekk-ui/input-label";
 import { RangeKnob } from "@dekk-ui/range-knob";
 import { clamp } from "@dekk-ui/utils/clamp";
@@ -11,8 +16,8 @@ import { RangeKnobFieldProps } from "./types";
 
 export const RangeKnobField = forwardRef<
 	HTMLInputElement,
-	RangeKnobFieldProps & { prefix?: string; suffix?: string }
->(({ id, label, name, max = 100, min = 0, step = 1, prefix, suffix }, ref) => {
+	RangeKnobFieldProps & CombinedInputProps
+>(({ id, label, name, max = 100, min = 0, step = 1, startAdornment, endAdornment }, ref) => {
 	const [value, setValue] = useState(min);
 	const theme = useTheme();
 	const handleChange = useCallback(
@@ -40,8 +45,8 @@ export const RangeKnobField = forwardRef<
 				tabIndex={-1}
 				onChange={handleChange}
 			/>
-			<StyledCombinedInput width={pxToRem(theme.space.l * 2)}>
-				{prefix && <StyledPrefix>{prefix}</StyledPrefix>}
+			<StyledCombinedInput width={pxToRem(54)}>
+				{startAdornment && <StyledPrefix>{startAdornment}</StyledPrefix>}
 				<NumberInput
 					ref={ref}
 					fullWidth
@@ -53,7 +58,7 @@ export const RangeKnobField = forwardRef<
 					textAlign="right"
 					onChange={handleChange}
 				/>
-				{suffix && <StyledSuffix>{suffix}</StyledSuffix>}
+				{endAdornment && <StyledSuffix>{endAdornment}</StyledSuffix>}
 			</StyledCombinedInput>
 		</FieldsetRow>
 	);
