@@ -45,7 +45,7 @@ export const RangeKnobField = forwardRef<
 				tabIndex={-1}
 				onChange={handleChange}
 			/>
-			<StyledCombinedInput width={pxToRem(54)}>
+			<StyledCombinedInput width={pxToRem(72)}>
 				{startAdornment && <StyledPrefix>{startAdornment}</StyledPrefix>}
 				<NumberInput
 					ref={ref}

@@ -1,8 +1,8 @@
-import { HTMLProps } from "react";
+import { InputHTMLAttributes } from "react";
 import { Except } from "type-fest";
 
 export interface RangeKnobProps
-	extends Except<HTMLProps<HTMLInputElement>, "ref" | "as" | "onChange"> {
+	extends Except<InputHTMLAttributes<HTMLInputElement>, "ref" | "as" | "onChange"> {
 	min?: number;
 	max?: number;
 	step?: number;

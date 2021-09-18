@@ -86,6 +86,7 @@ export const popoutComponents: Props["components"] = {
 		return <StyledPopoutValueContainer {...rest} />;
 	},
 };
+
 export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<SelectOption>>(
 	({ defaultValue, disabled, placeholder, width, fullWidth, flex, ...props }, ref) => {
 		const [value, setValue] = useState<SelectOption>(defaultValue);

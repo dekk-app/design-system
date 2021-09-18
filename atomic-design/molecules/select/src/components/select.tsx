@@ -8,6 +8,7 @@ import {
 	StyledInput,
 	StyledMenu,
 	StyledOption,
+	StyledPlaceholder,
 	StyledSelect,
 	StyledSingleValue,
 	StyledValueContainer,
@@ -28,6 +29,9 @@ export const customComponents: Props["components"] = {
 			...rest
 		} = props;
 		return <StyledValueContainer {...rest} />;
+	},
+	Placeholder: ({ children }) => {
+		return <StyledPlaceholder>{children}</StyledPlaceholder>;
 	},
 	Input: props => {
 		const { getStyles, cx, theme, innerRef, ...rest } = props;

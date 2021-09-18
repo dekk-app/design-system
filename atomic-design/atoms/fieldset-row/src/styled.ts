@@ -10,6 +10,7 @@ export const StyledFieldsetRow = styled.fieldset<FieldsetRowProps>`
 	margin: 0;
 	padding: 0;
 	border: 0;
+	user-select: none;
 
 	> :first-of-type {
 		justify-self: start;
