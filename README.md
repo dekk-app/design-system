@@ -25,7 +25,7 @@ Copyright © 2021 Dekk. All rights reserved.
 [percy-badge]: https://img.shields.io/badge/Visual_Regression-Percy-9e66bf?style=for-the-badge
 [percy]: https://percy.io/70750019/Dekk-UI
 [storybook-badge]: https://img.shields.io/badge/Documentation-Storybook-ff4685?style=for-the-badge
-[storybook]: https://design-system-dekk.vercel.app/
+[storybook]: https://dekk-ui.dekk.app/
 [atomic-design-badge]: https://img.shields.io/badge/System-Atomic_Design-be6700?style=for-the-badge
 [atomic-design]: https://atomicdesign.bradfrost.com/
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge
