@@ -64,7 +64,7 @@ export const StyledOption = styled.div<ReactSelectProps>`
 	height: ${pxToRem(28)};
 	padding: ${pxToRem(4)} ${pxToRem(8)};
 	font-family: inherit;
-	font-size: ${pxToRem(14)};
+	font-size: ${pxToRem(16)};
 	font-weight: 300;
 	line-height: ${pxToRem(20)};
 	${({ theme, isSelected, isFocused, isDisabled }) => css`
@@ -79,8 +79,7 @@ export const StyledControl = styled.div<ReactSelectProps>`
 	display: flex;
 	overflow: hidden;
 	border: 0;
-	appearance: none;
-	font-size: 12px;
+	font-size: ${pxToRem(16)};
 
 	&:focus {
 		outline: 0;
@@ -89,18 +88,13 @@ export const StyledControl = styled.div<ReactSelectProps>`
 	${({ theme, isFocused }) => css`
 		min-width: ${pxToRem(theme.space.l)};
 		height: ${pxToRem(theme.space.l)};
-		line-height: ${pxToRem(theme.space.s)};
 		border-radius: ${pxToRem(theme.radius.s)};
-		background: ${isFocused ? theme.ui.fill["1"] : theme.ui.fill["2"]};
+		background: ${theme.ui.fill["2"]};
 		color: ${theme.ui.text["1"]};
 		box-shadow: inset 0 0 0 1px ${theme.ui.outline["1"]};
-		caret-color: ${theme.ui.colors.primary};
 
 		${isFocused && focusRing}
 
-		&:hover {
-			background: ${theme.ui.fill["1"]};
-		}
 		&:focus {
 			${focus};
 		}
@@ -110,8 +104,7 @@ export const StyledPopoutControl = styled.div<ReactSelectProps>`
 	display: flex;
 	overflow: hidden;
 	border: 0;
-	appearance: none;
-	font-size: 12px;
+	font-size: ${pxToRem(16)};
 
 	&:focus {
 		outline: 0;
@@ -121,13 +114,12 @@ export const StyledPopoutControl = styled.div<ReactSelectProps>`
 		min-width: ${pxToRem(theme.space.l)};
 		margin: 0 ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)};
 		padding-bottom: ${pxToRem(theme.space.xs)};
-		line-height: ${pxToRem(20)};
 		background: ${theme.ui.background["1"]};
 		color: ${theme.ui.text["1"]};
 		box-shadow: inset 0 -1px 0 ${isFocused ? theme.ui.colors.primary : theme.ui.outline["1"]};
-		caret-color: ${theme.ui.colors.primary};
 	`};
 `;
+
 export const StyledValueContainer = styled.div`
 	display: flex;
 	position: relative;
@@ -137,6 +129,7 @@ export const StyledValueContainer = styled.div`
 	justify-content: flex-start;
 	padding: ${pxToRem(2)} ${pxToRem(8)};
 `;
+
 export const StyledPopoutValueContainer = styled.div`
 	display: flex;
 	position: relative;
@@ -146,6 +139,7 @@ export const StyledPopoutValueContainer = styled.div`
 	justify-content: flex-start;
 	padding: ${pxToRem(2)} 0;
 `;
+
 export const StyledBlanket = styled.div`
 	position: fixed;
 	z-index: 1;
@@ -154,12 +148,14 @@ export const StyledBlanket = styled.div`
 	bottom: 0;
 	left: 0;
 `;
+
 export const StyledPlaceholder = styled.div`
 	position: absolute;
 	top: 50%;
 	padding: 0 ${pxToRem(2)};
 	transform: translateY(-50%);
-	color: hsl(0, 0%, 50%);
+	opacity: 0.5;
+	color: inherit;
 `;
 
 export const StyledMenu = styled.div`

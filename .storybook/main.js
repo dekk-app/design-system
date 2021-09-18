@@ -20,8 +20,9 @@ module.exports = {
 	},
 	stories: ["../atomic-design/**/*.stories.@(ts|tsx|mdx)"],
 	addons: [
-		"@storybook/addon-essentials",
-		"@storybook/addon-links",
+		"@storybook/addon-viewport",
+		"@storybook/addon-docs",
+		"@storybook/addon-toolbars",
 		"@storybook/addon-a11y",
 		"storybook-dark-mode",
 		"@ergosign/storybook-addon-pseudo-states-react/register",

@@ -38,37 +38,25 @@ export const StyledRing = styled.div`
 	`};
 `;
 
-const thumb = css`
-	width: 0;
-	height: 0;
-	border: 0;
-	appearance: none;
-	pointer-events: none;
-`;
-
-export const StyledBubble = styled.input`
+export const StyledBubble = styled.span`
 	position: absolute;
-	appearance: none;
 	top: 0;
 	left: 50%;
 	border-radius: 50%;
-
-	&:focus {
-		outline: 0;
-	}
-
-	&::-webkit-slider-thumb {
-		${thumb};
-	}
-
-	&::-moz-range-thumb {
-		${thumb};
-	}
-
 	${({ theme }) => css`
 		width: ${pxToRem(12)};
 		height: ${pxToRem(12)};
 		margin: ${pxToRem(-6)};
 		background: ${theme.ui.colors.primary};
 	`};
+`;
+
+export const StyledRange = styled.input`
+	appearance: none;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	&:focus {
+		outline: 0;
+	}
 `;

@@ -27,6 +27,7 @@ export const StyledToggleButton = styled.button<ToggleButtonProps>`
 	}
 
 	${({ theme, isSelected }) => css`
+		height: ${pxToRem(theme.space.l)};
 		border-radius: ${pxToRem(theme.radius.s)};
 		background-color: ${isSelected ? theme.ui.colors.primary : theme.ui.fill["2"]};
 		color: ${isSelected ? theme.ui.colors.lightest : theme.ui.text["1"]};

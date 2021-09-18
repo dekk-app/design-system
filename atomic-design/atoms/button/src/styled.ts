@@ -13,6 +13,7 @@ export const StyledButton = styled.button<ButtonProps>`
 	margin: 0;
 	border: 0;
 	font-family: inherit;
+	font-size: ${pxToRem(16)};
 	white-space: nowrap;
 
 	&:focus {
@@ -25,7 +26,9 @@ export const StyledButton = styled.button<ButtonProps>`
 	}
 
 	${({ theme, variant = "default" }) => css`
-		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.s)};
+		height: ${pxToRem(theme.space.l)};
+		padding: ${pxToRem(theme.space.xxs)} ${pxToRem(theme.space.s)};
+		border-radius: ${pxToRem(theme.radius.s)};
 		background-color: ${variant === "primary"
 			? theme.ui.colors.primary
 			: variant === "default"

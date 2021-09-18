@@ -3,7 +3,7 @@ import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
 import React from "react";
 
-const Template: Story<RangeKnobProps> = args => {
+export const Simple = args => {
 	return (
 		<label>
 			<RangeKnob {...args} />
@@ -11,15 +11,9 @@ const Template: Story<RangeKnobProps> = args => {
 	);
 };
 
-export const Simple = Template.bind({});
-
-Simple.args = {};
-
-const PseudoStatesTemplate: Story<RangeKnobProps> = () => {
+export const PseudoStates: Story<RangeKnobProps> = () => {
 	return <RangeKnob />;
 };
-
-export const PseudoStates = PseudoStatesTemplate.bind(null);
 
 PseudoStates.argTypes = {
 	min: {

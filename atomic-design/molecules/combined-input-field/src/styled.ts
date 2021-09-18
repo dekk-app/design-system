@@ -6,13 +6,16 @@ import styled from "@emotion/styled";
 import { PrefixProps, StyledCombinedInputProps } from "./types";
 
 export const StyledPrefix = styled.div<PrefixProps>`
+	display: flex;
+	align-content: center;
+	align-items: center;
 	overflow: hidden;
-	font-size: ${pxToRem(12)};
+	font-size: ${pxToRem(16)};
 	${({ theme, width }) => css`
 		width: ${width || "auto"};
 		height: ${pxToRem(theme.space.l)};
-		padding: ${pxToRem(theme.space.xs)} 0 ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)};
-		line-height: ${pxToRem(theme.space.s)};
+		padding: ${pxToRem(theme.space.xxs)} 0 ${pxToRem(theme.space.xxs)}
+			${pxToRem(theme.space.xs)};
 		border-radius: ${pxToRem(theme.radius.s)} 0 0 ${pxToRem(theme.radius.s)};
 		background: inherit;
 		color: inherit;
@@ -20,15 +23,17 @@ export const StyledPrefix = styled.div<PrefixProps>`
 `;
 
 export const StyledSuffix = styled.div<PrefixProps>`
+	display: flex;
+	align-content: center;
+	align-items: center;
 	overflow: hidden;
-	font-size: ${pxToRem(12)};
+	font-size: ${pxToRem(16)};
 	${({ theme, width }) => css`
 		width: ${width || "auto"};
 		height: ${pxToRem(theme.space.l)};
 		margin: 0 0 0 ${pxToRem(-theme.space.xs + 2)};
-		padding: ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xs)}
+		padding: ${pxToRem(theme.space.xxs)} ${pxToRem(theme.space.xs)} ${pxToRem(theme.space.xxs)}
 			${pxToRem(theme.space.xs - 2)};
-		line-height: ${pxToRem(theme.space.s)};
 		border-radius: 0 ${pxToRem(theme.radius.s)} ${pxToRem(theme.radius.s)} 0;
 		background: inherit;
 		color: inherit;
