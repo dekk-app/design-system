@@ -80,7 +80,7 @@
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "babel-loader": "^8.2.2",
-    "babel-plugin-storybook-addon-pseudo-states-emotion": "^0.2.2",
+    "babel-plugin-storybook-addon-pseudo-states-emotion": "^0.2.3",
     "eslint": "^7.32.0",
     "eslint-config-xo-react": "^0.25.0",
     "eslint-config-xo-typescript": "^0.44.0",
