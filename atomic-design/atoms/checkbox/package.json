@@ -45,7 +45,7 @@
     "@dekk-ui/focus-ring": "^0.3.1",
     "@dekk-ui/theme": "^0.3.1",
     "@dekk-ui/utils": "^0.3.1",
-    "type-fest": "^2.3.2"
+    "type-fest": "^2.3.3"
   },
   "devDependencies": {
     "@emotion/core": "^11.0.0",
