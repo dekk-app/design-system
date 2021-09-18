@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/icon-button",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "keywords": [
     "component library",
     "design system",
@@ -42,10 +42,10 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/focus-ring": "^0.3.1",
-    "@dekk-ui/icons": "^0.3.0",
-    "@dekk-ui/theme": "^0.3.1",
-    "@dekk-ui/utils": "^0.3.1",
+    "@dekk-ui/focus-ring": "^0.4.0",
+    "@dekk-ui/icons": "^0.4.0",
+    "@dekk-ui/theme": "^0.4.0",
+    "@dekk-ui/utils": "^0.4.0",
     "type-fest": "^2.3.3"
   },
   "devDependencies": {
