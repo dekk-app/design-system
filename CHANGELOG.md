@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/dekk-app/design-system/compare/v0.4.0...v0.4.1) (2021-10-13)
+
+
+### Bug Fixes
+
+* **color-input-field:** props were not passed down ([#20](https://github.com/dekk-app/design-system/issues/20)) ([296e4e1](https://github.com/dekk-app/design-system/commit/296e4e191325e3b371bce161d42d1ab26630d8fd))
+
+
+
+
+
 # [0.4.0](https://github.com/dekk-app/design-system/compare/v0.3.1...v0.4.0) (2021-09-18)
 
 
