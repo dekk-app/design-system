@@ -1,20 +1,35 @@
 import { ColorInput, ColorInputProps } from "@dekk-ui/color-input-field";
+import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
 import React from "react";
 
-const Template: Story<ColorInputProps> = args => {
+export const Simple: Story<ColorInputProps> = args => {
 	return <ColorInput {...args} />;
 };
 
-export const Simple = Template.bind({});
-
 Simple.args = {
-	default: "#000000",
-	id: "opacity-0",
-	min: 0,
-	max: 100,
-	suffix: "%",
+	defaultValue: "#000000",
 };
+
+export const PseudoStates: Story<ColorInputProps> = args => {
+	return <ColorInput {...args} />;
+};
+
+PseudoStates.args = {
+	width: "120px",
+};
+
+PseudoStates.parameters = {
+	controls: { hideNoControlsWarning: true },
+	withPseudo: {
+		selector: "label",
+		pseudos: ["hover", "focus-within", "focus-within & hover"],
+		prefix: "pseudoclass--",
+		attributes: ["disabled"],
+	},
+};
+
+PseudoStates.decorators = [withPseudo];
 
 const story = {
 	component: ColorInput,
