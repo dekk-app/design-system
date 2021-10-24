@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/input-label",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "keywords": [
     "component library",
     "design system",
@@ -42,8 +42,8 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/theme": "^0.4.0",
-    "@dekk-ui/utils": "^0.4.0",
+    "@dekk-ui/theme": "^0.5.0",
+    "@dekk-ui/utils": "^0.5.0",
     "type-fest": "^2.3.3"
   },
   "devDependencies": {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/dekk-app/design-system/compare/v0.4.2...v0.5.0) (2021-10-24)
+
+
+### Features
+
+* **sealect:** allow controlled popout-select ([259dc34](https://github.com/dekk-app/design-system/commit/259dc34a9c6b130c6bd278526c02c317b3170666))
+
+
+
+
+
 ## [0.4.2](https://github.com/dekk-app/design-system/compare/v0.4.1...v0.4.2) (2021-10-24)
 
 
