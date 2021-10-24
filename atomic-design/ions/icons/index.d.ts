@@ -10,14 +10,25 @@ export type IconName =
 	| "chevronUp"
 	| "editorImage"
 	| "editorText"
+	| "formatAlignCenter"
+	| "formatAlignJustify"
+	| "formatAlignLeft"
+	| "formatAlignRight"
+	| "formatVerticalAlignBottom"
+	| "formatVerticalAlignMiddle"
+	| "formatVerticalAlignTop"
+	| "formatTextBox"
 	| "menu"
 	| "play"
 	| "plus";
+
 export type IconCollection = {
 	[key in IconName]: string;
 };
-export type Icons = {
-	[key in IconSize]: IconCollection;
-};
+export interface Icons {
+	[IconSize.s]: Partial<IconCollection>;
+	[IconSize.m]: IconCollection;
+	[IconSize.l]: Partial<IconCollection>;
+}
 export declare const icons: Icons;
 export default icons;
