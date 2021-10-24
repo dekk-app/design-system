@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/dekk-app/design-system/compare/v0.5.0...v0.5.1) (2021-10-24)
+
+
+### Bug Fixes
+
+* **input-label:** typing was missing 'as' attribute ([ff98a9a](https://github.com/dekk-app/design-system/commit/ff98a9a075d33eae015649c8271388b00ed576ec))
+
+
+
+
+
 # [0.5.0](https://github.com/dekk-app/design-system/compare/v0.4.2...v0.5.0) (2021-10-24)
 
 
