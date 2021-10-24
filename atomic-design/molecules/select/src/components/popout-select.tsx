@@ -9,7 +9,7 @@ import React, {
 	useRef,
 	useState,
 } from "react";
-import ReactSelect, { Props } from "react-select";
+import ReactSelect, { ActionMeta, Props } from "react-select";
 import { PopoutContext, usePopoutContext } from "../context";
 import {
 	StyledBlanket,
@@ -88,13 +88,19 @@ export const popoutComponents: Props["components"] = {
 };
 
 export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<SelectOption>>(
-	({ defaultValue, disabled, placeholder, width, fullWidth, flex, ...props }, ref) => {
+	({ defaultValue, disabled, placeholder, width, fullWidth, flex, onChange, ...props }, ref) => {
 		const [value, setValue] = useState<SelectOption>(defaultValue);
 		const controlRef = useRef<HTMLDivElement>(null);
 		const [open, setOpen] = useState(false);
-		const handleChange = useCallback((newValue: SelectOption) => {
-			setValue(newValue);
-		}, []);
+		const handleChange = useCallback(
+			(newValue: SelectOption, actionMeta: ActionMeta<SelectOption>) => {
+				setValue(newValue);
+				if (onChange) {
+					onChange(newValue, actionMeta);
+				}
+			},
+			[onChange]
+		);
 		const menu = useMemo(
 			() => ({
 				open() {
