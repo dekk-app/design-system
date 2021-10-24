@@ -88,7 +88,20 @@ export const popoutComponents: Props["components"] = {
 };
 
 export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<SelectOption>>(
-	({ defaultValue, disabled, placeholder, width, fullWidth, flex, onChange, ...props }, ref) => {
+	(
+		{
+			defaultValue,
+			value: controlledValue,
+			disabled,
+			placeholder,
+			width,
+			fullWidth,
+			flex,
+			onChange,
+			...props
+		},
+		ref
+	) => {
 		const [value, setValue] = useState<SelectOption>(defaultValue);
 		const controlRef = useRef<HTMLDivElement>(null);
 		const [open, setOpen] = useState(false);
@@ -152,8 +165,10 @@ export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<Se
 						onKeyDown={handleControlKeyDown}
 					>
 						<StyledValueContainer>
-							{value ? (
-								<StyledSingleValue>{value.label}</StyledSingleValue>
+							{controlledValue ?? value ? (
+								<StyledSingleValue>
+									{((controlledValue ?? value) as SelectOption).label}
+								</StyledSingleValue>
 							) : (
 								<StyledPlaceholder>{placeholder}</StyledPlaceholder>
 							)}
@@ -170,7 +185,7 @@ export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<Se
 								autoFocus
 								menuIsOpen
 								controlRef={ref}
-								value={value}
+								value={controlledValue ?? value}
 								isDisabled={disabled}
 								placeholder={placeholder || ""}
 								components={popoutComponents}
