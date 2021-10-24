@@ -3,9 +3,9 @@ import { StyledLabel } from "./styled";
 import { InputLabelProps } from "./types";
 
 export const InputLabel = forwardRef<HTMLLabelElement, InputLabelProps>(
-	({ children, fullWidth, ...props }, ref) => {
+	({ children, ...props }, ref) => {
 		return (
-			<StyledLabel {...props} ref={ref} fullWidth={fullWidth}>
+			<StyledLabel {...props} ref={ref}>
 				{children}
 			</StyledLabel>
 		);
