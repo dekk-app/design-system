@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/dekk-app/design-system/compare/v0.4.1...v0.4.2) (2021-10-24)
+
+
+### Bug Fixes
+
+* onChange was not responding ([aaecd8b](https://github.com/dekk-app/design-system/commit/aaecd8b6b888d9cb121406df76ef179aa3972828))
+
+
+
+
+
 # [0.4.0](https://github.com/dekk-app/design-system/compare/v0.3.1...v0.4.0) (2021-09-18)
 
 
