@@ -1,5 +1,4 @@
 import { Icon } from "@dekk-ui/icon";
-import { IconSize } from "@dekk-ui/icons";
 import { MultiButton, MultiButtonProps } from "@dekk-ui/multi-button";
 import { ToggleButton } from "@dekk-ui/toggle-button";
 import { Story } from "@storybook/react";
@@ -9,16 +8,16 @@ const Template: Story<MultiButtonProps> = args => {
 	return (
 		<MultiButton {...args}>
 			<ToggleButton isSelected>
-				<Icon icon="editorText" size={IconSize.s} />
+				<Icon icon="editorText" />
 			</ToggleButton>
 			<ToggleButton>
-				<Icon icon="editorImage" size={IconSize.s} />
+				<Icon icon="editorImage" />
 			</ToggleButton>
 			<ToggleButton>
-				<Icon icon="menu" size={IconSize.s} />
+				<Icon icon="menu" />
 			</ToggleButton>
 			<ToggleButton>
-				<Icon icon="plus" size={IconSize.s} />
+				<Icon icon="plus" />
 			</ToggleButton>
 		</MultiButton>
 	);
