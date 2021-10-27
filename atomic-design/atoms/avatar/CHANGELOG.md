@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/dekk-app/design-system/compare/v0.5.1...v0.6.0) (2021-10-27)
+
+**Note:** Version bump only for package @dekk-ui/avatar
+
+
+
+
+
 # [0.5.0](https://github.com/dekk-app/design-system/compare/v0.4.2...v0.5.0) (2021-10-24)
 
 **Note:** Version bump only for package @dekk-ui/avatar

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/dekk-app/design-system/compare/v0.5.1...v0.6.0) (2021-10-27)
+
+
+### Bug Fixes
+
+* **input-field:** allow textarea in 'as' ([d6dd808](https://github.com/dekk-app/design-system/commit/d6dd808d15f92a38c66d27a72a229eb270407623))
+
+
+### Features
+
+* **icon-button:** adjust to new icon api ([ebc75de](https://github.com/dekk-app/design-system/commit/ebc75de1da3659fe8199b7375c5dd21b77a736b7))
+* **icon-button:** adjust to new icons api ([a75572d](https://github.com/dekk-app/design-system/commit/a75572d9fe82ae19b08545bcc3ad390a8e222578))
+* **icon:** adjust to new icons api ([1e82906](https://github.com/dekk-app/design-system/commit/1e829068a6e2102435c7b1b154384c7d26ae7abe))
+* **icons:** add icons ([c1afd1b](https://github.com/dekk-app/design-system/commit/c1afd1b8fde2ccf087e1aa631fd282a645a3a74d))
+* **icons:** only export size 24 ([2123c41](https://github.com/dekk-app/design-system/commit/2123c4142274c188effb1e794c1fc8651aadd2f4))
+* **select:** adjust to new icon api ([fd7e71e](https://github.com/dekk-app/design-system/commit/fd7e71ecda1b5a8f4affc6c945fa472c8778603b))
+
+
+
+
+
 ## [0.5.1](https://github.com/dekk-app/design-system/compare/v0.5.0...v0.5.1) (2021-10-24)
 
 
