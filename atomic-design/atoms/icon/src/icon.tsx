@@ -1,16 +1,12 @@
-import { icons, IconSize } from "@dekk-ui/icons";
-import React, { FC } from "react";
+import { icons } from "@dekk-ui/icons";
+import React, { forwardRef } from "react";
 import { StyledPath, StyledSvg } from "./styled";
 import { IconProps } from "./types";
 
-export const Icon: FC<IconProps> = ({ icon, size, ...props }) => {
+export const Icon = forwardRef<SVGSVGElement, IconProps>(({ icon, ...props }, ref) => {
 	return (
-		<StyledSvg {...props} height={size} width={size} viewBox={`0 0 ${size} ${size}`}>
-			<StyledPath d={icons[size][icon]} />
+		<StyledSvg ref={ref} height={24} width={24} {...props} viewBox={`0 0 24 24`}>
+			<StyledPath d={icons[icon]} />
 		</StyledSvg>
 	);
-};
-
-Icon.defaultProps = {
-	size: IconSize.m,
-};
+});
