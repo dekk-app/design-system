@@ -19,13 +19,17 @@
     "name": "Gregor Adams",
     "email": "greg@pixelass.com"
   },
-  "main": "index.js",
-  "typings": "index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
-    "icons.json",
-    "index.d.ts",
-    "index.js"
+    "dist"
   ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf dist",
+    "watch": "rollup -cw"
+  },
   "publishConfig": {
     "access": "public"
   }
