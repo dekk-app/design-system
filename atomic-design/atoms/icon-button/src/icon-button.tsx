@@ -1,4 +1,4 @@
-import { icons, IconSize } from "@dekk-ui/icons";
+import { icons } from "@dekk-ui/icons";
 import React, { FC } from "react";
 import { StyledButton, StyledPath, StyledSvg } from "./styled";
 import { IconButtonProps } from "./types";
@@ -11,8 +11,4 @@ export const IconButton: FC<IconButtonProps> = ({ icon, size, ...props }) => {
 			</StyledSvg>
 		</StyledButton>
 	);
-};
-
-IconButton.defaultProps = {
-	size: IconSize.m,
 };

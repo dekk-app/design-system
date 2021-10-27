@@ -1,5 +1,4 @@
 import { IconButton, IconButtonProps } from "@dekk-ui/icon-button";
-import { IconSize } from "@dekk-ui/icons";
 import { withPseudo } from "@ergosign/storybook-addon-pseudo-states-react";
 import { Story } from "@storybook/react";
 import React from "react";
@@ -12,7 +11,6 @@ export const Simple = Template.bind({});
 
 Simple.args = {
 	icon: "plus",
-	size: IconSize.m,
 };
 
 const PseudoStatesTemplate: Story<IconButtonProps> = () => {
