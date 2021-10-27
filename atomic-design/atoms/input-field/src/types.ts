@@ -10,6 +10,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export interface TextInputProps extends InputProps {
 	type?: "email" | "password" | "text";
+	as?: "textarea";
 }
 
 export interface NumberInputProps extends Except<InputProps, "onChange" | "min" | "max" | "type"> {
