@@ -8,10 +8,10 @@ const Template: Story<MultiButtonProps> = args => {
 	return (
 		<MultiButton {...args}>
 			<ToggleButton isSelected>
-				<Icon icon="editorText" />
+				<Icon icon="formatText" />
 			</ToggleButton>
 			<ToggleButton>
-				<Icon icon="editorImage" />
+				<Icon icon="imageOutline" />
 			</ToggleButton>
 			<ToggleButton>
 				<Icon icon="menu" />
