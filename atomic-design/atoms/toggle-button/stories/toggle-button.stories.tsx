@@ -7,7 +7,7 @@ import React from "react";
 const Template: Story<ToggleButtonProps> = args => {
 	return (
 		<ToggleButton {...args}>
-			<Icon icon="editorImage" />
+			<Icon icon="imageOutline" />
 		</ToggleButton>
 	);
 };
@@ -19,7 +19,7 @@ Simple.args = {};
 const PseudoStatesTemplate: Story<ToggleButtonProps> = () => {
 	return (
 		<ToggleButton>
-			<Icon icon="editorImage" />
+			<Icon icon="imageOutline" />
 		</ToggleButton>
 	);
 };
