@@ -1,5 +1,4 @@
 import { Icon } from "@dekk-ui/icon";
-import { IconSize } from "@dekk-ui/icons";
 import React, { forwardRef, LegacyRef } from "react";
 import ReactSelect, { Props } from "react-select";
 import {
@@ -39,7 +38,7 @@ export const customComponents: Props["components"] = {
 	},
 	IndicatorsContainer: () => (
 		<StyledIndicatorsContainer>
-			<Icon size={IconSize.s} icon="chevronDown" />
+			<Icon icon="chevronDown" />
 		</StyledIndicatorsContainer>
 	),
 	IndicatorSeparator: null,

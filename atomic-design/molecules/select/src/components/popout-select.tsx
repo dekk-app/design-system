@@ -1,5 +1,4 @@
 import { Icon } from "@dekk-ui/icon";
-import { IconSize } from "@dekk-ui/icons";
 import React, {
 	forwardRef,
 	KeyboardEventHandler,
@@ -174,7 +173,7 @@ export const PopoutSelect = forwardRef<HTMLSelectElement, SelectProps & Props<Se
 							)}
 						</StyledValueContainer>
 						<StyledIndicatorsContainer>
-							<Icon size={IconSize.s} icon="chevronDown" />
+							<Icon icon="chevronDown" />
 						</StyledIndicatorsContainer>
 					</StyledControl>
 					{open && <StyledBlanket onClick={menu.close} />}
