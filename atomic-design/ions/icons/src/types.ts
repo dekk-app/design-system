@@ -1,12 +1,10 @@
-import { IconSize } from "./enums";
-
 export type IconName =
+	| "chartLine"
 	| "chevronDown"
 	| "chevronRight"
 	| "chevronLeft"
 	| "chevronUp"
-	| "editorImage"
-	| "editorText"
+	| "cubeOutline"
 	| "formatAlignCenter"
 	| "formatAlignJustify"
 	| "formatAlignLeft"
@@ -14,17 +12,16 @@ export type IconName =
 	| "formatVerticalAlignBottom"
 	| "formatVerticalAlignMiddle"
 	| "formatVerticalAlignTop"
+	| "formatSize"
+	| "formatText"
 	| "formatTextBox"
+	| "formatTitle"
+	| "imageOutline"
 	| "menu"
 	| "play"
-	| "plus";
+	| "plus"
+	| "toyBrickOutline";
 
-export type IconCollection = {
+export type Icons = {
 	[key in IconName]: string;
 };
-
-export interface Icons {
-	[IconSize.s]: Partial<IconCollection>;
-	[IconSize.m]: IconCollection;
-	[IconSize.l]: Partial<IconCollection>;
-}
