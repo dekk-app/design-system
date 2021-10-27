@@ -21,28 +21,44 @@ ARIAHidden.args = {
 };
 
 const iconNames: IconName[] = [
+	"chartLine",
 	"chevronDown",
 	"chevronRight",
 	"chevronLeft",
 	"chevronUp",
-	"editorImage",
-	"editorText",
+	"cubeOutline",
+	"formatAlignCenter",
+	"formatAlignJustify",
+	"formatAlignLeft",
+	"formatAlignRight",
+	"formatHorizontalAlignCenter",
+	"formatHorizontalAlignLeft",
+	"formatHorizontalAlignRight",
+	"formatVerticalAlignBottom",
+	"formatVerticalAlignMiddle",
+	"formatVerticalAlignTop",
+	"formatSize",
+	"formatText",
+	"formatTextBox",
+	"formatTitle",
+	"imageOutline",
 	"menu",
 	"play",
 	"plus",
+	"toyBrickOutline",
 ];
 
-export const AllIcons: Story<IconProps> = (({ size }) => {
+export const AllIcons: Story<IconProps> = (() => {
 	return (
 		<div
 			style={{
 				display: "grid",
 				gridGap: "1rem",
-				gridTemplateColumns: `repeat( auto-fit, minmax(${size}px, 1fr) )`,
+				gridTemplateColumns: `repeat( auto-fit, minmax(24px, 1fr) )`,
 			}}
 		>
 			{iconNames.map(iconName => (
-				<Icon icon={iconName} size={size} />
+				<Icon icon={iconName} />
 			))}
 		</div>
 	);
