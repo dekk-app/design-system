@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/dekk-app/design-system/compare/v0.6.0...v0.7.0) (2021-10-29)
+
+
+### Features
+
+* **icon-button:** use forwardProp ([3cefc41](https://github.com/dekk-app/design-system/commit/3cefc41faaaccf81fec107525b615cb122ed7264))
+* **icons:** add delete icon ([34d20ee](https://github.com/dekk-app/design-system/commit/34d20ee1f5aec1648b908ad8d6b21c3e1add7695))
+
+
+
+
+
 # [0.6.0](https://github.com/dekk-app/design-system/compare/v0.5.1...v0.6.0) (2021-10-27)
 
 

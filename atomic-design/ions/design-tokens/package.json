@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/design-tokens",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "keywords": [
     "component library",
     "design system",
@@ -50,7 +50,7 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/create-token": "^0.6.0"
+    "@dekk-ui/create-token": "^0.7.0"
   },
   "publishConfig": {
     "access": "public"
