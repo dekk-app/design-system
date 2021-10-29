@@ -5,6 +5,7 @@ export type IconName =
 	| "chevronLeft"
 	| "chevronUp"
 	| "cubeOutline"
+	| "deleteOutline"
 	| "formatAlignCenter"
 	| "formatAlignJustify"
 	| "formatAlignLeft"
