@@ -27,6 +27,7 @@ const iconNames: IconName[] = [
 	"chevronLeft",
 	"chevronUp",
 	"cubeOutline",
+	"deleteOutline",
 	"formatAlignCenter",
 	"formatAlignJustify",
 	"formatAlignLeft",
