@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/dekk-app/design-system/compare/v0.7.0...v0.8.0) (2021-11-02)
+
+
+### Bug Fixes
+
+* add missing dependencies ([952600b](https://github.com/dekk-app/design-system/commit/952600bca627362dc93c1aa3f76fea86c352b2cb))
+
+
+
+
+
 # [0.7.0](https://github.com/dekk-app/design-system/compare/v0.6.0...v0.7.0) (2021-10-29)
 
 **Note:** Version bump only for package @dekk-ui/color-input-field

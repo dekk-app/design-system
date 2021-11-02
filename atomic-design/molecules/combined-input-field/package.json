@@ -1,6 +1,6 @@
 {
   "name": "@dekk-ui/combined-input-field",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "keywords": [
     "component library",
     "design system",
@@ -42,10 +42,10 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "@dekk-ui/focus-ring": "^0.7.0",
-    "@dekk-ui/input-field": "^0.7.0",
-    "@dekk-ui/theme": "^0.7.0",
-    "@dekk-ui/utils": "^0.7.0"
+    "@dekk-ui/focus-ring": "^0.8.0",
+    "@dekk-ui/input-field": "^0.8.0",
+    "@dekk-ui/theme": "^0.8.0",
+    "@dekk-ui/utils": "^0.8.0"
   },
   "devDependencies": {
     "@emotion/core": "^11.0.0",
