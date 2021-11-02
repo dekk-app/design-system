@@ -34,6 +34,7 @@
   "dependencies": {
     "@dekk-ui/avatar": "^0.7.0",
     "@dekk-ui/theme": "^0.7.0",
+    "@dekk-ui/toggle-button": "^0.7.0",
     "@dekk-ui/utils": "^0.7.0"
   },
   "devDependencies": {
