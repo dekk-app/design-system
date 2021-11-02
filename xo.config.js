@@ -43,6 +43,7 @@ module.exports = {
 						objectLiteralTypeAssertions: "allow-as-parameter",
 					},
 				],
+				"import/no-extraneous-dependencies": 1,
 				"react/prop-types": 0,
 				"react/display-name": 0,
 				"arrow-body-style": 0,
